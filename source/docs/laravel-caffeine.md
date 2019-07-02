@@ -1,7 +1,7 @@
 ---
 title: Caffeine for Laravel
 description: Building a navigation menu for your site
-extends: _layouts.documentation
+extends: _layouts.docs
 section: content
 ---
 

@@ -18,11 +18,20 @@
 <script>
     const navMenu = {
         toggle() {
-            const menu = document.getElementById('js-nav-menu');
+            let menu = document.getElementById('js-nav-menu');
             menu.classList.toggle('hidden');
             menu.classList.toggle('lg:block');
             document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
             document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
         },
     }
 </script>

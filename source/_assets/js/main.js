@@ -1,5 +1,9 @@
 window.docsearch = require('docsearch.js');
+window.axios = require('axios');
+window.fuse = require('fuse.js');
+window.Vue = require('vue');
 
+import Search from './components/Search.vue';
 import hljs from 'highlight.js/lib/highlight';
 
 hljs.registerLanguage('bash', require('highlight.js/lib/languages/bash'));
@@ -15,3 +19,12 @@ hljs.registerLanguage('yaml', require('highlight.js/lib/languages/yaml'));
 document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
 });
+
+Vue.config.productionTip = false;
+
+new Vue({
+    components: {
+        Search,
+    },
+}).$mount('#vue-search');
+

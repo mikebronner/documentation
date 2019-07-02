@@ -1,7 +1,7 @@
 ---
 title: Customizing Your Site
 description: Customizing your Jigsaw docs site
-extends: _layouts.documentation
+extends: _layouts.docs
 section: content
 ---
 # Customizing Your Site {#customizing}
