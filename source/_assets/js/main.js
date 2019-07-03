@@ -26,5 +26,5 @@ new Vue({
     components: {
         Search,
     },
-}).$mount('#vue-search');
+}).$mount('#app');
 
