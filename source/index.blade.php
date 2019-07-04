@@ -19,61 +19,7 @@
             loop: true
         });
     </script>
-    <script type="text/javascript" src="https://genealabs.17hats.com/vendor/iframeSizer.min.js"></script>
-    <script>
-        var openmodal = document.querySelectorAll('.modal-open')
-
-        for (var i = 0; i < openmodal.length; i++) {
-            openmodal[i].addEventListener('click', function(event) {
-                event.preventDefault();
-                toggleModal();
-            });
-        }
-        
-        const overlay = document.querySelector('.modal-overlay')
-        overlay.addEventListener('click', toggleModal)
-        var closemodal = document.querySelectorAll('.modal-close')
-
-        for (var i = 0; i < closemodal.length; i++) {
-            closemodal[i].addEventListener('click', toggleModal)
-        }
-        
-        document.onkeydown = function(evt) {
-            evt = evt || window.event;
-            var isEscape = false;
-            if ("key" in evt) {
-                isEscape = (evt.key === "Escape" || evt.key === "Esc")
-            } else {
-                isEscape = (evt.keyCode === 27)
-            }
-
-            if (isEscape && document.body.classList.contains('modal-active')) {
-                toggleModal()
-            }
-        };
-        
-        function toggleModal () {
-            const body = document.querySelector('body')
-            const modal = document.querySelector('.modal')
-
-            modal.classList.toggle('opacity-0')
-            modal.classList.toggle('pointer-events-none')
-            body.classList.toggle('modal-active')
-        }
-  </script>
-@endpush
-
-@push ("styles")
-    <style>
-        .modal {
-            transition: opacity 0.25s ease;
-        }
-
-        body.modal-active {
-            overflow-x: hidden;
-            overflow-y: visible !important;
-        }
-    </style>
+    <script type="text/javascript" src="https://genealabs.17hats.com/ruby/embed/lead/script/hrspbdcvncvnbdpkngrcrxnrwsbghcws"></script>
 @endpush
 
 @section('content')
@@ -89,14 +35,10 @@
         &nbsp;<span id="typed"></span>!
     </p>
 </section>
-<section class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
-<div class="">
-    <div class="tab" onclick="$('html, body').animate({scrollTop: (window.height - 75) + 'px'}, 900, 'swing');"></div>
+<section class="flex w-full container max-w-xl mx-auto py-16 px-6">
     <section id="services">
-        <header class="row">
-            <h2 class="page-header">Our Services</h2>
-        </header>
-        <div class="flex -mx-2 flex-wrap">
+        <h2 class="text-center text-5xl">Our Services</h2>
+        <div class="flex mt-16 -mx-2 flex-wrap">
             <div class="w-full md:w-1/3 px-2 rounded overflow-hidden">
                 <p class="block text-center mb-0">
                     <i class="fa-stack fa-lg" style="font-size: 36px;">
@@ -134,51 +76,39 @@
                 </p>
             </div>
         </div>
-        <button class="modal-open mt-12 block rounded bg-green mx-auto hover:bg-green-300 text-white font-bold py-2 px-4"
-            type="button"
-            data-toggle="modal"
-            data-target="#lead-modal"
-        >
-            Get in touch with us now about your web project!
-        </button>
     </div>
+    <a
+        class="sh_lead_button text-center mt-12 block rounded bg-green mx-auto hover:bg-green-300 text-white font-bold py-2 px-4"
+        href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
+        onclick="shLeadFormPopup.openForm(event)"
+    >
+        Get in touch with us now about your web project!
+    </a>
 </section>
-
-
-  
-  <!--Modal-->
-  <div class="modal absolute opacity-0 pointer-events-none fixed w-full h-full  flex items-center justify-center">
-    <div class="modal-overlay absolute w-full h-full bg-gray-darker opacity-50"></div>
-    
-    <div class="modal-container bg-white w-4/5 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
-      
-      <div class="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-white text-sm z-50">
-        <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-          <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-        </svg>
-        <span class="text-sm">(Esc)</span>
-      </div>
-
-      <!-- Add margin if you want to see some of the overlay behind the modal-->
-      <div class="modal-content py-4 text-left px-6">
-        <!--Title-->
-        <div class="flex justify-between items-center pb-3">
-          <p class="text-2xl font-bold">Let's get started ...</p>
-          <div class="modal-close cursor-pointer z-50">
-            <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
-              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
-            </svg>
-          </div>
+<footer class="container mx-auto max-w-xl border-t mt-12 py-16 px-6">
+    <h3>Contact Information</h3>
+    <div class="flex flex-wrap -mx-2">
+        <div class="w-full md:w-2/3 px-2">
+            <p>
+                We are located in West Covina in the greater Los Angeles area, and are available for hire
+                for both start-to-finish <strong>web application </strong> projects (including
+                sub-contract work for Laravel projects).
+            </p>
+            <p>
+                We also perform <strong>German-English translation services</strong> with a focus on Genealogy.
+                Please contact us any time via the methods listed on the right -- we are happy to discuss potential
+                projects with you!
+            </p>
         </div>
-
-        <!--Body-->
-        <iframe name="lc_contact_form" frameborder="0" width="100%" height="600" src="https://genealabs.17hats.com/embed/lead/form/hrspbdcvncvnbdpkngrcrxnrwsbghcws"></iframe>
-
-      </div>
+        <div class="w-full md:w-1/3 px-2">
+            <div class="border border-grey-light bg-white rounded p-4 flex flex-col justify-between leading-normal">
+                <ul class="list-reset">
+                    <li><a class="text-success" href="tel:+16266714300"><strong><span class="fa fa-phone"></span>&nbsp;+1 (626) 671-4300</strong></a></li>
+                    <li><a class="text-success" href="mailto:hello@genealabs.com"><strong><span class="fa fa-send"></span>&nbsp;hello@genealabs.com</strong></a></li>
+                    <li><a class="text-success" href="http://twitter.com/intent/tweet?screen_name=GeneaLabs" target="_blank"><strong><span class="fa fa-twitter"></span>&nbsp;@GeneaLabs</strong></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-
-
-
-</section>
+</footer>
 @endsection
