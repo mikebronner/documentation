@@ -1,7 +1,7 @@
 ---
 pagination:
     collection: posts
-    perPage: 4
+    perPage: 25
 ---
 @extends('_layouts.blog')
 
