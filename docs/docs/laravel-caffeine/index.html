@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Building a navigation menu for your site">
+
+        <meta property="og:site_name" content=""/>
+        <meta property="og:title" content="Caffeine for Laravel | "/>
+        <meta property="og:description" content="Building a navigation menu for your site"/>
+        <meta property="og:url" content="https://genealabs.com/docs/laravel-caffeine"/>
+        <meta property="og:image" content="/assets/images/logo.png"/>
+        <meta property="og:type" content="website"/>
+
+        <meta name="twitter:image:alt" content="">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <title> | Caffeine for Laravel</title>
+
+        <link rel="home" href="https://genealabs.com">
+        <link rel="icon" href="/favicon.ico">
+
+        
+                    <!-- Insert analytics code here -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=fd0d3e296830fe5c6214">
+
+        
+            </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
+        <div id="app">
+            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+                <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+                    <div class="flex items-center">
+                        <a href="/" title=" home" class="inline-flex items-center">
+                            <img class="h-8 md:h-10 mr-3" src="/assets/images/genealabs_logo_new.png" alt=" logo" />
+
+                            <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0 pr-4"></h1>
+                        </a>
+                    </div>
+
+                        <div class="flex flex-1 justify-end items-center text-right md:pl-10">
+        
+        <nav class="hidden lg:flex items-center justify-end text-lg">
+            <a href="/blog"
+            class="lvl0   ml-6 "
+        >
+            Blog
+        </a>
+    
+                <a href="/packages"
+            class="lvl0   ml-6 "
+        >
+            Packages
+        </a>
+    
+                <a href="/about"
+            class="lvl0   ml-6 "
+        >
+            About
+        </a>
+    
+                <a href="/contact"
+            class="lvl0   ml-6 "
+        >
+            Contact
+        </a>
+    
+        </nav>
+    </div>
+
+                </div>
+
+                    <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+            </header>
+
+            <main role="main"
+                class="w-full flex-auto relative"
+            >
+                    <section class="container max-w-4xl mx-auto px-6 md:px-8 py-4">
+        <div class="flex flex-col lg:flex-row">
+            <nav id="js-nav-menu" class="nav-menu hidden lg:block">
+                <ul class="list-reset my-0">
+            <li class="list-reset pl-4">
+            
+        <a href="/packages"
+            class="lvl0 lvl0-active  nav-menu__item hover:text-blue"
+        >
+            Packages
+        </a>
+    
+            
+        <ul class="list-reset my-0">
+            <li class="list-reset pl-4">
+            
+        <a href="/docs/laravel-model-caching"
+            class="lvl1   nav-menu__item hover:text-blue"
+        >
+            Model Caching for Laravel
+        </a>
+    
+    </li>
+            <li class="list-reset pl-4">
+            
+        <a href="/docs/laravel-caffeine"
+            class="lvl1  active font-semibold text-blue nav-menu__item hover:text-blue"
+        >
+            Caffeine for Laravel
+        </a>
+    
+    </li>
+            <li class="list-reset pl-4">
+            
+        <a href="/docs/laravel-governor"
+            class="lvl1   nav-menu__item hover:text-blue"
+        >
+            Governor for Laravel
+        </a>
+    
+    </li>
+    </ul>
+    </li>
+    </ul>
+            </nav>
+
+            <div class="w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
+                <h1>Caffeine for Laravel</h1>
+<p><a href="https://gitter.im/GeneaLabs/laravel-caffeine?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img src="https://badges.gitter.im/GeneaLabs/laravel-caffeine.svg" alt="Join the chat at https://gitter.im/GeneaLabs/laravel-caffeine" /></a>
+<a href="https://travis-ci.org/GeneaLabs/laravel-caffeine"><img src="https://img.shields.io/travis/GeneaLabs/laravel-caffeine.svg" alt="Travis" /></a>
+<a href="https://scrutinizer-ci.com/g/GeneaLabs/laravel-caffeine"><img src="https://img.shields.io/scrutinizer/g/GeneaLabs/laravel-caffeine.svg" alt="Scrutinizer" /></a>
+<a href="https://coveralls.io/github/GeneaLabs/laravel-caffeine"><img src="https://img.shields.io/coveralls/GeneaLabs/laravel-caffeine.svg" alt="Coveralls" /></a>
+<a href="https://github.com/GeneaLabs/laravel-caffeine"><img src="https://img.shields.io/github/release/GeneaLabs/laravel-caffeine/all.svg" alt="GitHub (pre-)release" /></a>
+<a href="https://packagist.org/packages/genealabs/laravel-caffeine"><img src="https://img.shields.io/packagist/dt/GeneaLabs/laravel-caffeine.svg" alt="Packagist" /></a></p>
+<p><img src="https://github.com/GeneaLabs/laravel-caffeine/blob/master/caffeine.jpg" alt="Coffee for Laravel" /></p>
+<h2>Supporting This Package</h2>
+<p>This is an MIT-licensed open source project with its ongoing development made possible by the support of the community. If you'd like to support this, and our other packages, please consider <a href="https://www.patreon.com/mikebronner">becoming a backer or sponsor on Patreon</a>.</p>
+<h2>Goal</h2>
+<p>Prevent forms from timing out when submitting them after leaving them on-screen
+for a considerable amount of time. (Laravel defaults to 120 minutes, but that
+is configurable and could be different site-by-site.)</p>
+<h2>Implementation</h2>
+<p>To achieve this, we are sending a caffeine-drip (a request at regular intervals)
+to keep the session from timing out.
+This is only implemented on pages with a <code>_token</code> field, so all other pages will
+time-out as normal.</p>
+<h2>Reasoning</h2>
+<p>I chose this approach to keep the integrity of site-security, by avoiding the
+following:</p>
+<ul>
+<li>exposing the CSRF Token on an unsecured endpoint.</li>
+<li>eliminating CSRF Token validation on specific routes, or even altogether.</li>
+<li>removing session-timeout on all pages.</li>
+</ul>
+<h2>Considerations</h2>
+<h3>Routes</h3>
+<p>This package adds the routes under <code>genealabs/laravel-caffeine</code>.</p>
+<h3>Dependencies</h3>
+<ul>
+<li>Your project must be running one of the following Laravel versions:
+<ul>
+<li>5.1 (LTS)</li>
+<li>5.3</li>
+<li>5.4</li>
+<li>5.5 (LTS)</li>
+<li>5.6</li>
+<li>5.7</li>
+</ul></li>
+<li>PHP 7.1.3 or higher.</li>
+</ul>
+<h2>Installation</h2>
+<p>For Laravel 5.2, follow the directions here: <a href="https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a">https://github.com/GeneaLabs/laravel-caffeine/tree/166e2ca08af7cc62a59360f33e03d1cb8478df6a</a></p>
+<ol>
+<li>
+<p>Install the package:</p>
+<pre><code class="language-sh">composer require genealabs/laravel-caffeine</code></pre>
+</li>
+<li>
+<p><strong>This is only required for Laravel 5.4 or below:</strong>
+Add the service provider entry in <code>config/app.php</code>:</p>
+<pre><code class="language-php">// 'providers' =&gt; [
+   GeneaLabs\LaravelCaffeine\Providers\Service::class,
+// ],</code></pre>
+</li>
+<li>
+<p>If you are running 5.5 or above, remove the providers entry from <code>config/app.php</code>.</p>
+</li>
+<li>
+<p>If you have previously registered the middleware, please remove the following
+middleware from <code>app/Http/Kernel.php</code>:</p>
+<pre><code class="language-php">// protected $middleware = [
+   GeneaLabs\LaravelCaffeine\Http\Middleware\LaravelCaffeineDripMiddleware::class,
+// ];</code></pre>
+</li>
+</ol>
+<h2>Upgrade Notes</h2>
+<h3>0.6.0</h3>
+<p>This update changes the config file setting names. Please delete the published
+config file <code>config/genealabs-laravel-caffeine.php</code> if it exists, and follow the
+configuration instructions below.</p>
+<h2>Configuration</h2>
+<pre><code class="language-php">return [
+    /*
+    |--------------------------------------------------------------------------
+    | Drip Interval
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the interval with which Caffeine for Laravel
+    | keeps the session alive. By default this is 5 minutes (expressed
+    | in milliseconds). This needs to be shorter than your session
+    | lifetime value configured set in "config/session.php".
+    |
+    | Default: 300000 (int)
+    |
+    */
+    'drip-interval' =&gt; 300000,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Domain
+    |--------------------------------------------------------------------------
+    |
+    | You may optionally configure a separate domain that you are running
+    | Caffeine for Laravel on. This may be of interest if you have a
+    | monitoring service that queries other apps. Setting this to
+    | null will use the domain of the current application.
+    |
+    | Default: null (null|string)
+    |
+    */
+    'domain' =&gt; null,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Drip Endpoint URL
+    |--------------------------------------------------------------------------
+    |
+    | Sometimes you may wish to white-label your app and not expose the AJAX
+    | request URLs as belonging to this package. To achieve that you can
+    | rename the URL used for dripping caffeine into your application.
+    |
+    | Default: 'genealabs/laravel-caffeine/drip' (string)
+    |
+    */
+    'route' =&gt; 'genealabs/laravel-caffeine/drip', // Customizable end-point URL
+
+    /*
+    |--------------------------------------------------------------------------
+    | Checking for Lapsed Drips
+    |--------------------------------------------------------------------------
+    |
+    | If the browser is put to sleep on (for example on mobile devices or
+    | laptops), it will still cause an error when trying to submit the
+    | form. To avoid this, we force-reload the form 2 minutes prior
+    | to session time-out or later. Setting this setting to 0
+    | will disable this check if you don't want to use it.
+    |
+    | Default: 2000 (int)
+    |
+    */
+    'outdated-drip-check-interval' =&gt; 2000,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Use Route Middleware
+    |--------------------------------------------------------------------------
+    |
+    | Drips are enabled via route middleware instead of global middleware.
+    |
+    | Default: false (bool)
+    |
+    */
+    'use-route-middleware' =&gt; false,
+
+];</code></pre>
+<p><strong><em>Only publish the config file if you need to customize it</em></strong>:</p>
+<pre><code class="language-sh">php artisan caffeine:publish --config</code></pre>
+<h2>Usage</h2>
+<p>That was it! It will apply itself automatically where it finds a form with a
+<code>_token</code> field, or a meta tag named &quot;csrf-token&quot;, while pages are open in
+browsers.</p>
+<h3>Prevent Caffeination</h3>
+<p>There are two methods to prevent Caffeine for Laravel from dripping to keep the
+session alive: disabling it in Blade using the meta tag method, or enabling
+route-middleware mode, and then only enabling it on routes or route groups.</p>
+<h4>Meta Tag Method</h4>
+<p>If you would like to prevent a certain page from caffeinating your application,
+then add the following meta tag:</p>
+<pre><code class="language-php">&lt;meta name="caffeinated" content="false"&gt;</code></pre>
+<h4>Route Middleware Method</h4>
+<p>To enable this mode, you need to publish the configuration file (see the
+configuration section above) and then set <code>use-route-middleware</code> to <code>true</code>. This
+will disable the default global middleware mode (which applies it to any page
+that has the CSRF token in it across your entire application). Now you need to
+selectively enable Caffeine on a given route or route group using route
+middleware:</p>
+<pre><code class="language-php">Route::any('test', 'TestController@test')-&gt;middleware('caffeinated');
+
+Route::group(['middleware' =&gt; ['caffeinated']], function () {
+    Route::any('test', 'TestController@test');
+})</code></pre>
+<p>You can still use the route middleware method and apply it globally to all
+routes by editing <code>app/Http/Kernel.php</code> and adding it to the <code>web</code> middleware
+group. Although you should only use this option if you have a very specific use-
+case that prevents you from utilizing the default global middleware option.</p>
+<p><strong>This will only have effect if the page includes a form. If not, the page will
+not caffeinate your application anyway.</strong></p>
+<h1>The Fine Print</h1>
+<h2>Commitment to Quality</h2>
+<p>During package development I try as best as possible to embrace good design and
+development practices to try to ensure that this package is as good as it can
+be. My checklist for package development includes:</p>
+<ul>
+<li>✅ Achieve as close to 100% code coverage as possible using unit tests.</li>
+<li>✅ Eliminate any issues identified by SensioLabs Insight and Scrutinizer.</li>
+<li>✅ Be fully PSR1, PSR2, and PSR4 compliant.</li>
+<li>✅ Include comprehensive documentation in README.md.</li>
+<li>✅ Provide an up-to-date CHANGELOG.md which adheres to the format outlined
+at <a href="http://keepachangelog.com">http://keepachangelog.com</a>.</li>
+<li>✅ Have no PHPMD or PHPCS warnings throughout all code.</li>
+</ul>
+<h2>Contributing</h2>
+<p>Please observe and respect all aspects of the included Code of Conduct
+<a href="https://github.com/GeneaLabs/laravel-caffeine/blob/master/CODE_OF_CONDUCT.md">https://github.com/GeneaLabs/laravel-caffeine/blob/master/CODE_OF_CONDUCT.md</a>.</p>
+<h3>Reporting Issues</h3>
+<p>When reporting issues, please fill out the included template as completely as
+possible. Incomplete issues may be ignored or closed if there is not enough
+information included to be actionable.</p>
+<h3>Submitting Pull Requests</h3>
+<p>Please review the Contribution Guidelines <a href="https://github.com/GeneaLabs/laravel-caffeine/blob/master/CONTRIBUTING.md">https://github.com/GeneaLabs/laravel-caffeine/blob/master/CONTRIBUTING.md</a>.
+Only PRs that meet all criterium will be accepted.</p>
+<h2>❤️ Open-Source Software - Give ⭐️</h2>
+<p>We have included the awesome <code>symfony/thanks</code> composer package as a dev
+dependency. Let your OS package maintainers know you appreciate them by starring
+the packages you use. Simply run <code>composer thanks</code> after installing this
+package. (And not to worry, since it's a dev-dependency it won't be installed in
+your live environment.)</p>            </div>
+        </div>
+    </section>
+            </main>
+        </div>
+
+        <script src="/assets/build/js/main.js?id=a6f070e792abfcf8ab6d"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-reset">
+                <li class="md:mr-2">
+                    &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> 2019.
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>

@@ -6,7 +6,9 @@ return [
     'siteName' => "",
     'siteDescription' => 'Providing documentation for all our open-source packages.',
     'siteAuthor' => 'Mike Bronner',
-
+    'build' => [
+        'destination' => 'docs',
+    ],
     // Algolia DocSearch credentials
     'docsearchApiKey' => '',
     'docsearchIndexName' => '',

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Things to consider before upgrading to macOS Catalina beta.">
+
+        <meta property="og:site_name" content=""/>
+        <meta property="og:title" content="The 2019 macOS Beta/Preview PSA Watch For Web Developers | "/>
+        <meta property="og:description" content="Things to consider before upgrading to macOS Catalina beta."/>
+        <meta property="og:url" content="https://genealabs.com/blog/the-2019-macos-beta-preview-psa-watch-for-web-developers"/>
+        <meta property="og:image" content="/assets/images/logo.png"/>
+        <meta property="og:type" content="website"/>
+
+        <meta name="twitter:image:alt" content="">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <title> | The 2019 macOS Beta/Preview PSA Watch For Web Developers</title>
+
+        <link rel="home" href="https://genealabs.com">
+        <link rel="icon" href="/favicon.ico">
+
+            <meta property="og:title" content="The 2019 macOS Beta/Preview PSA Watch For Web Developers" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://genealabs.com/blog/the-2019-macos-beta-preview-psa-watch-for-web-developers"/>
+    <meta property="og:description" content="Things to consider before upgrading to macOS Catalina beta." />
+
+                    <!-- Insert analytics code here -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=fd0d3e296830fe5c6214">
+
+        
+            </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
+        <div id="app">
+            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+                <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+                    <div class="flex items-center">
+                        <a href="/" title=" home" class="inline-flex items-center">
+                            <img class="h-8 md:h-10 mr-3" src="/assets/images/genealabs_logo_new.png" alt=" logo" />
+
+                            <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0 pr-4"></h1>
+                        </a>
+                    </div>
+
+                        <div id="vue-search" class="flex flex-1 justify-end items-center">
+        <search></search>
+
+        <nav class="hidden lg:flex items-center justify-end text-lg">
+            <a href="/blog"
+            class="lvl0   ml-6 "
+        >
+            Blog
+        </a>
+    
+                <a href="/packages"
+            class="lvl0   ml-6 "
+        >
+            Packages
+        </a>
+    
+                <a href="/about"
+            class="lvl0   ml-6 "
+        >
+            About
+        </a>
+    
+                <a href="/contact"
+            class="lvl0   ml-6 "
+        >
+            Contact
+        </a>
+    
+        </nav>
+
+        <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+    </div>
+
+                </div>
+
+                    <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+            </header>
+
+            <main role="main"
+                class="w-full flex-auto relative"
+            >
+                    <section class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+        
+        <h1 class="leading-none mb-2">The 2019 macOS Beta/Preview PSA Watch For Web Developers</h1>
+
+        <p class="text-grey-darker text-xl md:mt-0">Mike Bronner  •  July 2, 2019</p>
+
+                                    <a
+                    href="/blog/categories/misc"
+                    title="View posts in misc"
+                    class="inline-block bg-grey-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >misc</a>
+                    
+        <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
+            <p>It's time once again to begin the rollercoaster ride that is the annual macOS beta program! As a developer, I am intrigued by the new functionality provided in the OS, as well as new features in Xcode. This year holds huge promises that I am really looking forward to!</p>
+<p>I will be installing and updating macOS Catalina as new versions come out, and testing them from a web development stand-point (mainly Laravel, but possibly also Server-Side Swift, if I get the time). Any issues I encounter with the following software will be reported here, and I will keep this entry up-to-date as best possible.</p>
+<ul>
+<li>Visual Studio Code</li>
+<li>Vagrant</li>
+<li>Virtual Box</li>
+<li>Table Plus</li>
+<li>(possibly) Atom Editor</li>
+<li>Safari (dev tools)</li>
+<li>Discord</li>
+<li>CleanMyMac X</li>
+<li>Transmit</li>
+<li>Jumpshare</li>
+<li>TG Pro</li>
+<li>Affinity Designer</li>
+<li>Affinity Photo</li>
+<li>Paw</li>
+<li>Tower</li>
+<li>Permute</li>
+<li>Screenflow 8</li>
+</ul>
+<p>These are most of the apps I use on a day-to-day basis from a full-stack web-dev point-of view.</p>
+<p>Today I am installing macOS 10.15.0 on my test machine, a 2016 MacBook Pro with TouchBar. Following that I will attempt to install the apps listed above and see if there are any compatibility issues and report back.</p>
+<p><em>Keep an eye on this post, and let me know if there is an app that I missed. If I have it, I will try to add it.</em></p>
+<h2>Beta 1 - Build 19A471t from 2019-06-03</h2>
+<ul>
+<li>✅ VirtualBox 5.2.14</li>
+<li>✅ Vagrant 2.0.1</li>
+<li>✅ Homestead</li>
+<li>✅ VSCode 1.35.0-insider</li>
+<li>✅ Tower 2.6.6 and 3.4.1</li>
+<li>✅ Paw 3.1.8</li>
+<li>✅ TablePlus 2.4</li>
+<li>✅ Safari Dev Tools</li>
+<li>✅ Screenflow 8.2.3</li>
+<li>⛔️ CleanMyMac X 4.4.2 - Smart Scan feature hangs, app updates don't work.</li>
+<li>✅ Permute 3.2.5</li>
+<li>✅ Jumpshare 2.4.4</li>
+<li>✅ Affinity Photo 1.6.7, 1.7</li>
+<li>✅ Affinity Designer 1.6.1, 1.7</li>
+<li>✅ Discord 0.0.255</li>
+<li>✅ Base 2.4.12</li>
+</ul>
+<h2>Beta 2 - Build 19A487l from 2019-06-17</h2>
+<ul>
+<li>✅ VirtualBox 5.2.14</li>
+<li>✅ Vagrant 2.0.1</li>
+<li>⚠️ Homestead: if using NFS, you will need to update your Sites folder directive as follows:
+<pre><code class="language-yml">- map: /System/Volumes/Data/Users/yourname/sitesfolder
+  to: /home/vagrant/Sites
+  type: "nfs"</code></pre></li>
+<li>✅ VSCode 1.35.0-insider</li>
+<li>✅ Tower 3.4.1</li>
+<li>✅ Paw 3.1.8</li>
+<li>✅ TablePlus 2.4</li>
+<li>✅ Safari Dev Tools</li>
+<li>✅ Screenflow 8.2.3</li>
+<li>⛔️ CleanMyMac X 4.4.3 - Various issues, Smart Scan feature hangs, malware scan hangs, software update problems, and more...</li>
+<li>✅ Permute 3.2.5</li>
+<li>✅ Jumpshare 2.4.4</li>
+<li>✅ Affinity Photo 1.6.7, 1.7</li>
+<li>✅ Affinity Designer 1.6.1, 1.7</li>
+<li>✅ Discord 0.0.255</li>
+<li>✅ Base 2.4.12</li>
+</ul>
+<h2>Beta 3 - Build 19A501i from 2019-07-02</h2>
+<ul>
+<li>✅ VirtualBox 5.2.14</li>
+<li>✅ Vagrant 2.0.1</li>
+<li>⚠️ Homestead: <strong>if using NFS, you will need to update your Sites folder directive as follows:</strong>
+<pre><code class="language-yml">- map: /System/Volumes/Data/Users/yourname/sitesfolder
+  to: /home/vagrant/Sites
+  type: "nfs"</code></pre></li>
+<li>✅ VSCode 1.35.0-insider</li>
+<li>✅ Tower 3.4.2</li>
+<li>✅ Paw 3.1.8</li>
+<li>✅ TablePlus 2.4</li>
+<li>✅ Safari Dev Tools</li>
+<li>✅ Screenflow 8.2.3</li>
+<li>✅ CleanMyMac X 4.4.3</li>
+<li>✅ Permute 3.2.5</li>
+<li>✅ Jumpshare 2.4.4</li>
+<li>✅ Affinity Photo 1.6.7, 1.7</li>
+<li>✅ Affinity Designer 1.6.1, 1.7</li>
+<li>✅ Discord 0.0.255</li>
+<li>✅ Base 2.4.12</li>
+</ul>
+<h2>Summary</h2>
+<ul>
+<li>So far I'm loving Catalina, especially the new Sidecar functionality that lets me use my iPad Pro as a display.</li>
+<li>The CleanMyMac issues aren't a primary concern, as I can still run my Mac great without it in all other regards.</li>
+</ul>        </div>
+
+        <nav class="flex justify-between text-sm md:text-base">
+            <div>
+                                    <a href="https://genealabs.com/blog/when-postgresql-table-sequences-get0-out-of-sync" title="Older Post: When PostgreSQL Table Sequences Get Out Of Sync">
+                        &LeftArrow; When PostgreSQL Table Sequences Get Out Of Sync
+                    </a>
+                            </div>
+
+            <div>
+                            </div>
+        </nav>
+    </section>
+            </main>
+        </div>
+
+        <script src="/assets/build/js/main.js?id=a6f070e792abfcf8ab6d"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+<script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-reset">
+                <li class="md:mr-2">
+                    &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> 2019.
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
