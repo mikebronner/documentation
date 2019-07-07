@@ -5,7 +5,7 @@ extends: _layouts.docs
 section: content
 ---
 
-![Coffee for Laravel](/images/caffeine.jpg)
+![Coffee for Laravel](/assets/images/caffeine.jpg)
 
 # Caffeine for Laravel
 [![Join the chat at https://gitter.im/GeneaLabs/laravel-caffeine](https://badges.gitter.im/GeneaLabs/laravel-caffeine.svg)](https://gitter.im/GeneaLabs/laravel-caffeine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
