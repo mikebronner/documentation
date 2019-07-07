@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Here&#039;s what needs to be done if you want to bring an existing Laravel site into Envoyer.">
+
+        <meta property="og:site_name" content=""/>
+        <meta property="og:title" content="Set Up Envoyer On An Existing Forge Site | "/>
+        <meta property="og:description" content="Here&#039;s what needs to be done if you want to bring an existing Laravel site into Envoyer."/>
+        <meta property="og:url" content="http://localhost:3000/blog/set-up-envoyer-on-an-existing-forge-site"/>
+        <meta property="og:image" content="/assets/images/logo.png"/>
+        <meta property="og:type" content="website"/>
+
+        <meta name="twitter:image:alt" content="">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <title> | Set Up Envoyer On An Existing Forge Site</title>
+
+        <link rel="home" href="http://localhost:3000">
+        <link rel="icon" href="/favicon.ico">
+
+            <meta property="og:title" content="Set Up Envoyer On An Existing Forge Site" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://localhost:3000/blog/set-up-envoyer-on-an-existing-forge-site"/>
+    <meta property="og:description" content="Here&#039;s what needs to be done if you want to bring an existing Laravel site into Envoyer." />
+
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=bbd206428976a3c8e299">
+
+        
+            </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
+        <div id="app">
+            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+                <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+                    <div class="flex items-center">
+                        <a href="/" title=" home" class="inline-flex items-center">
+                            <img class="h-8 md:h-10 mr-3" src="/assets/images/genealabs_logo_new.png" alt=" logo" />
+
+                            <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0 pr-4"></h1>
+                        </a>
+                    </div>
+
+                        <div id="vue-search" class="flex flex-1 justify-end items-center">
+        <search></search>
+
+        <nav class="hidden lg:flex items-center justify-end text-lg">
+            <a href="/blog"
+            class="lvl0   ml-6 "
+        >
+            Blog
+        </a>
+    
+                <a href="/packages"
+            class="lvl0   ml-6 "
+        >
+            Packages
+        </a>
+    
+                <a href="/about"
+            class="lvl0   ml-6 "
+        >
+            About
+        </a>
+    
+                <a href="/contact"
+            class="lvl0   ml-6 "
+        >
+            Contact
+        </a>
+    
+        </nav>
+
+        <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+    </div>
+
+                </div>
+
+                    <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+            </header>
+
+            <main role="main"
+                class="w-full flex-auto relative"
+            >
+                    <section class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+        
+        <h1 class="leading-none mb-2">Set Up Envoyer On An Existing Forge Site</h1>
+
+        <p class="text-grey-darker text-xl md:mt-0">Mike Bronner  •  March 16, 2015</p>
+
+                                    <a
+                    href="/blog/categories/devops"
+                    title="View posts in devops"
+                    class="inline-block bg-grey-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >devops</a>
+                            <a
+                    href="/blog/categories/laravel"
+                    title="View posts in laravel"
+                    class="inline-block bg-grey-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >laravel</a>
+                    
+        <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
+            <p>So up until now you’ve been managing your <a href="http://laravel.com"><strong>Laravel</strong></a> project deployment with <a href="https://forge.laravel.com"><strong>Laravel Forge</strong></a>, but are interested in moving to <a href="http://envoyer.io"><strong>Envoyer</strong></a>.</p>
+<blockquote>
+<p><strong>“What happens to my existing setup?”</strong></p>
+</blockquote>
+<p>It’s actually very straight-forward to get your existing forge-git-hooked site to deploy out.</p>
+<ol>
+<li>Remove any pre-existing Forge deploy hooks that were set up on your git provider.</li>
+<li>Follow <a href="https://laracasts.com/series/envoyer">Taylor’s setup instructions on Laracasts</a>. This should include setting up your deploy-on-commit hook, as well as the SSH key on Forge. Be sure to also set up your environment variables. Push your Envoyer project out when you’re ready.</li>
+<li>Update your site using Forge site configuration to point to:
+<em><site root>/current/public</em></li>
+</ol>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*oSAXFPfn571yYIsP1IbO6w.png" alt="" />Example Configuration</p>
+<p>4. SSH into your server and go to your project’s root.</p>
+<p>5. Copy the content of your .env file: <strong><em>cat .env</em></strong></p>
+<p>6. Paste the .env content into Envoyer’s environment management interface and push it to production:</p>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*uJRQCGqfWZfSzi5GP1W_3w.png" alt="" />Environment Management in Envoyer</p>
+<hr />
+<p>Envoyer actually just rides on top of your old files and adds what it needs. You might want to do some clean-up to get rid of the left-overs, but be aware that this might cause some down-time if things don’t go as expected. <strong><em>Be sure that you can afford some down-time to re-deploy, if anything should happen to go wrong.</em></strong></p>
+<p>The following command should remove all but the necessary files for you:</p>
+<blockquote>
+<p><strong>find . -maxdepth 1 -not -name “.” -not -name “current” -not -name “storage” -not -name “releases” -not -name “.env” -exec rm -rf {} \;</strong></p>
+</blockquote>
+<hr />
+<blockquote>
+<p>Your setup is preserved — just a bit of optional cleanup was all it took!</p>
+</blockquote>        </div>
+
+        <nav class="flex justify-between text-sm md:text-base">
+            <div>
+                                    <a href="http://localhost:3000/blog/run-all-the-commands-outside-of-homestead" title="Older Post: Run _#AllTheCommands_ Outside of Homestead">
+                        &LeftArrow; Run _#AllTheCommands_ Outside of Homestead
+                    </a>
+                            </div>
+
+            <div>
+                                    <a href="http://localhost:3000/blog/how-to-install-phpci-in-homestead" title="Newer Post: How To Install PHPCI In Homestead">
+                        How To Install PHPCI In Homestead &RightArrow;
+                    </a>
+                            </div>
+        </nav>
+    </section>
+            </main>
+        </div>
+
+        <script src="/assets/build/js/main.js?id=72c73dd34dc559d59278"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+<script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-reset">
+                <li class="md:mr-2">
+                    &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> 2019.
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>

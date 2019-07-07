@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Using Studio to help create packages for Laravel 5.">
+
+        <meta property="og:site_name" content=""/>
+        <meta property="og:title" content="Creating Packages with Laravel 5 &amp; Studio | "/>
+        <meta property="og:description" content="Using Studio to help create packages for Laravel 5."/>
+        <meta property="og:url" content="https://genealabs.com/blog/creating-packages-with-laravel-5-and-studio"/>
+        <meta property="og:image" content="/assets/images/logo.png"/>
+        <meta property="og:type" content="website"/>
+
+        <meta name="twitter:image:alt" content="">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <title> | Creating Packages with Laravel 5 &amp; Studio</title>
+
+        <link rel="home" href="https://genealabs.com">
+        <link rel="icon" href="/favicon.ico">
+
+            <meta property="og:title" content="Creating Packages with Laravel 5 &amp; Studio" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://genealabs.com/blog/creating-packages-with-laravel-5-and-studio"/>
+    <meta property="og:description" content="Using Studio to help create packages for Laravel 5." />
+
+                    <!-- Insert analytics code here -->
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=bd479b6aefa35d9b895d">
+
+        
+            </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
+        <div id="app">
+            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+                <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+                    <div class="flex items-center">
+                        <a href="/" title=" home" class="inline-flex items-center">
+                            <img class="h-8 md:h-10 mr-3" src="/assets/images/genealabs_logo_new.png" alt=" logo" />
+
+                            <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0 pr-4"></h1>
+                        </a>
+                    </div>
+
+                        <div id="vue-search" class="flex flex-1 justify-end items-center">
+        <search></search>
+
+        <nav class="hidden lg:flex items-center justify-end text-lg">
+            <a href="/blog"
+            class="lvl0   ml-6 "
+        >
+            Blog
+        </a>
+    
+                <a href="/packages"
+            class="lvl0   ml-6 "
+        >
+            Packages
+        </a>
+    
+                <a href="/about"
+            class="lvl0   ml-6 "
+        >
+            About
+        </a>
+    
+                <a href="/contact"
+            class="lvl0   ml-6 "
+        >
+            Contact
+        </a>
+    
+        </nav>
+
+        <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+    </div>
+
+                </div>
+
+                    <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+            </header>
+
+            <main role="main"
+                class="w-full flex-auto relative"
+            >
+                    <section class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+        
+        <h1 class="leading-none mb-2">Creating Packages with Laravel 5 &amp; Studio</h1>
+
+        <p class="text-grey-darker text-xl md:mt-0">Mike Bronner  •  May 30, 2015</p>
+
+                                    <a
+                    href="/blog/categories/laravel"
+                    title="View posts in laravel"
+                    class="inline-block bg-grey-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >laravel</a>
+                            <a
+                    href="/blog/categories/package-development"
+                    title="View posts in package-development"
+                    class="inline-block bg-grey-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >package-development</a>
+                    
+        <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
+            <p>Workbench has sadly been discontinued in Laravel 5. Yes, there are ways to integrate it back into L5, but it seems to be on its way out. So, other than manually wiring up our packages that are in development, what can we do?</p>
+<p>Enter <a href="https://twitter.com/franzliedke">@franzliedke</a>’s <a href="https://github.com/franzliedke/studio"><strong>studio</strong></a> package. It aims to be a widely usable composer package scaffolding tool, but there may be certain instances where it won’t work well for you. So your mileage may vary.</p>
+<h3>Requirements</h3>
+<ul>
+<li>Parent Laravel project</li>
+<li>Studio package</li>
+</ul>
+<h3>Installation</h3>
+<p>We want to start the new package in the project you are envisioning it to be used in initially — that’s our “Parent Laravel Project”.</p>
+<ol>
+<li>Go to your project’s base path. Let’s assume our project is called “purple-turtles” for the sake of demonstration.</li>
+</ol>
+<pre><code>cd ~/Developer/Sites/purple-turtles</code></pre>
+<p>2. Studio documentation recommends installing studio globally with composer, however, this won’t work if you are developing in a VM like Homestead. Instead, let’s install it at the project level:</p>
+<pre><code>composer require --dev franzl/studio</code></pre>
+<p>3. Now lets get a new package started:</p>
+<pre><code>vendor/bin/studio create packages/purple-turles/icecreammachine</code></pre>
+<p>4. This will now step through a series of questions to get the package set up:</p>
+<ul>
+<li>Please name this package: enter the <em>vendor/package</em> name you want to use.</li>
+<li>Please provide a default namespace (PSR-4): hit enter if the suggested default is to your liking. If not, like in our case, enter something like “PurpleTurtles\IcecreamMachine”.</li>
+<li>… PhpUnit …: enter “y” if you will be using PHPUnit for testing, otherwise you can just hit enter.</li>
+<li>… PhpSpec …: enter “y” if you will be using PHPSpec for testing, otherwise you can just hit enter.</li>
+<li>… TravisCI …: enter “y” if you will be using TravisCI for builds (this is free for open-source projects).</li>
+</ul>
+<p>It will now finish up creating the scaffold in the packages directory in your project’s base path.</p>
+<p>5. Set up git:</p>
+<p>cd packages/purples-turtles/icecreammachine
+git init</p>
+<p>Now you can use your favorite GIT tool (in my case Git Tower 2) or commandline to publish your package to GitHub or BitBucket, or something similar.</p>
+<p>All that’s left now is to publish your package in Packagist and include it in other projects!</p>
+<p>Also note that your package will be available in your parent project, as if it was included in the vendor folder.</p>
+<p>There is a small drawback in that you need to run <strong>composer update</strong> anytime you make class-level changes (or run <strong>composer dump-autoload -o</strong> if the changes weren’t that drastic) in the package directory, and then run <strong>composer update</strong> or <strong>composer dump-autoload -o</strong> or <strong>php artisan optimize</strong> in the parent project. Would love to see studio hook into the composer process and automatically run composer update on the package whenever the parent project is updated.</p>        </div>
+
+        <nav class="flex justify-between text-sm md:text-base">
+            <div>
+                                    <a href="https://genealabs.com/blog/how-to-install-phpci-in-homestead" title="Older Post: How To Install PHPCI In Homestead">
+                        &LeftArrow; How To Install PHPCI In Homestead
+                    </a>
+                            </div>
+
+            <div>
+                                    <a href="https://genealabs.com/blog/running-phpstorm-on-el-capitan" title="Newer Post: Running PHPStorm On El Captian">
+                        Running PHPStorm On El Captian &RightArrow;
+                    </a>
+                            </div>
+        </nav>
+    </section>
+            </main>
+        </div>
+
+        <script src="/assets/build/js/main.js?id=a6f070e792abfcf8ab6d"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+<script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-reset">
+                <li class="md:mr-2">
+                    &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> 2019.
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>

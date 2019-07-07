@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="Best configuration of Homestead I have found so far.">
+
+        <meta property="og:site_name" content=""/>
+        <meta property="og:title" content="Eliminate Port Forwarding and Hosts File Configuration From Laravel Homestead! | "/>
+        <meta property="og:description" content="Best configuration of Homestead I have found so far."/>
+        <meta property="og:url" content="http://localhost:3000/blog/eliminate-port-forwarding-and-hosts-files-configuration-from-homestead"/>
+        <meta property="og:image" content="/assets/images/logo.png"/>
+        <meta property="og:type" content="website"/>
+
+        <meta name="twitter:image:alt" content="">
+        <meta name="twitter:card" content="summary_large_image">
+
+        
+        <title> | Eliminate Port Forwarding and Hosts File Configuration From Laravel Homestead!</title>
+
+        <link rel="home" href="http://localhost:3000">
+        <link rel="icon" href="/favicon.ico">
+
+            <meta property="og:title" content="Eliminate Port Forwarding and Hosts File Configuration From Laravel Homestead!" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="http://localhost:3000/blog/eliminate-port-forwarding-and-hosts-files-configuration-from-homestead"/>
+    <meta property="og:description" content="Best configuration of Homestead I have found so far." />
+
+        
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=bbd206428976a3c8e299">
+
+        
+            </head>
+
+    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
+        <div id="app">
+            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+                <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+                    <div class="flex items-center">
+                        <a href="/" title=" home" class="inline-flex items-center">
+                            <img class="h-8 md:h-10 mr-3" src="/assets/images/genealabs_logo_new.png" alt=" logo" />
+
+                            <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0 pr-4"></h1>
+                        </a>
+                    </div>
+
+                        <div id="vue-search" class="flex flex-1 justify-end items-center">
+        <search></search>
+
+        <nav class="hidden lg:flex items-center justify-end text-lg">
+            <a href="/blog"
+            class="lvl0   ml-6 "
+        >
+            Blog
+        </a>
+    
+                <a href="/packages"
+            class="lvl0   ml-6 "
+        >
+            Packages
+        </a>
+    
+                <a href="/about"
+            class="lvl0   ml-6 "
+        >
+            About
+        </a>
+    
+                <a href="/contact"
+            class="lvl0   ml-6 "
+        >
+            Contact
+        </a>
+    
+        </nav>
+
+        <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+    </div>
+
+                </div>
+
+                    <button class="flex justify-center items-center bg-blue border border-blue h-10 mr-4 px-5 rounded-full lg:hidden focus:outline-none"
+    onclick="navMenu.toggle()"
+>
+    <svg id="js-nav-menu-show" xmlns="http://www.w3.org/2000/svg"
+        class="fill-current text-white h-9 w-4" viewBox="0 0 32 32"
+    >
+        <path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/>
+    </svg>
+
+    <svg id="js-nav-menu-hide" xmlns="http://www.w3.org/2000/svg"
+        class="hidden fill-current text-white h-9 w-4" viewBox="0 0 36 30"
+    >
+        <polygon points="32.8,4.4 28.6,0.2 18,10.8 7.4,0.2 3.2,4.4 13.8,15 3.2,25.6 7.4,29.8 18,19.2 28.6,29.8 32.8,25.6 22.2,15 "/>
+    </svg>
+</button>
+
+            </header>
+
+            <main role="main"
+                class="w-full flex-auto relative"
+            >
+                    <section class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+        
+        <h1 class="leading-none mb-2">Eliminate Port Forwarding and Hosts File Configuration From Laravel Homestead!</h1>
+
+        <p class="text-grey-darker text-xl md:mt-0">Mike Bronner  •  December 7, 2017</p>
+
+                                    <a
+                    href="/blog/categories/homestead"
+                    title="View posts in homestead"
+                    class="inline-block bg-grey-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                >homestead</a>
+                    
+        <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
+            <p>You know the drill with Homestead: maintain a huge list of domains in <code>/etc/hosts</code>, make sure all the ports are forwarding correctly, have complex config files to handle running artisan commands outside of homestead, and so on. This has always been annoying me, so when the <code>.dev</code> TLD switched to forced HTTPS a few weeks back in macOS 10.13.2-beta, (which has since released), as well as in Chrome now, it was time to find a better workflow.</p>
+<p>At first I started experimenting with complicated Bonjour configurations and <code>.local</code> domains, but that had more drawbacks than benefits. I ran the problem by my <a href="https://github.com/sjbronner">brother</a>. He had a few suggestions that could drastically simplify the issue:</p>
+<ul>
+<li>remove port forwarding</li>
+<li>point all sites to the IP address configured in <code>Homestead.yaml</code>.</li>
+</ul>
+<p>That was a good first step, as we no longer needed to worry about possible port conflicts on our computers, and could still use the default ports for services running in Homestead. The <code>hosts</code> file was still a problem, though.</p>
+<p>The solution for that was to register a public subdomain that points to Homestead’s IP address. Now that we have that in place, we cleared out all the entries from <code>/etc/hosts</code> that were specific to Homestead sites, and lo-and-behold, we have streamlined the Homestead workflow process quite a bit.</p>
+<blockquote>
+<p>The only place you need to make configuration changes is now in <code>Homestead.yaml</code> when adding new sites.</p>
+</blockquote>
+<h4>Assumptions</h4>
+<ul>
+<li>Your Homestead’s IP address is <code>192.168.10.10</code>. If yours is different, use that IP address in the instructions below.</li>
+<li>Your development computer has internet access. If not, you may still have to maintain a <code>/etc/hosts</code> file.</li>
+<li>You have a registered domain you can use for development purposes, referenced in the steps below as <code>example.com</code>.</li>
+<li>The instructions are geared toward Mac users. If you are on Linus, you may need to adjust some things. Eliminating port forwarding on Windows might not work.</li>
+<li>I keep all my Homestead sites in a <code>Sites</code> folder. You may call this something else on your system. By default <code>Homestead.yaml</code> defines this folder as <code>~/Code</code>.</li>
+</ul>
+<h4>Implementation</h4>
+<ul>
+<li>Go to your registrar and create an <code>A</code> record with host <code>*.dev</code> that points to <code>192.168.10.10</code>.</li>
+<li>Open your <code>Homestead.yaml</code> file in an editor of your choice.</li>
+<li>Remove Homestead’s default port forwarding rules by adding the following line:<code>default_ports: false</code></li>
+<li>Remove or comment out your custom port forward rules.</li>
+<li>Rename the TLDs of the site entries from whatever they were at (<code>.dev</code> or <code>.test</code>, etc) to <code>&lt;site&gt;.dev.example.com</code>. Replace <code>&lt;site&gt;</code> with whatever you want to access that site as in Homestead:</li>
+</ul>
+<iframe width="700" height="250" src="/media/db76b110e0e6c3d7a31f9f8eb58827e2?postId=1d3ab956bd5b" data-media-id="db76b110e0e6c3d7a31f9f8eb58827e2" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<ul>
+<li>Go ahead and save your <code>Homestead.yaml</code> file and open <code>/etc/hosts</code> for editing.</li>
+<li>Clear out (or comment, for now) all the Homestead domain and IP entries.</li>
+</ul>
+<p>If you now fire up and provision homestead <code>vagrant up --provision</code>, you should be able to access your dev site in your browser using the following URL: <code>purpleturles.dev.example.com</code>, <strong>without using the </strong><code>**:8000**</code> <strong>port</strong>!</p>
+<p>We’re not quite out of the woods just yet, as you will quickly find out that the Redis and Postgres services are refusing connections. This is because they are not bound to the <code>192.168.10.10</code> address. Let’s get that wrapped up.</p>
+<ul>
+<li>SSH into Homestead: <code>vagrant ssh</code>.</li>
+<li>Edit the Postgres configuration file:</li>
+</ul>
+<iframe width="700" height="250" src="/media/a36064122aef7a86c6143c292279bfde?postId=1d3ab956bd5b" data-media-id="a36064122aef7a86c6143c292279bfde" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<ul>
+<li>Add the following line at the end:</li>
+</ul>
+<iframe width="700" height="250" src="/media/af47cd1ca310ac491d4088b935713e1a?postId=1d3ab956bd5b" data-media-id="af47cd1ca310ac491d4088b935713e1a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<ul>
+<li>Go ahead and save the Postgres config file, and open the Redis config file for editing:</li>
+</ul>
+<iframe width="700" height="250" src="/media/33a8a42313f72a60b80858ff1a7df1f8?postId=1d3ab956bd5b" data-media-id="33a8a42313f72a60b80858ff1a7df1f8" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<ul>
+<li>Add the following entry after the existing bind entry:</li>
+</ul>
+<iframe width="700" height="250" src="/media/2aa4336aef39786fd68cabfca7efc91a?postId=1d3ab956bd5b" data-media-id="2aa4336aef39786fd68cabfca7efc91a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<p>Now we’re cooking! Go ahead and save, exit Homestead, and restart it once more: <code>vagrant reload</code>.</p>
+<blockquote>
+<p>You should now have access to all your dev sites without the need to do port forwarding or maintaining a tedious <code>/etc/hosts</code> file!</p>
+</blockquote>
+<p><em>Please let me know if you have any questions or comments. I would love to hear about your experiences with this!</em></p>
+<p><em>I would like to thank my brother, Sebastian, for his help in this and sparking some interesting discussions and thoughts on how to achieve this!</em></p>        </div>
+
+        <nav class="flex justify-between text-sm md:text-base">
+            <div>
+                                    <a href="http://localhost:3000/blog/upgrading-homestead-to-virtualbox-5" title="Older Post: Upgrading Homestead to VirtualBox 5">
+                        &LeftArrow; Upgrading Homestead to VirtualBox 5
+                    </a>
+                            </div>
+
+            <div>
+                                    <a href="http://localhost:3000/blog/testing-against-multiple-laravel-versions" title="Newer Post: Testing Against Multiple Laravel Versions">
+                        Testing Against Multiple Laravel Versions &RightArrow;
+                    </a>
+                            </div>
+        </nav>
+    </section>
+            </main>
+        </div>
+
+        <script src="/assets/build/js/main.js?id=72c73dd34dc559d59278"></script>
+
+        <script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+<script>
+    const navMenu = {
+        toggle() {
+            let menu = document.getElementById('js-nav-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            console.log(document.getElementById('js-nav-menu2'));
+            //document.querySelector("js-nav-menu")
+/*
+            const menu2 = document.getElementById('js-nav-menu2');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('lg:block');
+            document.getElementById('js-nav-menu-hide').classList.toggle('hidden');
+            document.getElementById('js-nav-menu-show').classList.toggle('hidden');
+            */
+        },
+    }
+</script>
+
+        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+            <ul class="flex flex-col md:flex-row justify-center list-reset">
+                <li class="md:mr-2">
+                    &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> 2019.
+                </li>
+            </ul>
+        </footer>
+    </body>
+</html>
