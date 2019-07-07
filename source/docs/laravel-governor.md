@@ -5,12 +5,14 @@ extends: _layouts.docs
 section: content
 ---
 
+![Governor for Laravel](/assets/images/governor.jpg)
+
+# Governor For Laravel
 [![Build Status](https://travis-ci.org/GeneaLabs/laravel-governor.svg?branch=master)](https://travis-ci.org/GeneaLabs/laravel-governor)
 [![Coverage Status](https://coveralls.io/repos/github/GeneaLabs/laravel-governor/badge.svg?branch=master)](https://coveralls.io/github/GeneaLabs/laravel-governor?branch=master)
 [![Latest StableVersion](https://poser.pugx.org/genealabs/laravel-governor/v/stable.png)](https://packagist.org/packages/genealabs/laravel-governor)
 [![Total Downloads](https://poser.pugx.org/genealabs/laravel-governor/downloads.png)](https://packagist.org/packages/genealabs/laravel-governor)
 
-# Governor For Laravel
 **Manage authorization with granular role-based permissions in your Laravel apps.**
 
 ![screencast 2017-06-04 at 3 34 56 pm](https://cloud.githubusercontent.com/assets/1791050/26765962/fa085878-493b-11e7-9bb7-b4d9f88844a0.gif)
