@@ -1,9 +1,11 @@
 ---
 title: Caffeine for Laravel
-description: Building a navigation menu for your site
+description: Keeping your Laravel forms awake.
 extends: _layouts.docs
 section: content
 ---
+
+![Coffee for Laravel](/images/caffeine.jpg)
 
 # Caffeine for Laravel
 [![Join the chat at https://gitter.im/GeneaLabs/laravel-caffeine](https://badges.gitter.im/GeneaLabs/laravel-caffeine.svg)](https://gitter.im/GeneaLabs/laravel-caffeine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -12,8 +14,6 @@ section: content
 [![Coveralls](https://img.shields.io/coveralls/GeneaLabs/laravel-caffeine.svg)](https://coveralls.io/github/GeneaLabs/laravel-caffeine)
 [![GitHub (pre-)release](https://img.shields.io/github/release/GeneaLabs/laravel-caffeine/all.svg)](https://github.com/GeneaLabs/laravel-caffeine)
 [![Packagist](https://img.shields.io/packagist/dt/GeneaLabs/laravel-caffeine.svg)](https://packagist.org/packages/genealabs/laravel-caffeine)
-
-![Coffee for Laravel](https://github.com/GeneaLabs/laravel-caffeine/blob/master/caffeine.jpg)
 
 ## Supporting This Package
 This is an MIT-licensed open source project with its ongoing development made possible by the support of the community. If you'd like to support this, and our other packages, please consider [becoming a backer or sponsor on Patreon](https://www.patreon.com/mikebronner).
