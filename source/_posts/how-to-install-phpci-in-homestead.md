@@ -95,7 +95,7 @@ Please enter your MySQL password: **secret**
 
 
 ```
-Your PHPCI URL (“http://phpci.local" for example): **http://phpci.dev:8000**
+Your PHPCI URL (“https://phpci.local" for example): **https://phpci.dev:8000**
 ```
 
 

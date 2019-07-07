@@ -216,7 +216,7 @@ be. My checklist for package development includes:
 -   ✅ Be fully PSR1, PSR2, and PSR4 compliant.
 -   ✅ Include comprehensive documentation in README.md.
 -   ✅ Provide an up-to-date CHANGELOG.md which adheres to the format outlined
-    at <http://keepachangelog.com>.
+    at <https://keepachangelog.com>.
 -   ✅ Have no PHPMD or PHPCS warnings throughout all code.
 
 ## Contributing

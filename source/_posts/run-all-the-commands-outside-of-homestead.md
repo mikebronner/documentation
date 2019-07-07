@@ -85,6 +85,6 @@ To:
 
 ### Sources
 
-*   [http://php-osx.liip.ch](http://php-osx.liip.ch/)
-*   [http://jacurtis.com/easily-install-mcrypt-php-mavericks-yosemite/](http://jacurtis.com/easily-install-mcrypt-php-mavericks-yosemite/)
+*   [https://php-osx.liip.ch](https://php-osx.liip.ch/)
+*   [https://jacurtis.com/easily-install-mcrypt-php-mavericks-yosemite/](https://jacurtis.com/easily-install-mcrypt-php-mavericks-yosemite/)
 *   [https://laracasts.com/discuss/channels/general-discussion/homestead-db-connection-problem](https://laracasts.com/discuss/channels/general-discussion/homestead-db-connection-problem)

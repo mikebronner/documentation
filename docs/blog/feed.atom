@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="https://www.w3.org/2005/Atom">
     <title></title>
     <link href="https://genealabs.com" />
     <link type="application/atom+xml" rel="self" href="https://genealabs.com/blog/feed.atom" />
-    <updated>2019-07-07T19:59:43+02:00</updated>
+    <updated>2019-07-07T20:17:48+02:00</updated>
     <id>https://genealabs.com/blog/feed.atom</id>
     <author>
         <name>Mike Bronner</name>
@@ -942,7 +942,7 @@ A professional audience (legal, medical, etc.) will most likely require......</s
 </ul>
 <h4>Where can I find translators?</h4>
 <p><img src="https://cdn-images-1.medium.com/max/1600/1*fN_j7E34WJgsdmczk6ujJQ.jpeg" alt="" /></p>
-<p>Translation Associations are a great place to start looking for translators. The <em>International Federation of Translators</em> has a <a href="http://www.fit-ift.org/?page_id=1735">comprehensive listing of translation associations world-wide</a>.</p>
+<p>Translation Associations are a great place to start looking for translators. The <em>International Federation of Translators</em> has a <a href="https://www.fit-ift.org/?page_id=1735">comprehensive listing of translation associations world-wide</a>.</p>
 <p>Professional associations are even better for finding the translator you need, especially in Genealogy. The <em>Association of Professional Genealogists</em> provides a <a href="https://www.apgen.org/directory/search_results.html?search=true&amp;related_services=18">directory for genealogical translators</a>.</p>
 <h4>Why consider a certified translator?</h4>
 <p>Certified translators have a certain level of skill and quality that meets certain standards. Certification is a good indicator that a translator is serious about their craft.</p>
@@ -1126,7 +1126,7 @@ Welcome to PHPCI
 Please enter your MySQL database name [phpci]:
 Please enter your MySQL username [phpci]: **homestead**
 Please enter your MySQL password: **secret**</code></pre>
-<pre><code>Your PHPCI URL (“http://phpci.local" for example): **http://phpci.dev:8000**</code></pre>
+<pre><code>Your PHPCI URL (“https://phpci.local" for example): **https://phpci.dev:8000**</code></pre>
 <pre><code>Setting up your database… OK</code></pre>
 <pre><code>Admin Email: **your@email.com**
 Admin Name: **Your Name**

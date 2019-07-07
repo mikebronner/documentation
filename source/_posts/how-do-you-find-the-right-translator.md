@@ -29,7 +29,7 @@ The context of the document will help you further narrow down the field of prosp
 
 ![](https://cdn-images-1.medium.com/max/1600/1*fN_j7E34WJgsdmczk6ujJQ.jpeg)
 
-Translation Associations are a great place to start looking for translators. The _International Federation of Translators_ has a [comprehensive listing of translation associations world-wide](http://www.fit-ift.org/?page_id=1735).
+Translation Associations are a great place to start looking for translators. The _International Federation of Translators_ has a [comprehensive listing of translation associations world-wide](https://www.fit-ift.org/?page_id=1735).
 
 Professional associations are even better for finding the translator you need, especially in Genealogy. The _Association of Professional Genealogists_ provides a [directory for genealogical translators](https://www.apgen.org/directory/search_results.html?search=true&related_services=18).
 

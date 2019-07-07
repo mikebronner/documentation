@@ -7,7 +7,7 @@
 
     <div class="md:flex -mx-2 -mx-4">
         <a class="mb-8 mx-3 px-2 md:w-1/3 {{ $page->selected('laravel-governor') }}"
-            href="{{ $page->baseUrl }}/laravel-governor"
+            href="{{ $page->baseUrl }}/docs/laravel-governor"
         >
             <h3 id="intro-laravel" class="text-2xl text-blue-darkest mb-0">Governor for Laravel</h3>
             <p>Providing permissions management for your Laravel projects. (Includes a Nova admin panel.)</p>
@@ -21,7 +21,7 @@
         </a>
 
         <a class="mx-3 px-2 md:w-1/3 {{ $page->selected('laravel-caffeine') }}"
-            href="{{ $page->baseUrl }}/laravel-caffeine"
+            href="{{ $page->baseUrl }}/docs/laravel-caffeine"
         >
             <h3 id="intro-mix" class="text-2xl text-blue-darkest mb-0">Caffeine for Laravel</h3>
             <p>Automatic session-preservation, preventing timeouts on long forms and the associated headache of having to enter it all over again.</p>
