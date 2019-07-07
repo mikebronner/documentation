@@ -1,0 +1,20 @@
+.m-t-1 {
+    margin-top: 10px;
+}
+
+.m-t-2 {
+    margin-top: 20px;
+}
+
+.m-t-3 {
+    margin-top: 30px;
+}
+
+#products {
+    background-image: url('/assets/paper_texture.jpg');
+
+    .container {
+        padding-top: 70px !important;
+        padding-bottom: 30px;
+    }
+}

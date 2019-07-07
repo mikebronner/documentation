@@ -1,0 +1,12 @@
+body {
+  background-image: url('/imgs/translation_background.jpg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: black;
+
+  header + .container {
+    padding-top: 35px;
+    background-color: white;
+  }
+}
