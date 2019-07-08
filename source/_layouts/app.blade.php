@@ -65,6 +65,9 @@
             >
                 @yield('body')
             </main>
+
+            @yield ("side-menu")
+
         </div>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>

@@ -4,7 +4,6 @@ description: Building a navigation menu for your site
 extends: _layouts.docs
 section: content
 ---
-
 ![Governor for Laravel](/assets/images/governor.jpg)
 
 # Governor For Laravel
