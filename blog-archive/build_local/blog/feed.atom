@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Blog Starter Template</title>
+    <link href="" />
+    <link type="application/atom+xml" rel="self" href="/blog/feed.atom" />
+    <updated>2019-07-01T21:27:02+00:00</updated>
+    <id>/blog/feed.atom</id>
+    <author>
+        <name>Author Name</name>
+    </author>
+                <entry>
+    <id>/blog/getting-started</id>
+    <link type="text/html" rel="alternate" href="/blog/getting-started" />
+    <title>Getting Started</title>
+    <published>2018-12-25T00:00:00+00:00</published>
+    <updated>2018-12-25T00:00:00+00:00</updated>
+    <author>
+        <name>Author Name</name>
+    </author>
+    <summary type="html">This is a starter template for creating a beautiful, customizable blog with minimal effort. You’ll only have to change a few settings and you’re ready to go.
+
+As with all Jigsaw sites, configuration settings can be found in &lt;code&gt;config.php&lt;/code&gt;;......</summary>
+    <content type="html"><![CDATA[
+        <p>This is a starter template for creating a beautiful, customizable blog with minimal effort. You’ll only have to change a few settings and you’re ready to go.</p>
+<h2>Configuration</h2>
+<p>As with all Jigsaw sites, configuration settings can be found in <code>config.php</code>; you can update the variables in that file with settings specific to your site. You can also add new configuration variables there to use across your site; take a look at the <a href="http://jigsaw.tighten.co/docs/site-variables/">Jigsaw documentation</a> to learn more.</p>
+<pre><code class="language-php">// config.php
+return [
+    'baseUrl' =&gt; 'https://my-awesome-jigsaw-site.com/',
+    'production' =&gt; false,
+    'siteName' =&gt; 'My Site',
+    'siteDescription' =&gt; 'Give your blog a boost with Jigsaw.',
+    ...
+];</code></pre>
+<blockquote>
+<p>Tip: This configuration file is also where you’ll define any &quot;collections&quot; (for example, a collection of the contributors to your site, or a collection of blog posts organized by topic). Check out the official <a href="https://jigsaw.tighten.co/docs/collections/">Jigsaw documentation</a> to learn more.</p>
+</blockquote>
+<hr />
+<h3>Adding Content</h3>
+<p>You can write your content using a <a href="http://jigsaw.tighten.co/docs/content-other-file-types/">variety of file types</a>. By default, this starter template expects your content to be located in the <code>source/_posts/</code> folder.</p>
+<p>The top of each content page contains a YAML header that specifies how it should be rendered. The <code>title</code> attribute is used to dynamically generate HTML <code>title</code> and OpenGraph tags for each page. The <code>extends</code> attribute defines which parent Blade layout this content file will render with (e.g. <code>_layouts.post</code> will render with <code>source/_layouts/post.blade.php</code>), and the <code>section</code> attribute defines the Blade &quot;section&quot; that expects this content to be placed into it.</p>
+<pre><code class="language-yaml">---
+extends: _layouts.post
+section: content
+title: Getting Started
+date: 2018-12-25
+description: Getting started with the Jigsaw blog starter template
+cover_image: /assets/img/post-cover-image-2.png
+featured: true
+---</code></pre>
+<h3>Adding Assets</h3>
+<p>Any assets that need to be compiled (such as JavaScript, Less, or Sass files) can be added to the <code>source/_assets/</code> directory, and Laravel Mix will process them when running <code>npm run local</code> or <code>npm run production</code>. The processed assets will be stored in <code>/source/assets/build/</code> (note there is no underscore on this second <code>assets</code> directory).</p>
+<p>Then, when Jigsaw builds your site, the entire <code>/source/assets/</code> directory containing your built files (and any other directories containing static assets, such as images or fonts, that you choose to store there) will be copied to the destination build folders (<code>build_local</code>, on your local machine).</p>
+<p>Files that don't require processing (such as images and fonts) can be added directly to <code>/source/assets/</code>.</p>
+<p><a href="http://jigsaw.tighten.co/docs/compiling-assets/">Read more about compiling assets in Jigsaw using Laravel Mix.</a></p>
+<hr />
+<h2 id="getting-started-building-your-site">Building Your Site</h2>
+<p>Now that you’ve edited your configuration variables and know how to customize your styles and content, let’s build the site.</p>
+<pre><code class="language-bash"># build static files with Jigsaw
+./vendor/bin/jigsaw build
+
+# compile assets with Laravel Mix
+# options: dev, staging, production
+npm run dev</code></pre>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/customizing-your-site</id>
+    <link type="text/html" rel="alternate" href="/blog/customizing-your-site" />
+    <title>Customizing Your Site</title>
+    <published>2018-12-24T00:00:00+00:00</published>
+    <updated>2018-12-24T00:00:00+00:00</updated>
+    <author>
+        <name>Author Name</name>
+    </author>
+    <summary type="html">This starter template comes pre-loaded with Tailwind CSS, a utility CSS framework that allows you to customize and build complex designs without touching a line of CSS. There are also a few base Sass files in the &lt;code&gt;/source/_assets/sass&lt;/code&gt; folder,......</summary>
+    <content type="html"><![CDATA[
+        <p>This starter template comes pre-loaded with <a href="https://tailwindcss.com">Tailwind CSS</a>, a utility CSS framework that allows you to customize and build complex designs without touching a line of CSS. There are also a few base Sass files in the <code>/source/_assets/sass</code> folder, set up with the expectation that you can add any custom CSS into <code>_blog.scss</code>.</p>
+<blockquote>
+<p>You can also re-work the architecture of the Sass files any way you’d like; just make sure to keep the <code>@tailwind</code> references in your final <code>main.scss</code> file.</p>
+</blockquote>
+<pre><code class="language-scss">// source/_assets/sass/main.scss
+
+@tailwind preflight;
+@tailwind components;
+
+// Code syntax highlighting,
+// https://highlightjs.org
+@import '~highlightjs/styles/default';
+
+@import 'base';
+@import 'navigation';
+@import 'mailchimp';
+@import 'blog';
+
+@tailwind utilities;</code></pre>
+<hr />
+<h2>Typography Styles</h2>
+<p>Here’s a quick preview of what some of the basic type styles will look like in this starter template:</p>
+<h1>h1 Heading</h1>
+<h2>h2 Heading</h2>
+<h3>h3 Heading</h3>
+<h4>h4 Heading</h4>
+<h5>h5 Heading</h5>
+<h6>h6 Heading</h6>
+<p>The quick brown fox jumps over the lazy dog</p>
+<p><s>The quick brown fox jumps over the lazy dog</s></p>
+<p><u>The quick brown fox jumps over the lazy dog</u></p>
+<p><em>The quick brown fox jumps over the lazy dog</em></p>
+<p><strong>The quick brown fox jumps over the lazy dog</strong></p>
+<p><code>The quick brown fox jumps over the lazy dog</code></p>
+<p><small>The quick brown fox jumps over the lazy dog</small></p>
+<blockquote>
+<p>The quick brown fox jumps over the lazy dog</p>
+</blockquote>
+<p><a href="#">The quick brown fox jumps over the lazy dog</a></p>
+<pre><code class="language-php">class Foo extends bar
+{
+    public function fooBar()
+    {
+        //
+    }
+}</code></pre>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/custom-404-page</id>
+    <link type="text/html" rel="alternate" href="/blog/custom-404-page" />
+    <title>Custom 404 Pages</title>
+    <published>2018-12-23T00:00:00+00:00</published>
+    <updated>2018-12-23T00:00:00+00:00</updated>
+    <author>
+        <name>Author Name</name>
+    </author>
+    <summary type="html">This starter template includes a custom 404 Not Found error page, located at &lt;code&gt;/source/404.blade.php&lt;/code&gt;. To preview the 404 page, you can visit &lt;code&gt;/404&lt;/code&gt; in your browser.
+
+
+Depending on where your site is hosted, you may need to configure......</summary>
+    <content type="html"><![CDATA[
+        <p>This starter template includes a custom <strong>404 Not Found</strong> error page, located at <code>/source/404.blade.php</code>. <a href="/404">To preview the 404 page</a>, you can visit <code>/404</code> in your browser.</p>
+<pre><code class="language-html">&lt;!-- source/404.blade.php --&gt;
+
+@extends('_layouts.master')
+
+@section('body')
+    &lt;div class="flex flex-col items-center text-grey-darker mt-32"&gt;
+        &lt;h1 class="text-6xl font-light leading-none mb-2"&gt;404&lt;/h1&gt;
+
+        &lt;h2 class="text-3xl"&gt;Page not found.&lt;/h2&gt;
+
+        &lt;hr class="block w-full max-w-sm mx-auto border my-8"&gt;
+
+        &lt;p class="text-xl"&gt;
+            Need to update this page? See the &lt;a title="404 Page Documentation" href="https://jigsaw.tighten.co/docs/custom-404-page/"&gt;Jigsaw documentation&lt;/a&gt;.
+        &lt;/p&gt;
+    &lt;/div&gt;
+@endsection</code></pre>
+<hr />
+<p>Depending on where your site is hosted, you may need to configure your server to use the custom 404 page. For more details, visit the <a href="https://jigsaw.tighten.co/docs/custom-404-page/">Jigsaw documentation about configuring a custom 404 page</a>.</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/fuse-search</id>
+    <link type="text/html" rel="alternate" href="/blog/fuse-search" />
+    <title>Fuse Search</title>
+    <published>2018-12-22T00:00:00+00:00</published>
+    <updated>2018-12-22T00:00:00+00:00</updated>
+    <author>
+        <name>Author Name</name>
+    </author>
+    <summary type="html">To provide fast, local search of your blog, this starter template comes with a pre-built Vue.js component that uses Fuse.js. Fuse.js is a &amp;quot;lightweight fuzzy-search library with no dependencies.&amp;quot; It works by running queries against a JSON index......</summary>
+    <content type="html"><![CDATA[
+        <p>To provide fast, local search of your blog, this starter template comes with a pre-built Vue.js component that uses Fuse.js. <a href="http://fusejs.io/">Fuse.js</a> is a &quot;lightweight fuzzy-search library with <em>no</em> dependencies.&quot; It works by running queries against a JSON index of your content.</p>
+<p>During the <a href="http://jigsaw.tighten.co/docs/building-and-previewing/">build process</a>, the contents of your <code>posts</code> collection is processed by the <code>GenerateIndex.php</code> listener, and an <code>index.json</code> file is generated in the build directory. The <code>Search.vue</code> component provides a search input that queries this local index.</p>
+<p>If you'd like to customize the generation of your search index, take a look at the <code>handle</code> method of the <code>GenerateIndex.php</code> file.</p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/mailchimp-newsletters</id>
+    <link type="text/html" rel="alternate" href="/blog/mailchimp-newsletters" />
+    <title>Mailchimp Newsletters</title>
+    <published>2018-11-21T00:00:00+00:00</published>
+    <updated>2018-11-21T00:00:00+00:00</updated>
+    <author>
+        <name>Author Name</name>
+    </author>
+    <summary type="html">Mailchimp is a fantastic marketing platform, and takes the pain out of managing email lists and campaigns. The blog starter template comes with a beautiful pre-built newsletter form, that only needs a Mailchimp list URL to send to.
+To begin accepting......</summary>
+    <content type="html"><![CDATA[
+        <p><a href="https://mailchimp.com/">Mailchimp</a> is a fantastic marketing platform, and takes the pain out of managing email lists and campaigns. The blog starter template comes with a beautiful pre-built newsletter form, that only needs a Mailchimp list URL to send to.</p>
+<p>To begin accepting subscribers, simply add your list URL to the form <code>action</code> in the <code>source/_components/newsletter-signup.blade.php</code> file.</p>
+<pre><code class="language-html">&lt;!-- source/_components/newsletter-signup.blade.php --&gt;
+
+&lt;div id="mc_embed_signup"&gt;
+    &lt;form action="https://your-mail-chimp-list-manage-url" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate&gt;
+        &lt;div id="mc_embed_signup_scroll"&gt;
+            &lt;h2&gt;Sign up for newsletter&lt;/h2&gt;
+            &lt;div class="mc-field-group"&gt;
+                &lt;label for="mce-EMAIL"&gt;Email Address &lt;/label&gt;
+                &lt;input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address"&gt;
+            &lt;/div&gt;
+            &lt;div id="mce-responses" class="clear"&gt;
+                &lt;div class="response" id="mce-error-response" style="display:none"&gt;&lt;/div&gt;
+                &lt;div class="response" id="mce-success-response" style="display:none"&gt;&lt;/div&gt;
+            &lt;/div&gt;    &lt;!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--&gt;
+
+            &lt;div style="position: absolute; left: -5000px;" aria-hidden="true"&gt;&lt;input type="text" name="b_25582686a9fc051afd5453557_189578c854" tabindex="-1" value=""&gt;&lt;/div&gt;
+            &lt;div class="clear"&gt;&lt;input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre>
+<h3>Example</h3>
+<img src="/assets/img/newsletter.png">
+<p><a href="https://mailchimp.com/help/host-your-own-signup-forms/#Edit_your_Custom_Signup_Form">See how to get your Mailchimp list URL.</a></p>    ]]></content>
+</entry>
+            <entry>
+    <id>/blog/my-first-blog-post</id>
+    <link type="text/html" rel="alternate" href="/blog/my-first-blog-post" />
+    <title>My First Blog Post</title>
+    <published>2017-03-23T00:00:00+00:00</published>
+    <updated>2017-03-23T00:00:00+00:00</updated>
+    <author>
+        <name>Author Name</name>
+    </author>
+    <summary type="html">This is the start of your first blog post....</summary>
+    <content type="html"><![CDATA[
+        <p>This is the start of your first blog post.</p>    ]]></content>
+</entry>
+    </feed>

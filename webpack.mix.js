@@ -30,4 +30,6 @@ mix.js('source/_assets/js/main.js', 'js')
         folders: ['source'],
         whitelistPatterns: [/language/, /hljs/, /algolia/],
     })
+    // .copy("source/assets/images/email/**.*", "docs/imgs/email/")
+    // .copy("source/assets/images/email/**.*", "build_local/imgs/email/")
     .version();

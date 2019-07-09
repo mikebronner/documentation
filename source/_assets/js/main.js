@@ -3,6 +3,7 @@ window.axios = require('axios');
 window.fuse = require('fuse.js');
 window.Vue = require('vue');
 
+import ContextMenu from './components/ContextMenu.vue';
 import Search from './components/Search.vue';
 import hljs from 'highlight.js/lib/highlight';
 
@@ -24,7 +25,25 @@ Vue.config.productionTip = false;
 
 new Vue({
     components: {
+        ContextMenu,
         Search,
     },
+
+    data: function () {
+        return {
+            pageHeadings: [],
+        };
+    },
+
+    mounted: function () {
+        var self = this;
+
+        document
+            .querySelectorAll('h2,h3')
+            .forEach(function (heading) {
+                heading.id = heading.textContent.replace(/\s+/g, '-').toLowerCase();
+                self.pageHeadings.push(heading);
+            });
+    }
 }).$mount('#app');
 

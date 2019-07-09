@@ -24,7 +24,7 @@
 
 @section('content')
 <section id="intro"
-    class="block w-screen h-screen -mt-8 bg-cover flex items-center justify-center"
+    class="block w-screen h-screen -mt-8 bg-cover bg-center flex items-center justify-center"
 >
     <p>We
         <span class="fa-stack">

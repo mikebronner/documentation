@@ -48,8 +48,6 @@
                     <div class="flex items-center">
                         <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
                             <img class="h-8 md:h-10 mr-3" src="/assets/images/genealabs_logo_new.png" alt="{{ $page->siteName }} logo" />
-
-                            <h1 class="text-lg md:text-2xl text-blue-darkest font-semibold hover:text-blue-dark my-0 pr-4">{{ $page->siteName }}</h1>
                         </a>
                     </div>
 
@@ -65,9 +63,6 @@
             >
                 @yield('body')
             </main>
-
-            @yield ("side-menu")
-
         </div>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>

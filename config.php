@@ -3,7 +3,7 @@
 return [
     'baseUrl' => 'http://localhost:3000',
     'production' => false,
-    'siteName' => "",
+    'siteName' => "GeneaLabs",
     'siteDescription' => 'Providing documentation for all our open-source packages.',
     'siteAuthor' => 'Mike Bronner',
     // Algolia DocSearch credentials

@@ -3,14 +3,16 @@ title: Governor for Laravel
 description: Building a navigation menu for your site
 extends: _layouts.docs
 section: content
+repository_url: https://github.com/GeneaLabs/laravel-governor
 ---
-![Governor for Laravel](/assets/images/governor.jpg)
 
 # Governor For Laravel
 [![Build Status](https://travis-ci.org/GeneaLabs/laravel-governor.svg?branch=master)](https://travis-ci.org/GeneaLabs/laravel-governor)
 [![Coverage Status](https://coveralls.io/repos/github/GeneaLabs/laravel-governor/badge.svg?branch=master)](https://coveralls.io/github/GeneaLabs/laravel-governor?branch=master)
 [![Latest StableVersion](https://poser.pugx.org/genealabs/laravel-governor/v/stable.png)](https://packagist.org/packages/genealabs/laravel-governor)
 [![Total Downloads](https://poser.pugx.org/genealabs/laravel-governor/downloads.png)](https://packagist.org/packages/genealabs/laravel-governor)
+
+![Governor for Laravel](/assets/images/governor.jpg)
 
 **Manage authorization with granular role-based permissions in your Laravel apps.**
 
