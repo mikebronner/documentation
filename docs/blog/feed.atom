@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <feed xmlns="https://www.w3.org/2005/Atom">
-    <title></title>
+    <title>GeneaLabs</title>
     <link href="https://genealabs.com" />
     <link type="application/atom+xml" rel="self" href="https://genealabs.com/blog/feed.atom" />
-    <updated>2019-07-08T00:43:09+02:00</updated>
+    <updated>2019-07-09T23:32:45+00:00</updated>
     <id>https://genealabs.com/blog/feed.atom</id>
     <author>
         <name>Mike Bronner</name>
@@ -12,8 +12,8 @@
     <id>https://genealabs.com/blog/the-2019-macos-beta-preview-psa-watch-for-web-developers</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/the-2019-macos-beta-preview-psa-watch-for-web-developers" />
     <title>The 2019 macOS Beta/Preview PSA Watch For Web Developers</title>
-    <published>2019-07-02T02:00:00+02:00</published>
-    <updated>2019-07-02T02:00:00+02:00</updated>
+    <published>2019-07-02T00:00:00+00:00</published>
+    <updated>2019-07-02T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -116,8 +116,8 @@
     <id>https://genealabs.com/blog/when-postgresql-table-sequences-get0-out-of-sync</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/when-postgresql-table-sequences-get0-out-of-sync" />
     <title>When PostgreSQL Table Sequences Get Out Of Sync</title>
-    <published>2019-06-29T02:00:00+02:00</published>
-    <updated>2019-06-29T02:00:00+02:00</updated>
+    <published>2019-06-29T00:00:00+00:00</published>
+    <updated>2019-06-29T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -152,8 +152,8 @@ $$</code></pre>    ]]></content>
     <id>https://genealabs.com/blog/dynamic-model-binding-in-nova-resources</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/dynamic-model-binding-in-nova-resources" />
     <title>Dynamic Model Binding In Laravel Resources</title>
-    <published>2019-06-06T02:00:00+02:00</published>
-    <updated>2019-06-06T02:00:00+02:00</updated>
+    <published>2019-06-06T00:00:00+00:00</published>
+    <updated>2019-06-06T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -195,8 +195,8 @@ If you are developing Nova packages, you have probably been faced with the situa
     <id>https://genealabs.com/blog/filtering-belongsto-fields-in-laravel-nova</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/filtering-belongsto-fields-in-laravel-nova" />
     <title>Filtering BelongsTo Fields In Laravel Nova</title>
-    <published>2019-06-01T02:00:00+02:00</published>
-    <updated>2019-06-01T02:00:00+02:00</updated>
+    <published>2019-06-01T00:00:00+00:00</published>
+    <updated>2019-06-01T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -316,8 +316,8 @@ A common example would be to......</summary>
     <id>https://genealabs.com/blog/cron-job-error-notifications</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/cron-job-error-notifications" />
     <title>Cron-Job Error Notifications</title>
-    <published>2019-05-28T02:00:00+02:00</published>
-    <updated>2019-05-28T02:00:00+02:00</updated>
+    <published>2019-05-28T00:00:00+00:00</published>
+    <updated>2019-05-28T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -358,8 +358,8 @@ root: your@email-server.com</code></pre>
     <id>https://genealabs.com/blog/restart-phpfpm-automatically-if-server-gets-overloaded</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/restart-phpfpm-automatically-if-server-gets-overloaded" />
     <title>Restart PHP-FPM Automatically If Server Gets Overloaded</title>
-    <published>2019-05-28T02:00:00+02:00</published>
-    <updated>2019-05-28T02:00:00+02:00</updated>
+    <published>2019-05-28T00:00:00+00:00</published>
+    <updated>2019-05-28T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -383,8 +383,8 @@ fi</code></pre>
     <id>https://genealabs.com/blog/install-imagick-for-php-7-2-on-ubuntu-18-04</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/install-imagick-for-php-7-2-on-ubuntu-18-04" />
     <title>Install Imagick for PHP 7.2 on Ubuntu 18.04</title>
-    <published>2019-05-28T02:00:00+02:00</published>
-    <updated>2019-05-28T02:00:00+02:00</updated>
+    <published>2019-05-28T00:00:00+00:00</published>
+    <updated>2019-05-28T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -424,8 +424,8 @@ service php7.2-fpm reload</code></pre></li>
     <id>https://genealabs.com/blog/securing-your-entire-home-network-with-encryptme</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/securing-your-entire-home-network-with-encryptme" />
     <title>Securing Your Entire Home Network With encrypt.me</title>
-    <published>2019-05-27T02:00:00+02:00</published>
-    <updated>2019-05-27T02:00:00+02:00</updated>
+    <published>2019-05-27T00:00:00+00:00</published>
+    <updated>2019-05-27T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -520,8 +520,8 @@ ps aux | grep openvpn</code></pre>
     <id>https://genealabs.com/blog/how-to-convert-png-to-tiled-tiff</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/how-to-convert-png-to-tiled-tiff" />
     <title>How To Convert PNG To Tiled TIFF</title>
-    <published>2019-05-25T02:00:00+02:00</published>
-    <updated>2019-05-25T02:00:00+02:00</updated>
+    <published>2019-05-25T00:00:00+00:00</published>
+    <updated>2019-05-25T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -539,8 +539,8 @@ ps aux | grep openvpn</code></pre>
     <id>https://genealabs.com/blog/what-to-do-when-vagrant-wont-start-your-homestead-box</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/what-to-do-when-vagrant-wont-start-your-homestead-box" />
     <title>What To Do When Vagrant Won&#039;t Start Your Homestead Box</title>
-    <published>2019-05-25T02:00:00+02:00</published>
-    <updated>2019-05-25T02:00:00+02:00</updated>
+    <published>2019-05-25T00:00:00+00:00</published>
+    <updated>2019-05-25T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -568,8 +568,8 @@ VBoxManage: error: Context: "RTEXITCODE handleCreate(HandlerArg *)" at line 94 o
     <id>https://genealabs.com/blog/testing-against-multiple-laravel-versions</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/testing-against-multiple-laravel-versions" />
     <title>Testing Against Multiple Laravel Versions</title>
-    <published>2018-05-28T02:00:00+02:00</published>
-    <updated>2018-05-28T02:00:00+02:00</updated>
+    <published>2018-05-28T00:00:00+00:00</published>
+    <updated>2018-05-28T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -647,8 +647,8 @@ _Working as a web developer. On his blog he writes about things he learned while
     <id>https://genealabs.com/blog/eliminate-port-forwarding-and-hosts-files-configuration-from-homestead</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/eliminate-port-forwarding-and-hosts-files-configuration-from-homestead" />
     <title>Eliminate Port Forwarding and Hosts File Configuration From Laravel Homestead!</title>
-    <published>2017-12-07T01:00:00+01:00</published>
-    <updated>2017-12-07T01:00:00+01:00</updated>
+    <published>2017-12-07T00:00:00+00:00</published>
+    <updated>2017-12-07T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -716,8 +716,8 @@ _Working as a web developer. On his blog he writes about things he learned while
     <id>https://genealabs.com/blog/upgrading-homestead-to-virtualbox-5</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/upgrading-homestead-to-virtualbox-5" />
     <title>Upgrading Homestead to VirtualBox 5</title>
-    <published>2017-10-05T02:00:00+02:00</published>
-    <updated>2017-10-05T02:00:00+02:00</updated>
+    <published>2017-10-05T00:00:00+00:00</published>
+    <updated>2017-10-05T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -826,8 +826,8 @@ dmesg | tail or so.</code></pre>    ]]></content>
     <id>https://genealabs.com/blog/when-should-you-hire-a-translator</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/when-should-you-hire-a-translator" />
     <title>When should you hire a translator?</title>
-    <published>2017-10-05T02:00:00+02:00</published>
-    <updated>2017-10-05T02:00:00+02:00</updated>
+    <published>2017-10-05T00:00:00+00:00</published>
+    <updated>2017-10-05T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -919,8 +919,8 @@ are most likely not, well, enough.</p>
     <id>https://genealabs.com/blog/how-do-you-find-the-right-translator</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/how-do-you-find-the-right-translator" />
     <title>How do you find the right translator?</title>
-    <published>2017-10-05T02:00:00+02:00</published>
-    <updated>2017-10-05T02:00:00+02:00</updated>
+    <published>2017-10-05T00:00:00+00:00</published>
+    <updated>2017-10-05T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -1007,8 +1007,8 @@ A professional audience (legal, medical, etc.) will most likely require......</s
     <id>https://genealabs.com/blog/running-phpstorm-on-el-capitan</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/running-phpstorm-on-el-capitan" />
     <title>Running PHPStorm On El Captian</title>
-    <published>2017-10-05T02:00:00+02:00</published>
-    <updated>2017-10-05T02:00:00+02:00</updated>
+    <published>2017-10-05T00:00:00+00:00</published>
+    <updated>2017-10-05T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -1032,8 +1032,8 @@ Update the SCSS File Watcher settings......</summary>
     <id>https://genealabs.com/blog/creating-packages-with-laravel-5-and-studio</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/creating-packages-with-laravel-5-and-studio" />
     <title>Creating Packages with Laravel 5 &amp; Studio</title>
-    <published>2015-05-30T02:00:00+02:00</published>
-    <updated>2015-05-30T02:00:00+02:00</updated>
+    <published>2015-05-30T00:00:00+00:00</published>
+    <updated>2015-05-30T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -1078,8 +1078,8 @@ git init</p>
     <id>https://genealabs.com/blog/how-to-install-phpci-in-homestead</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/how-to-install-phpci-in-homestead" />
     <title>How To Install PHPCI In Homestead</title>
-    <published>2015-04-08T02:00:00+02:00</published>
-    <updated>2015-04-08T02:00:00+02:00</updated>
+    <published>2015-04-08T00:00:00+00:00</published>
+    <updated>2015-04-08T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -1180,8 +1180,8 @@ You should now be able to log in using the email address and password specified 
     <id>https://genealabs.com/blog/set-up-envoyer-on-an-existing-forge-site</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/set-up-envoyer-on-an-existing-forge-site" />
     <title>Set Up Envoyer On An Existing Forge Site</title>
-    <published>2015-03-16T01:00:00+01:00</published>
-    <updated>2015-03-16T01:00:00+01:00</updated>
+    <published>2015-03-16T00:00:00+00:00</published>
+    <updated>2015-03-16T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -1222,8 +1222,8 @@ It’s actually very straight-forward to get your existing forge-git-hooked.....
     <id>https://genealabs.com/blog/run-all-the-commands-outside-of-homestead</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/run-all-the-commands-outside-of-homestead" />
     <title>Run _#AllTheCommands_ Outside of Homestead</title>
-    <published>2015-03-16T01:00:00+01:00</published>
-    <updated>2015-03-16T01:00:00+01:00</updated>
+    <published>2015-03-16T00:00:00+00:00</published>
+    <updated>2015-03-16T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
@@ -1286,8 +1286,8 @@ Laravel Homestead has brought virtual machines for web development to the mainst
     <id>https://genealabs.com/blog/agnoster-terminal-theme-on-osx</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/agnoster-terminal-theme-on-osx" />
     <title>Agnoster Terminal Theme on OS X</title>
-    <published>2015-02-27T01:00:00+01:00</published>
-    <updated>2015-02-27T01:00:00+01:00</updated>
+    <published>2015-02-27T00:00:00+00:00</published>
+    <updated>2015-02-27T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
