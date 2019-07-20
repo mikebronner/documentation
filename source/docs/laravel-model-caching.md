@@ -67,6 +67,15 @@ composer require genealabs/laravel-model-caching:*
 ```
 
 ## Upgrade Notes
+### 0.6.0
+The environment and config variables for disabling this package have changed.
+- If you have previously published the config file, publish it again, and adjust as necessary:
+  ```sh
+  php artisan model-caching:publish --config
+  ```
+
+- If you have disabled the package in your .env file, change the entry from `MODEL_CACHE_DISABLED=true` to `MODEL_CACHE_ENABLED=false`.
+
 ### 0.5.0
 The following implementations have changed (see the respective sections below):
 - model-specific cache prefix
