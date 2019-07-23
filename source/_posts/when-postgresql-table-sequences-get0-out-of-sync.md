@@ -15,9 +15,9 @@ DO $$
 DECLARE
     rec RECORD;
     LAST_ID integer;
-    schemaName archer(255);
+    schemaName varchar(255);
 BEGIN
-    SET schemaName = 'public';
+    schemaName = 'public';
     FOR rec IN
     SELECT
         table_name
@@ -26,7 +26,7 @@ BEGIN
     WHERE
         table_schema = schemaName
         AND column_name = 'id'
-        AND data_type IN ('integer', 'int8')
+        AND data_type IN ('integer', 'bigint')
         LOOP
             EXECUTE 'SELECT (id + 1) as id FROM ' || schemaName || '.' || rec.table_name || ' ORDER BY id DESC LIMIT 1' INTO LAST_ID;
             EXECUTE 'SELECT SETVAL(''' || rec.table_name || '_id_seq''::regclass, ' || LAST_ID || ');';
