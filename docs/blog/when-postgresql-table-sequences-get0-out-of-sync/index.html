@@ -139,7 +139,7 @@ BEGIN
     schemaName = 'public';
     FOR rec IN
     SELECT
-        table_name
+        table_name,data_type
     FROM
         information_schema.columns
     WHERE
@@ -148,6 +148,9 @@ BEGIN
         AND data_type IN ('integer', 'bigint')
         LOOP
             EXECUTE 'SELECT (id + 1) as id FROM ' || schemaName || '.' || rec.table_name || ' ORDER BY id DESC LIMIT 1' INTO LAST_ID;
+            IF LAST_ID IS NULL THEN
+                LAST_ID = 1;
+            END IF;
             EXECUTE 'SELECT SETVAL(''' || rec.table_name || '_id_seq''::regclass, ' || LAST_ID || ');';
         END LOOP;
 END;
