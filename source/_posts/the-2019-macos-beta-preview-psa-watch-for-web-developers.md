@@ -101,8 +101,9 @@ Today I am installing macOS 10.15.0 on my test machine, a 2016 MacBook Pro with 
 - ✅ Discord 0.0.255
 - ✅ Base 2.4.12
 
-## Beta 3 - Build 19A501i from 2019-07-02
+## Beta 4 - Build 19A512f from 2019-07-16
 - ⛔️ VirtualBox 6
+- ✅ Parallels 14
 - ✅ Vagrant 2.0.1
 - ⚠️ Homestead: **if using NFS, you will need to update your Sites folder directive as follows:**
   ```yml
@@ -122,7 +123,6 @@ Today I am installing macOS 10.15.0 on my test machine, a 2016 MacBook Pro with 
 - ✅ Affinity Photo 1.6.7, 1.7
 - ✅ Affinity Designer 1.6.1, 1.7
 - ✅ Discord 0.0.255
-- ✅ Base 2.4.12
 
 ## Summary
 - So far I'm loving Catalina, especially the new Sidecar functionality that lets me use my iPad Pro as a display.
