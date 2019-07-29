@@ -101,6 +101,29 @@ Today I am installing macOS 10.15.0 on my test machine, a 2016 MacBook Pro with 
 - ✅ Discord 0.0.255
 - ✅ Base 2.4.12
 
+## Beta 3 - Build 19A501i from 2019-07-02
+- ⛔️ VirtualBox 6
+- ✅ Vagrant 2.0.1
+- ⚠️ Homestead: **if using NFS, you will need to update your Sites folder directive as follows:**
+  ```yml
+    - map: /System/Volumes/Data/Users/yourname/sitesfolder
+      to: /home/vagrant/Sites
+      type: "nfs"
+  ```
+- ✅ VSCode 1.35.0-insider
+- ✅ Tower 3.4.2
+- ✅ Paw 3.1.8
+- ✅ TablePlus 2.4
+- ✅ Safari Dev Tools
+- ✅ Screenflow 8.2.3
+- ✅ CleanMyMac X 4.4.3
+- ✅ Permute 3.2.5
+- ✅ Jumpshare 2.4.4
+- ✅ Affinity Photo 1.6.7, 1.7
+- ✅ Affinity Designer 1.6.1, 1.7
+- ✅ Discord 0.0.255
+- ✅ Base 2.4.12
+
 ## Summary
 - So far I'm loving Catalina, especially the new Sidecar functionality that lets me use my iPad Pro as a display.
 - The CleanMyMac issues aren't a primary concern, as I can still run my Mac great without it in all other regards.
