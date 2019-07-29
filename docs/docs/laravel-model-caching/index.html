@@ -174,15 +174,16 @@ flush entire cache for providers that don't).</li>
 - Please only use with the versions of Laravel noted above to be compatible.</code></pre></li>
 </ul>
 <h3>Possible Conflicting Packages</h3>
-<p>Any packages that also override <code>newEloquentModel()</code> from the <code>Model</code> class will
-likely conflict with this package. So far these may include the following:</p>
+<p>Any packages that override <code>newEloquentModel()</code> from the <code>Model</code> class will
+likely conflict with this package. Of course, any packages that implement their
+own Querybuilder class effectively circumvent this package, rendering them
+incompatible.</p>
+<p>The following are packages we have identified as incompatible:</p>
 <ul>
 <li><a href="https://github.com/grimzy/laravel-mysql-spatial">grimzy/laravel-mysql-spatial</a></li>
-<li><a href="https://github.com/fico7489/laravel-pivot">fico7489/laravel-pivot</a>
-This package conflicts with Laravel Telescope. We have forked our own solution
-for pivot events that replaces this package. If you previously had this package
-installed, we recommend uninstalling it to avoid conflicts.</li>
+<li><a href="https://github.com/fico7489/laravel-pivot">fico7489/laravel-pivot</a></li>
 <li><a href="https://github.com/chelout/laravel-relationship-events">chelout/laravel-relationship-events</a></li>
+<li><a href="https://github.com/spatie/laravel-query-builder">spatie/laravel-query-builder</a></li>
 </ul>
 <h3>Things That Don't Work Currently</h3>
 <p>The following items currently do no work with this package:</p>

@@ -42,14 +42,16 @@ relationships. This package is an attempt to address those requirements.
     ```
 
 ### Possible Conflicting Packages
-Any packages that also override `newEloquentModel()` from the `Model` class will
-likely conflict with this package. So far these may include the following:
+Any packages that override `newEloquentModel()` from the `Model` class will
+likely conflict with this package. Of course, any packages that implement their
+own Querybuilder class effectively circumvent this package, rendering them
+incompatible.
+
+The following are packages we have identified as incompatible:
 - [grimzy/laravel-mysql-spatial](https://github.com/grimzy/laravel-mysql-spatial)
 - [fico7489/laravel-pivot](https://github.com/fico7489/laravel-pivot)
-  This package conflicts with Laravel Telescope. We have forked our own solution
-  for pivot events that replaces this package. If you previously had this package
-  installed, we recommend uninstalling it to avoid conflicts.
 - [chelout/laravel-relationship-events](https://github.com/chelout/laravel-relationship-events)
+- [spatie/laravel-query-builder](https://github.com/spatie/laravel-query-builder)
 
 ### Things That Don't Work Currently
 The following items currently do no work with this package:
