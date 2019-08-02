@@ -73,7 +73,7 @@ composer require genealabs/laravel-model-caching:*
 The environment and config variables for disabling this package have changed.
 - If you have previously published the config file, publish it again, and adjust as necessary:
   ```sh
-  php artisan model-caching:publish --config
+  php artisan modelCache:publish --config
   ```
 
 - If you have disabled the package in your .env file, change the entry from `MODEL_CACHE_DISABLED=true` to `MODEL_CACHE_ENABLED=false`.
