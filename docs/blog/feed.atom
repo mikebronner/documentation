@@ -3,7 +3,7 @@
     <title>GeneaLabs</title>
     <link href="https://genealabs.com" />
     <link type="application/atom+xml" rel="self" href="https://genealabs.com/blog/feed.atom" />
-    <updated>2019-08-02T15:22:59+00:00</updated>
+    <updated>2019-08-03T14:10:17+00:00</updated>
     <id>https://genealabs.com/blog/feed.atom</id>
     <author>
         <name>Mike Bronner</name>
@@ -135,8 +135,8 @@
 </ul>    ]]></content>
 </entry>
             <entry>
-    <id>https://genealabs.com/blog/when-postgresql-table-sequences-get0-out-of-sync</id>
-    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/when-postgresql-table-sequences-get0-out-of-sync" />
+    <id>https://genealabs.com/blog/when-postgresql-table-sequences-get-out-of-sync</id>
+    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/when-postgresql-table-sequences-get-out-of-sync" />
     <title>When PostgreSQL Table Sequences Get Out Of Sync</title>
     <published>2019-06-29T00:00:00+00:00</published>
     <updated>2019-06-29T00:00:00+00:00</updated>
@@ -151,25 +151,28 @@
 DECLARE
     rec RECORD;
     LAST_ID integer;
-    schemaName varchar(255);
 BEGIN
-    schemaName = 'public';
     FOR rec IN
-    SELECT
-        table_name,data_type
-    FROM
-        information_schema.columns
-    WHERE
-        table_schema = schemaName
-        AND column_name = 'id'
-        AND data_type IN ('integer', 'bigint')
-        LOOP
-            EXECUTE 'SELECT (id + 1) as id FROM ' || schemaName || '.' || rec.table_name || ' ORDER BY id DESC LIMIT 1' INTO LAST_ID;
-            IF LAST_ID IS NULL THEN
-                LAST_ID = 1;
-            END IF;
-            EXECUTE 'SELECT SETVAL(''' || rec.table_name || '_id_seq''::regclass, ' || LAST_ID || ');';
-        END LOOP;
+        SELECT tc.table_schema,
+            tc.table_name,
+            ccu.column_name,
+            c.data_type
+        FROM information_schema.table_constraints tc 
+        JOIN information_schema.constraint_column_usage AS ccu
+            USING (constraint_schema, constraint_name) 
+        JOIN information_schema.columns AS c
+            ON c.table_schema = tc.constraint_schema
+            AND tc.table_name = c.table_name
+            AND ccu.column_name = c.column_name
+        WHERE constraint_type = 'PRIMARY KEY'
+            AND data_type IN ('integer', 'bigint')
+    LOOP
+        EXECUTE 'SELECT (' || rec.column_name || ' + 1) as ' || rec.column_name || ' FROM ' || rec.table_schema || '.' || rec.table_name || ' ORDER BY ' || rec.column_name || ' DESC LIMIT 1' INTO LAST_ID;
+        IF LAST_ID IS NULL THEN
+            LAST_ID = 1;
+        END IF;
+        EXECUTE 'SELECT SETVAL(''' || rec.table_name || '_' || rec.column_name || '_seq''::regclass, ' || LAST_ID || ');';
+    END LOOP;
 END;
 $$</code></pre>    ]]></content>
 </entry>
