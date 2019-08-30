@@ -52,6 +52,7 @@ The following are packages we have identified as incompatible:
 - [fico7489/laravel-pivot](https://github.com/fico7489/laravel-pivot)
 - [chelout/laravel-relationship-events](https://github.com/chelout/laravel-relationship-events)
 - [spatie/laravel-query-builder](https://github.com/spatie/laravel-query-builder)
+- [dwightwatson/rememberable](https://github.com/dwightwatson/rememberable)
 
 ### Things That Don't Work Currently
 The following items currently do no work with this package:
