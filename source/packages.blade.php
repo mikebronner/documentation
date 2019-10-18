@@ -68,7 +68,10 @@
             href="https://github.com/GeneaLabs/laravel-model-caching"
             target="_blank"
         >
-            <img class="w-full" src="/assets/images/model-caching.jpg" alt="Governor for Laravel header image.">
+            <img class="w-full"
+            src="https://repository-images.githubusercontent.com/103836049/6a492d80-716f-11e9-9cbe-34f1412a9c97"
+            alt="Model Caching for Laravel header image."
+        >
             <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">Model Caching for Laravel</div>
                 <p class="text-gray-700 text-base">
