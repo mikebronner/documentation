@@ -8,7 +8,7 @@
 @endpush
 
 @section('content')
-    <section class="container mx-auto py-6 px-4 max-w-lg">
+    <section class="container mx-auto py-6 px-4">
         <h1>About Us</h1>
 
         <img src="/assets/images/mike-and-myelene.jpg"

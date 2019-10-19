@@ -41,10 +41,10 @@
         @stack ('styles')
     </head>
 
-    <body class="flex flex-col justify-between min-h-screen bg-grey-lightest text-grey-darkest leading-normal font-sans">
+    <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-900 leading-normal font-sans">
         <div id="app">
             <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
-                <div class="container flex items-center max-w-4xl mx-auto px-4 lg:px-8">
+                <div class="container flex items-center mx-auto px-4 lg:px-8">
                     <div class="flex items-center">
                         <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
                             <img class="h-8 md:h-10 mr-3" src="/assets/images/genealabs_logo_new.png" alt="{{ $page->siteName }} logo" />

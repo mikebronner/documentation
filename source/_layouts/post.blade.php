@@ -8,26 +8,26 @@
 @endpush
 
 @section('body')
-    <section class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+    <section class="flex-auto w-full container mx-auto py-16 px-6">
         @if ($page->cover_image)
             <img src="{{ $page->cover_image }}" alt="{{ $page->title }} cover image" class="mb-2">
         @endif
 
         <h1 class="leading-none mb-2">{{ $page->title }}</h1>
 
-        <p class="text-grey-darker text-xl md:mt-0">{{ $page->author }}  •  {{ date('F j, Y', $page->date) }}</p>
+        <p class="text-gray-800 text-xl md:mt-0">{{ $page->author }}  •  {{ date('F j, Y', $page->date) }}</p>
 
         @if ($page->categories)
             @foreach ($page->categories as $i => $category)
                 <a
                     href="{{ '/blog/categories/' . $category }}"
                     title="View posts in {{ $category }}"
-                    class="inline-block bg-grey-light hover:bg-blue-lighter leading-loose tracking-wide text-grey-darkest uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
+                    class="inline-block bg-gray-300 hover:bg-blue-500-lighter leading-loose tracking-wide text-gray-900 uppercase text-xs font-semibold rounded mr-4 px-3 pt-px"
                 >{{ $category }}</a>
             @endforeach
         @endif
 
-        <div class="border-b border-blue-lighter mb-10 pb-4" v-pre>
+        <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             @yield('content')
         </div>
 

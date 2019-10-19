@@ -141,7 +141,7 @@ Depending on where your site is hosted, you may need to configure......</summary
 @extends('_layouts.master')
 
 @section('body')
-    &lt;div class="flex flex-col items-center text-grey-darker mt-32"&gt;
+    &lt;div class="flex flex-col items-center text-gray-800 mt-32"&gt;
         &lt;h1 class="text-6xl font-light leading-none mb-2"&gt;404&lt;/h1&gt;
 
         &lt;h2 class="text-3xl"&gt;Page not found.&lt;/h2&gt;

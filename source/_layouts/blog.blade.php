@@ -15,7 +15,7 @@
 @endsection
 
 @section('body')
-    <section class="flex-auto w-full container max-w-xl mx-auto py-16 px-6">
+    <section class="flex-auto w-full container mx-auto py-16 px-6">
         @yield('content')
     </section>
 @endsection

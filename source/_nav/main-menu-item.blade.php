@@ -7,7 +7,7 @@
         </a>
     @else
         {{-- Menu item without URL--}}
-        <p class="nav-menu__item text-grey-dark">{{ $label }}</p>
+        <p class="nav-menu__item text-gray-700">{{ $label }}</p>
     @endif
 
     @if (! is_string($item) && $item->children)

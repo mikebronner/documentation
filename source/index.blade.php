@@ -35,7 +35,7 @@
         &nbsp;<span id="typed"></span>!
     </p>
 </section>
-<section class="flex w-full container max-w-xl mx-auto py-16 px-6">
+<section class="flex w-full container mx-auto py-16 px-6">
     <section id="services">
         <h2 class="text-center text-5xl">Our Services</h2>
         <div class="flex mt-16 -mx-2 flex-wrap">
@@ -85,7 +85,7 @@
         Get in touch with us now about your web project!
     </a>
 </section>
-<footer class="container mx-auto max-w-xl border-t mt-12 py-16 px-6">
+<footer class="container mx-auto border-t mt-12 py-16 px-6">
     <h3>Contact Information</h3>
     <div class="flex flex-wrap -mx-2">
         <div class="w-full md:w-2/3 px-2">
@@ -101,7 +101,7 @@
             </p>
         </div>
         <div class="w-full md:w-1/3 px-2">
-            <div class="border border-grey-light bg-white rounded p-4 flex flex-col justify-between leading-normal">
+            <div class="border border-gray-light bg-white rounded p-4 flex flex-col justify-between leading-normal">
                 <ul class="list-reset">
                     <li><a class="text-success" href="tel:+16266714300"><strong><span class="fa fa-phone"></span>&nbsp;+1 (626) 671-4300</strong></a></li>
                     <li><a class="text-success" href="mailto:hello@genealabs.com"><strong><span class="fa fa-send"></span>&nbsp;hello@genealabs.com</strong></a></li>
