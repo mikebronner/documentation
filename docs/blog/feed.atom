@@ -3,7 +3,7 @@
     <title>GeneaLabs</title>
     <link href="https://genealabs.com" />
     <link type="application/atom+xml" rel="self" href="https://genealabs.com/blog/feed.atom" />
-    <updated>2019-10-20T22:02:36+00:00</updated>
+    <updated>2019-10-30T00:36:09+00:00</updated>
     <id>https://genealabs.com/blog/feed.atom</id>
     <author>
         <name>Mike Bronner</name>
@@ -341,6 +341,72 @@ A common example would be to......</summary>
 <p><em>Did you find this interesting? Let me know if there are other aspects of Nova that you have questions about, and I will try to answer them.</em></p>    ]]></content>
 </entry>
             <entry>
+    <id>https://genealabs.com/blog/install-imagick-for-php-7-2-on-ubuntu-18-04</id>
+    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/install-imagick-for-php-7-2-on-ubuntu-18-04" />
+    <title>Install Imagick for PHP 7.2 on Ubuntu 18.04</title>
+    <published>2019-05-28T00:00:00+00:00</published>
+    <updated>2019-05-28T00:00:00+00:00</updated>
+    <author>
+        <name>Mike Bronner</name>
+    </author>
+    <summary type="html">I use Imagick for many of my web application projects. It is a robust and powerful image manipulation tool that has some advantages over GD. Unfortunately it doesn&#039;t come installed by default in Homestead.
+
+
+SSH into your Homestead instance.
+Run the......</summary>
+    <content type="html"><![CDATA[
+        <p>I use Imagick for many of my web application projects. It is a robust and powerful image manipulation tool that has some advantages over GD. Unfortunately it doesn't come installed by default in Homestead.</p>
+<h2>Installation</h2>
+<ol>
+<li>SSH into your Homestead instance.</li>
+<li>Run the following command:
+<pre><code class="language-sh">sudo -i
+apt update -y
+apt install php-imagick -y
+echo extension=imagick.so &gt;&gt; /etc/php/7.2/cli/php.ini
+echo extension=imagick.so &gt;&gt; /etc/php/7.2/fpm/php.ini
+service php7.2-fpm reload</code></pre></li>
+</ol>
+<h2>Optional Configuration</h2>
+<p>If you would like to enable processing of PDFs in Imagick (it is now disabled by default), perform the following configuration after running the above command, while still in <code>sudo</code> mode:</p>
+<ol>
+<li>Edit the Iaptmagick configuration file:
+<pre><code class="language-sh">nano /etc/ImageMagick-6/policy.xml</code></pre></li>
+<li>
+<p>Enable PDF editing, change</p>
+<pre><code class="language-xml">&lt;policy domain="coder" rights="none" pattern="PDF" /&gt;</code></pre>
+<p>to</p>
+<pre><code class="language-xml">&lt;policy domain="coder" rights="read|write" pattern="PDF" /&gt;</code></pre>
+</li>
+</ol>
+<p>That should do it!</p>    ]]></content>
+</entry>
+            <entry>
+    <id>https://genealabs.com/blog/restart-phpfpm-automatically-if-server-gets-overloaded</id>
+    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/restart-phpfpm-automatically-if-server-gets-overloaded" />
+    <title>Restart PHP-FPM Automatically If Server Gets Overloaded</title>
+    <published>2019-05-28T00:00:00+00:00</published>
+    <updated>2019-05-28T00:00:00+00:00</updated>
+    <author>
+        <name>Mike Bronner</name>
+    </author>
+    <summary type="html">From time to time your server may get overloaded because PHP is spawning too many workers, or its workers get hung up, and does not make more available. I had a case where this was happening daily on a server, and it was impacting my clients so much that......</summary>
+    <content type="html"><![CDATA[
+        <p>From time to time your server may get overloaded because PHP is spawning too many workers, or its workers get hung up, and does not make more available. I had a case where this was happening daily on a server, and it was impacting my clients so much that their sites were becoming non-responsive.</p>
+<p>To help alleviate the issue while I was troubleshooting, we wrote a script that would automatically restart PHP-FPM if the server load was deemed too high:</p>
+<pre><code class="language-sh">#!/bin/bash
+
+LOAD=`uptime | sed -r 's/^.*average: [0-9.]+, ([0-9.]+),.*$/\1/'`
+ISLOADED=`bc &lt;&lt;&lt; "$LOAD &gt; 3"`
+
+if [ $ISLOADED -eq 1 ]
+then
+        echo "restarting php-fpm at a load of $LOAD"
+        systemctl restart php7.2-fpm 
+fi</code></pre>
+<p>We then added this script to run in cron every minute. With the server stabilizing, I was able to focus on troubleshooting the actual problem, without impacting live websites TOO severely.</p>    ]]></content>
+</entry>
+            <entry>
     <id>https://genealabs.com/blog/cron-job-error-notifications</id>
     <link type="text/html" rel="alternate" href="https://genealabs.com/blog/cron-job-error-notifications" />
     <title>Cron-Job Error Notifications</title>
@@ -381,72 +447,6 @@ user3: root
 # forward root to email
 root: your@email-server.com</code></pre>
 <p>I hope this helps maintain your sanity, as it helped mine. :)</p>    ]]></content>
-</entry>
-            <entry>
-    <id>https://genealabs.com/blog/restart-phpfpm-automatically-if-server-gets-overloaded</id>
-    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/restart-phpfpm-automatically-if-server-gets-overloaded" />
-    <title>Restart PHP-FPM Automatically If Server Gets Overloaded</title>
-    <published>2019-05-28T00:00:00+00:00</published>
-    <updated>2019-05-28T00:00:00+00:00</updated>
-    <author>
-        <name>Mike Bronner</name>
-    </author>
-    <summary type="html">From time to time your server may get overloaded because PHP is spawning too many workers, or its workers get hung up, and does not make more available. I had a case where this was happening daily on a server, and it was impacting my clients so much that......</summary>
-    <content type="html"><![CDATA[
-        <p>From time to time your server may get overloaded because PHP is spawning too many workers, or its workers get hung up, and does not make more available. I had a case where this was happening daily on a server, and it was impacting my clients so much that their sites were becoming non-responsive.</p>
-<p>To help alleviate the issue while I was troubleshooting, we wrote a script that would automatically restart PHP-FPM if the server load was deemed too high:</p>
-<pre><code class="language-sh">#!/bin/bash
-
-LOAD=`uptime | sed -r 's/^.*average: [0-9.]+, ([0-9.]+),.*$/\1/'`
-ISLOADED=`bc &lt;&lt;&lt; "$LOAD &gt; 3"`
-
-if [ $ISLOADED -eq 1 ]
-then
-        echo "restarting php-fpm at a load of $LOAD"
-        systemctl restart php7.2-fpm 
-fi</code></pre>
-<p>We then added this script to run in cron every minute. With the server stabilizing, I was able to focus on troubleshooting the actual problem, without impacting live websites TOO severely.</p>    ]]></content>
-</entry>
-            <entry>
-    <id>https://genealabs.com/blog/install-imagick-for-php-7-2-on-ubuntu-18-04</id>
-    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/install-imagick-for-php-7-2-on-ubuntu-18-04" />
-    <title>Install Imagick for PHP 7.2 on Ubuntu 18.04</title>
-    <published>2019-05-28T00:00:00+00:00</published>
-    <updated>2019-05-28T00:00:00+00:00</updated>
-    <author>
-        <name>Mike Bronner</name>
-    </author>
-    <summary type="html">I use Imagick for many of my web application projects. It is a robust and powerful image manipulation tool that has some advantages over GD. Unfortunately it doesn&#039;t come installed by default in Homestead.
-
-
-SSH into your Homestead instance.
-Run the......</summary>
-    <content type="html"><![CDATA[
-        <p>I use Imagick for many of my web application projects. It is a robust and powerful image manipulation tool that has some advantages over GD. Unfortunately it doesn't come installed by default in Homestead.</p>
-<h2>Installation</h2>
-<ol>
-<li>SSH into your Homestead instance.</li>
-<li>Run the following command:
-<pre><code class="language-sh">sudo -i
-apt update -y
-apt install php-imagick -y
-echo extension=imagick.so &gt;&gt; /etc/php/7.2/cli/php.ini
-echo extension=imagick.so &gt;&gt; /etc/php/7.2/fpm/php.ini
-service php7.2-fpm reload</code></pre></li>
-</ol>
-<h2>Optional Configuration</h2>
-<p>If you would like to enable processing of PDFs in Imagick (it is now disabled by default), perform the following configuration after running the above command, while still in <code>sudo</code> mode:</p>
-<ol>
-<li>Edit the Iaptmagick configuration file:
-<pre><code class="language-sh">nano /etc/ImageMagick-6/policy.xml</code></pre></li>
-<li>
-<p>Enable PDF editing, change</p>
-<pre><code class="language-xml">&lt;policy domain="coder" rights="none" pattern="PDF" /&gt;</code></pre>
-<p>to</p>
-<pre><code class="language-xml">&lt;policy domain="coder" rights="read|write" pattern="PDF" /&gt;</code></pre>
-</li>
-</ol>
-<p>That should do it!</p>    ]]></content>
 </entry>
             <entry>
     <id>https://genealabs.com/blog/securing-your-entire-home-network-with-encryptme</id>
@@ -622,7 +622,7 @@ VBoxManage: error: Context: "RTEXITCODE handleCreate(HandlerArg *)" at line 94 o
 </ul>
 <h3>Configuring Travis-CI</h3>
 <p>Take a read through Michael’s blog post (and follow his instructions if you like). Once you have an idea of what needs to be done, we will implement those changes, with a slightly different approach, to your project’s <code>.travis.yml</code> file:</p>
-<iframe width="700" height="250" src="/media/40165969ea5ddd72dafbd4203fdeb8e6?postId=3485cb5762e2" data-media-id="40165969ea5ddd72dafbd4203fdeb8e6" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/40165969ea5ddd72dafbd4203fdeb8e6?postId=3485cb5762e2" data-media-id="40165969ea5ddd72dafbd4203fdeb8e6" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/40165969ea5ddd72dafbd4203fdeb8e6?postId=3485cb5762e2" data-media-id="40165969ea5ddd72dafbd4203fdeb8e6" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>Let’s go over what changed:</p>
 <ul>
 <li>Removed the <code>php</code> and <code>env</code> sections.</li>
@@ -637,7 +637,7 @@ VBoxManage: error: Context: "RTEXITCODE handleCreate(HandlerArg *)" at line 94 o
 <li>Install the correct dependencies for that version of Laravel.</li>
 <li>Run PHPUnit.</li>
 </ul>
-<iframe width="700" height="250" src="/media/2ce0287f316cbebd07e4549fd9b7b14e?postId=3485cb5762e2" data-media-id="2ce0287f316cbebd07e4549fd9b7b14e" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/2ce0287f316cbebd07e4549fd9b7b14e?postId=3485cb5762e2" data-media-id="2ce0287f316cbebd07e4549fd9b7b14e" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/2ce0287f316cbebd07e4549fd9b7b14e?postId=3485cb5762e2" data-media-id="2ce0287f316cbebd07e4549fd9b7b14e" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>Let’s take a closer look:</p>
 <ul>
 <li>Make a backup of <code>composer.json</code> so it doesn’t get messed up when we run these scripts locally.</li>
@@ -709,7 +709,7 @@ _Working as a web developer. On his blog he writes about things he learned while
 <li>Remove or comment out your custom port forward rules.</li>
 <li>Rename the TLDs of the site entries from whatever they were at (<code>.dev</code> or <code>.test</code>, etc) to <code>&lt;site&gt;.dev.example.com</code>. Replace <code>&lt;site&gt;</code> with whatever you want to access that site as in Homestead:</li>
 </ul>
-<iframe width="700" height="250" src="/media/db76b110e0e6c3d7a31f9f8eb58827e2?postId=1d3ab956bd5b" data-media-id="db76b110e0e6c3d7a31f9f8eb58827e2" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/db76b110e0e6c3d7a31f9f8eb58827e2?postId=1d3ab956bd5b" data-media-id="db76b110e0e6c3d7a31f9f8eb58827e2" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/db76b110e0e6c3d7a31f9f8eb58827e2?postId=1d3ab956bd5b" data-media-id="db76b110e0e6c3d7a31f9f8eb58827e2" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
 <ul>
 <li>Go ahead and save your <code>Homestead.yaml</code> file and open <code>/etc/hosts</code> for editing.</li>
 <li>Clear out (or comment, for now) all the Homestead domain and IP entries.</li>
@@ -720,19 +720,19 @@ _Working as a web developer. On his blog he writes about things he learned while
 <li>SSH into Homestead: <code>vagrant ssh</code>.</li>
 <li>Edit the Postgres configuration file:</li>
 </ul>
-<iframe width="700" height="250" src="/media/a36064122aef7a86c6143c292279bfde?postId=1d3ab956bd5b" data-media-id="a36064122aef7a86c6143c292279bfde" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/a36064122aef7a86c6143c292279bfde?postId=1d3ab956bd5b" data-media-id="a36064122aef7a86c6143c292279bfde" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/a36064122aef7a86c6143c292279bfde?postId=1d3ab956bd5b" data-media-id="a36064122aef7a86c6143c292279bfde" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
 <ul>
 <li>Add the following line at the end:</li>
 </ul>
-<iframe width="700" height="250" src="/media/af47cd1ca310ac491d4088b935713e1a?postId=1d3ab956bd5b" data-media-id="af47cd1ca310ac491d4088b935713e1a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/af47cd1ca310ac491d4088b935713e1a?postId=1d3ab956bd5b" data-media-id="af47cd1ca310ac491d4088b935713e1a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/af47cd1ca310ac491d4088b935713e1a?postId=1d3ab956bd5b" data-media-id="af47cd1ca310ac491d4088b935713e1a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
 <ul>
 <li>Go ahead and save the Postgres config file, and open the Redis config file for editing:</li>
 </ul>
-<iframe width="700" height="250" src="/media/33a8a42313f72a60b80858ff1a7df1f8?postId=1d3ab956bd5b" data-media-id="33a8a42313f72a60b80858ff1a7df1f8" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/33a8a42313f72a60b80858ff1a7df1f8?postId=1d3ab956bd5b" data-media-id="33a8a42313f72a60b80858ff1a7df1f8" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/33a8a42313f72a60b80858ff1a7df1f8?postId=1d3ab956bd5b" data-media-id="33a8a42313f72a60b80858ff1a7df1f8" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
 <ul>
 <li>Add the following entry after the existing bind entry:</li>
 </ul>
-<iframe width="700" height="250" src="/media/2aa4336aef39786fd68cabfca7efc91a?postId=1d3ab956bd5b" data-media-id="2aa4336aef39786fd68cabfca7efc91a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/2aa4336aef39786fd68cabfca7efc91a?postId=1d3ab956bd5b" data-media-id="2aa4336aef39786fd68cabfca7efc91a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/2aa4336aef39786fd68cabfca7efc91a?postId=1d3ab956bd5b" data-media-id="2aa4336aef39786fd68cabfca7efc91a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>Now we’re cooking! Go ahead and save, exit Homestead, and restart it once more: <code>vagrant reload</code>.</p>
 <blockquote>
 <p>You should now have access to all your dev sites without the need to do port forwarding or maintaining a tedious <code>/etc/hosts</code> file!</p>
@@ -741,114 +741,29 @@ _Working as a web developer. On his blog he writes about things he learned while
 <p><em>I would like to thank my brother, Sebastian, for his help in this and sparking some interesting discussions and thoughts on how to achieve this!</em></p>    ]]></content>
 </entry>
             <entry>
-    <id>https://genealabs.com/blog/upgrading-homestead-to-virtualbox-5</id>
-    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/upgrading-homestead-to-virtualbox-5" />
-    <title>Upgrading Homestead to VirtualBox 5</title>
+    <id>https://genealabs.com/blog/running-phpstorm-on-el-capitan</id>
+    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/running-phpstorm-on-el-capitan" />
+    <title>Running PHPStorm On El Captian</title>
     <published>2017-10-05T00:00:00+00:00</published>
     <updated>2017-10-05T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
-    <summary type="html">
-_Note on conventions used in this article:
+    <summary type="html">The following are some tweaks to get PHPStorm working on OS X 10.11 “El Capitan”.
 
 
-console commands are bold and italic:_ which php5-fpm
-
-
-
-*
-
-
-
-
-As with everything, we need to make a consious decision when we do things. In this case a VirtualBox Guest Additions mismatch has severe......</summary>
+Install SASS gem: sudo gem install sass
+Get the location of the sass command: which sass (in my case it was /usr/local/bin/scss)
+Update the SCSS File Watcher settings......</summary>
     <content type="html"><![CDATA[
-        <hr />
-<p>_Note on conventions used in this article:</p>
-<ul>
-<li>
-<p>console commands are bold and italic:_ <strong><em>which php5-fpm</em></strong></p>
-</li>
-<li>
-<ul>
-<li>*</li>
-</ul>
-</li>
-</ul>
-<h3>Reasoning</h3>
-<p>As with everything, we need to make a consious decision when we do things. In this case a VirtualBox Guest Additions mismatch has severe performance implications and in my case has halted the synchronizing between Vagrant and OS/X.</p>
-<hr />
-<h3>Requirements</h3>
-<ul>
-<li>
-<p>Homestead 2</p>
-</li>
-<li>
-<p>VirtualBox 5 (5.0.0 or greater)</p>
-</li>
-<li>
-<p>Vagrant 1.7.4 (or greater)</p>
-</li>
-<li>
-<ul>
-<li>*</li>
-</ul>
-</li>
-</ul>
-<h3>Implementation</h3>
+        <p>The following are some tweaks to get PHPStorm working on OS X 10.11 “El Capitan”.</p>
+<h3>SCSS File Watcher</h3>
 <ol>
-<li>Let’s start off by halting Homestead:
-<strong><em>homestead halt</em></strong></li>
-<li>And next Vagrant: make sure you download the <a href="http://www.vagrantup.com/downloads.html">latest version</a> (1.7.4 as of this writing) and install as usual.</li>
-<li>Download and install the <a href="https://www.virtualbox.org/wiki/Downloads">latest version of VirtualBox</a> (5.0.0 as of this writing).</li>
-<li>Now for the tricky bit: upgrading VirtualBox Guest Additions. Let’s bring Homestead back up:
-<strong><em>homestead up</em></strong> Notice now how it says the Guest Addition version does not match the VirtualBox version?</li>
-<li>SSH into Homestead:
-<strong><em>homestead ssh</em></strong></li>
-<li>Remove any existing packages that we need to build the Guest Additions. (We will install the new versions next.)
-*<em>_sudo apt-get remove dkms build-essential linux-headers-</em>_**</li>
-<li>Remove any remnants of the old Guest Additions:
-*<em>_sudo rm -rf VBoxGuestAdditions-</em>_**</li>
-<li>Now lets install the new replacements for them:
-<strong><em>sudo apt-get install dkms build-essential linux-headers-$(uname -r)</em></strong></li>
-<li>Great! We have the system prepped, and ready to install the new Guest Additions. In my example I am using the 5.0.0 version, but make sure you use the version that matches your VirtualBox (one command, please excuse the inappropriate line breaks — wish Medium had propper code snippet support, the code blocks they do have break the lists):
-<strong><em>wget</em></strong> <a href="http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions_5.0.0.iso"><strong>_http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions<em>5.0.0.iso</em></strong></a></li>
-<li>Create a mount point for the ISO:
-<strong><em>sudo mkdir /media/VBoxGuestAdditions</em></strong></li>
-<li>And mount the ISO (again, this is a single command on one line):
-<strong>_sudo mount -o loop,ro VBoxGuestAdditions<em>5.0.0.iso /media/VBoxGuestAdditions</em></strong></li>
-<li>Now we can finally install the Guest Additions:
-<strong><em>sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run</em></strong></li>
-<li>Once this completes successfully, we can clean up:
-<strong><em>sudo umount /media/VBoxGuestAdditions
-sudo rm -rf /media/VBoxGuestAdditions
-rm VBoxGuestAdditions</em><em>.iso
-sudo rm -rf /opt/VBoxGuestAdditions-4</em>_</strong></li>
-<li>Exit out of Homestead, and restart it:
-<strong><em>exit
-homestead halt</em></strong></li>
-<li>Let’s bring it back up:
-<strong><em>homestead up</em></strong></li>
+<li>Install SASS gem: <strong>sudo gem install sass</strong></li>
+<li>Get the location of the sass command: <strong>which sass</strong> (in my case it was <strong>/usr/local/bin/scss</strong>)</li>
+<li>Update the SCSS File Watcher settings to point to your sass command:</li>
 </ol>
-<hr />
-<p>And we can rejoice not seeing a Guest Addition version warning! Mission accomplished. Now pat yourself on the back, and get back to work already! 😄</p>
-<hr />
-<h3>Update</h3>
-<p>This process also fixes instances of the following error that may be encountered while running <strong><em>homestead up</em></strong>:</p>
-<pre><code>==&gt; default: Mounting shared folders…
-default: /vagrant =&gt; /Users/mike/.composer/vendor/laravel/homestead
-Failed to mount folders in Linux guest. This is usually because
-the “vboxsf” file system is not available. Please verify that
-the guest additions are properly installed in the guest and
-can work properly. The command attempted was:</code></pre>
-<pre><code>mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3` vagrant /vagrant
-mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` vagrant /vagrant</code></pre>
-<pre><code>The error output from the last command was:</code></pre>
-<pre><code>mount: wrong fs type, bad option, bad superblock on vagrant,
-missing codepage or helper program, or other error</code></pre>
-<pre><code>In some cases useful info is found in syslog — try
-dmesg | tail or so.</code></pre>    ]]></content>
+<p><img src="https://cdn-images-1.medium.com/max/1600/1*KWmZ1kasiiaFPzLPQ1Hkag.png" alt="" /></p>    ]]></content>
 </entry>
             <entry>
     <id>https://genealabs.com/blog/when-should-you-hire-a-translator</id>
@@ -1032,29 +947,114 @@ A professional audience (legal, medical, etc.) will most likely require......</s
 <p>Hopefully this has proven to be useful. We would love to hear your comments, experiences, and feedback in the comments below.</p>    ]]></content>
 </entry>
             <entry>
-    <id>https://genealabs.com/blog/running-phpstorm-on-el-capitan</id>
-    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/running-phpstorm-on-el-capitan" />
-    <title>Running PHPStorm On El Captian</title>
+    <id>https://genealabs.com/blog/upgrading-homestead-to-virtualbox-5</id>
+    <link type="text/html" rel="alternate" href="https://genealabs.com/blog/upgrading-homestead-to-virtualbox-5" />
+    <title>Upgrading Homestead to VirtualBox 5</title>
     <published>2017-10-05T00:00:00+00:00</published>
     <updated>2017-10-05T00:00:00+00:00</updated>
     <author>
         <name>Mike Bronner</name>
     </author>
-    <summary type="html">The following are some tweaks to get PHPStorm working on OS X 10.11 “El Capitan”.
+    <summary type="html">
+_Note on conventions used in this article:
 
 
-Install SASS gem: sudo gem install sass
-Get the location of the sass command: which sass (in my case it was /usr/local/bin/scss)
-Update the SCSS File Watcher settings......</summary>
+console commands are bold and italic:_ which php5-fpm
+
+
+
+*
+
+
+
+
+As with everything, we need to make a consious decision when we do things. In this case a VirtualBox Guest Additions mismatch has severe......</summary>
     <content type="html"><![CDATA[
-        <p>The following are some tweaks to get PHPStorm working on OS X 10.11 “El Capitan”.</p>
-<h3>SCSS File Watcher</h3>
+        <hr />
+<p>_Note on conventions used in this article:</p>
+<ul>
+<li>
+<p>console commands are bold and italic:_ <strong><em>which php5-fpm</em></strong></p>
+</li>
+<li>
+<ul>
+<li>*</li>
+</ul>
+</li>
+</ul>
+<h3>Reasoning</h3>
+<p>As with everything, we need to make a consious decision when we do things. In this case a VirtualBox Guest Additions mismatch has severe performance implications and in my case has halted the synchronizing between Vagrant and OS/X.</p>
+<hr />
+<h3>Requirements</h3>
+<ul>
+<li>
+<p>Homestead 2</p>
+</li>
+<li>
+<p>VirtualBox 5 (5.0.0 or greater)</p>
+</li>
+<li>
+<p>Vagrant 1.7.4 (or greater)</p>
+</li>
+<li>
+<ul>
+<li>*</li>
+</ul>
+</li>
+</ul>
+<h3>Implementation</h3>
 <ol>
-<li>Install SASS gem: <strong>sudo gem install sass</strong></li>
-<li>Get the location of the sass command: <strong>which sass</strong> (in my case it was <strong>/usr/local/bin/scss</strong>)</li>
-<li>Update the SCSS File Watcher settings to point to your sass command:</li>
+<li>Let’s start off by halting Homestead:
+<strong><em>homestead halt</em></strong></li>
+<li>And next Vagrant: make sure you download the <a href="http://www.vagrantup.com/downloads.html">latest version</a> (1.7.4 as of this writing) and install as usual.</li>
+<li>Download and install the <a href="https://www.virtualbox.org/wiki/Downloads">latest version of VirtualBox</a> (5.0.0 as of this writing).</li>
+<li>Now for the tricky bit: upgrading VirtualBox Guest Additions. Let’s bring Homestead back up:
+<strong><em>homestead up</em></strong> Notice now how it says the Guest Addition version does not match the VirtualBox version?</li>
+<li>SSH into Homestead:
+<strong><em>homestead ssh</em></strong></li>
+<li>Remove any existing packages that we need to build the Guest Additions. (We will install the new versions next.)
+*<em>_sudo apt-get remove dkms build-essential linux-headers-</em>_**</li>
+<li>Remove any remnants of the old Guest Additions:
+*<em>_sudo rm -rf VBoxGuestAdditions-</em>_**</li>
+<li>Now lets install the new replacements for them:
+<strong><em>sudo apt-get install dkms build-essential linux-headers-$(uname -r)</em></strong></li>
+<li>Great! We have the system prepped, and ready to install the new Guest Additions. In my example I am using the 5.0.0 version, but make sure you use the version that matches your VirtualBox (one command, please excuse the inappropriate line breaks — wish Medium had propper code snippet support, the code blocks they do have break the lists):
+<strong><em>wget</em></strong> <a href="http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions_5.0.0.iso"><strong>_http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions<em>5.0.0.iso</em></strong></a></li>
+<li>Create a mount point for the ISO:
+<strong><em>sudo mkdir /media/VBoxGuestAdditions</em></strong></li>
+<li>And mount the ISO (again, this is a single command on one line):
+<strong>_sudo mount -o loop,ro VBoxGuestAdditions<em>5.0.0.iso /media/VBoxGuestAdditions</em></strong></li>
+<li>Now we can finally install the Guest Additions:
+<strong><em>sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run</em></strong></li>
+<li>Once this completes successfully, we can clean up:
+<strong><em>sudo umount /media/VBoxGuestAdditions
+sudo rm -rf /media/VBoxGuestAdditions
+rm VBoxGuestAdditions</em><em>.iso
+sudo rm -rf /opt/VBoxGuestAdditions-4</em>_</strong></li>
+<li>Exit out of Homestead, and restart it:
+<strong><em>exit
+homestead halt</em></strong></li>
+<li>Let’s bring it back up:
+<strong><em>homestead up</em></strong></li>
 </ol>
-<p><img src="https://cdn-images-1.medium.com/max/1600/1*KWmZ1kasiiaFPzLPQ1Hkag.png" alt="" /></p>    ]]></content>
+<hr />
+<p>And we can rejoice not seeing a Guest Addition version warning! Mission accomplished. Now pat yourself on the back, and get back to work already! 😄</p>
+<hr />
+<h3>Update</h3>
+<p>This process also fixes instances of the following error that may be encountered while running <strong><em>homestead up</em></strong>:</p>
+<pre><code>==&gt; default: Mounting shared folders…
+default: /vagrant =&gt; /Users/mike/.composer/vendor/laravel/homestead
+Failed to mount folders in Linux guest. This is usually because
+the “vboxsf” file system is not available. Please verify that
+the guest additions are properly installed in the guest and
+can work properly. The command attempted was:</code></pre>
+<pre><code>mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3` vagrant /vagrant
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` vagrant /vagrant</code></pre>
+<pre><code>The error output from the last command was:</code></pre>
+<pre><code>mount: wrong fs type, bad option, bad superblock on vagrant,
+missing codepage or helper program, or other error</code></pre>
+<pre><code>In some cases useful info is found in syslog — try
+dmesg | tail or so.</code></pre>    ]]></content>
 </entry>
             <entry>
     <id>https://genealabs.com/blog/creating-packages-with-laravel-5-and-studio</id>
@@ -1288,18 +1288,18 @@ Laravel Homestead has brought virtual machines for web development to the mainst
 <li>Open Terminal.</li>
 <li>Let’s head to your home directory and install PHP 5.6 (the latest version as of now):</li>
 </ol>
-<iframe width="700" height="250" src="/media/b4ddfd87a71a24e4477a792b9701ce34?postId=e2fc8d05251f" data-media-id="b4ddfd87a71a24e4477a792b9701ce34" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/b4ddfd87a71a24e4477a792b9701ce34?postId=e2fc8d05251f" data-media-id="b4ddfd87a71a24e4477a792b9701ce34" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/b4ddfd87a71a24e4477a792b9701ce34?postId=e2fc8d05251f" data-media-id="b4ddfd87a71a24e4477a792b9701ce34" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>3. If you are using Oh-My-ZSH:</p>
-<iframe width="700" height="250" src="/media/39f2610b56c46a5414d390a09d64241f?postId=e2fc8d05251f" data-media-id="39f2610b56c46a5414d390a09d64241f" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/39f2610b56c46a5414d390a09d64241f?postId=e2fc8d05251f" data-media-id="39f2610b56c46a5414d390a09d64241f" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/39f2610b56c46a5414d390a09d64241f?postId=e2fc8d05251f" data-media-id="39f2610b56c46a5414d390a09d64241f" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>And prepend “/usr/local/php5/bin:” to the “export PATH” string, like so:</p>
-<iframe width="700" height="250" src="/media/85b3252a288771b936be53e4452daffc?postId=e2fc8d05251f" data-media-id="85b3252a288771b936be53e4452daffc" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/85b3252a288771b936be53e4452daffc?postId=e2fc8d05251f" data-media-id="85b3252a288771b936be53e4452daffc" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/85b3252a288771b936be53e4452daffc?postId=e2fc8d05251f" data-media-id="85b3252a288771b936be53e4452daffc" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>4. If you are using Bash (default):</p>
-<iframe width="700" height="250" src="/media/de66c4484e4c75027aee39ac5c4c6534?postId=e2fc8d05251f" data-media-id="de66c4484e4c75027aee39ac5c4c6534" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/de66c4484e4c75027aee39ac5c4c6534?postId=e2fc8d05251f" data-media-id="de66c4484e4c75027aee39ac5c4c6534" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/de66c4484e4c75027aee39ac5c4c6534?postId=e2fc8d05251f" data-media-id="de66c4484e4c75027aee39ac5c4c6534" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>And add the following line at the end (if you already have entries there):</p>
-<iframe width="700" height="250" src="/media/fde537d04e9fee3a2ead07128e8e4e7c?postId=e2fc8d05251f" data-media-id="fde537d04e9fee3a2ead07128e8e4e7c" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/fde537d04e9fee3a2ead07128e8e4e7c?postId=e2fc8d05251f" data-media-id="fde537d04e9fee3a2ead07128e8e4e7c" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/fde537d04e9fee3a2ead07128e8e4e7c?postId=e2fc8d05251f" data-media-id="fde537d04e9fee3a2ead07128e8e4e7c" allowfullscreen="" frameborder="0"></iframe></iframe>
 <p>5. Quit and restart Terminal.</p>
 <p>6. Go to one of your Laravel projects in your Homestead-shared folder (don’t SSH into Homestead though), and run:</p>
-<iframe width="700" height="250" src="/media/3b58e17ab0bc15ce71751e6407712d85?postId=e2fc8d05251f" data-media-id="3b58e17ab0bc15ce71751e6407712d85" allowfullscreen="" frameborder="0"></iframe>
+<iframe width="700" height="250" src="/media/3b58e17ab0bc15ce71751e6407712d85?postId=e2fc8d05251f" data-media-id="3b58e17ab0bc15ce71751e6407712d85" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/3b58e17ab0bc15ce71751e6407712d85?postId=e2fc8d05251f" data-media-id="3b58e17ab0bc15ce71751e6407712d85" allowfullscreen="" frameborder="0"></iframe></iframe>
 <hr />
 <h3>The Cake</h3>
 <p>If all went well, you should be greeted by the following output (you will most likely have a newer version of Laravel installed):</p>
@@ -1308,7 +1308,19 @@ Laravel Homestead has brought virtual machines for web development to the mainst
 <h3>And The Icing</h3>
 <p>We still have the one command that won’t play nice, though: “<strong>php artisan migrate</strong>”. There’s a fix for that too:</p>
 <p>In your project, edit config/database.php, changing</p>
-<iframe width="700" height="250" src="/media/a7640fb44de2c2f3628226dd3dc399b9?postId=e2fc8d05251f" data-media-id="a7640fb44de2c2f3628226dd3dc399b9" allowfullscreen="" frameborder="0"></iframe>    ]]></content>
+<iframe width="700" height="250" src="/media/a7640fb44de2c2f3628226dd3dc399b9?postId=e2fc8d05251f" data-media-id="a7640fb44de2c2f3628226dd3dc399b9" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/a7640fb44de2c2f3628226dd3dc399b9?postId=e2fc8d05251f" data-media-id="a7640fb44de2c2f3628226dd3dc399b9" allowfullscreen="" frameborder="0"></iframe></iframe>Original Database Settings
+
+To:
+
+<iframe width="700" height="250" src="/media/9e717d7ceda176fc15e8f21376af7829?postId=e2fc8d05251f" data-media-id="9e717d7ceda176fc15e8f21376af7829" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/9e717d7ceda176fc15e8f21376af7829?postId=e2fc8d05251f" data-media-id="9e717d7ceda176fc15e8f21376af7829" allowfullscreen="" frameborder="0"></iframe></iframe>New and improved database settings!
+
+* * *
+
+### Sources
+
+*   [https://php-osx.liip.ch](https://php-osx.liip.ch/)
+*   [https://jacurtis.com/easily-install-mcrypt-php-mavericks-yosemite/](https://jacurtis.com/easily-install-mcrypt-php-mavericks-yosemite/)
+*   [https://laracasts.com/discuss/channels/general-discussion/homestead-db-connection-problem](https://laracasts.com/discuss/channels/general-discussion/homestead-db-connection-problem)    ]]></content>
 </entry>
             <entry>
     <id>https://genealabs.com/blog/agnoster-terminal-theme-on-osx</id>
@@ -1335,6 +1347,63 @@ The Agnoster ZSH theme is getting a lot of wind in its sails these days, and Mir
 <li><strong>ZSH</strong> (preinstalled)</li>
 <li><strong>Oh-My-Zsh</strong> Refer to the <a href="https://github.com/robbyrussell/oh-my-zsh">full installation guide</a> for more details.</li>
 </ul>
-<iframe width="700" height="250" src="/media/a7e4cfa0a4c9d468b39c67eca36a631a?postId=391d60effaf6" data-media-id="a7e4cfa0a4c9d468b39c67eca36a631a" allowfullscreen="" frameborder="0"></iframe>    ]]></content>
+<iframe width="700" height="250" src="/media/a7e4cfa0a4c9d468b39c67eca36a631a?postId=391d60effaf6" data-media-id="a7e4cfa0a4c9d468b39c67eca36a631a" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/a7e4cfa0a4c9d468b39c67eca36a631a?postId=391d60effaf6" data-media-id="a7e4cfa0a4c9d468b39c67eca36a631a" allowfullscreen="" frameborder="0"></iframe></iframe>Install Oh-My-ZSH
+
+*   **Ubuntu Mono Derivative Powerline Font** [Download Fonts](https://github.com/powerline/fonts/archive/master.zip)
+
+* * *
+
+### Installation
+
+Now that we have identified our pre-requisites, let’s get started:
+
+1.  Download the font archive, and unzip it. Go to _fonts-master/UbuntuMono/_ and install each of the four TTFs: simply double-click and let Font Book install them for you.
+2.  Open Terminal, then navigate to _Terminal Preferences &gt; Profiles &gt; Font_ and click the Change button.
+3.  Select _Ubuntu Mono derivative Powerline_ and set the font size to your liking.
+4.  Close preferences, and quit Terminal.
+5.  If you haven’t already done so, install Oh-My-ZSH.
+6.  Now let’s configure your ZSH theme settings:
+
+<iframe width="700" height="250" src="/media/39f2610b56c46a5414d390a09d64241f?postId=391d60effaf6" data-media-id="39f2610b56c46a5414d390a09d64241f" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/39f2610b56c46a5414d390a09d64241f?postId=391d60effaf6" data-media-id="39f2610b56c46a5414d390a09d64241f" allowfullscreen="" frameborder="0"></iframe></iframe>Edit the ZSH Configuration
+
+8\. There we will update our theme. You can find “ZSH_THEME=” toward the top of the file:
+
+<iframe width="700" height="250" src="/media/3364c8937df411694a97f32ec8695a04?postId=391d60effaf6" data-media-id="3364c8937df411694a97f32ec8695a04" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/3364c8937df411694a97f32ec8695a04?postId=391d60effaf6" data-media-id="3364c8937df411694a97f32ec8695a04" allowfullscreen="" frameborder="0"></iframe></iframe>Set the ZSH Theme
+
+9\. Save you changes (CTRL-X if you’re using Nano, continue editing forever if you’re using Vi or Vim).
+
+10\. Quit and restart Terminal.
+
+11\. You should now see your new theme in place.
+
+* * *
+
+### Bonus
+
+#### Custom Colors
+
+You can customize your color preferences as desired in _Terminal Preferences &gt; Profiles &gt; ANSI Colors_.
+
+#### Agnoster in PHPStorm Terminal
+
+So now that we have the OS/X Terminal configured, you’re thinking that’s all well and good, but doesn’t really help if you’re using PHPStorm’s integrated Terminal window. Actually, now that you look at it, it only seems to have made things worse.
+
+Never fear, the fix for that is here!
+
+1.  Open the Terminal window and position it in the IDE to you liking.
+2.  Open PHPStorm Preferences (CDM-, or PHPStorm &gt; Preferences … menu item).
+3.  Go to Editor &gt; Colors &amp; Fonts &gt; Console Colors. Change Console standard output &gt; Foreground to White. Change Console background &gt; Background to Black.
+4.  Go to Editor &gt; Colors &amp; Fonts &gt; Console Font. Change Primary Font to Ubuntu Mono Derivative Powerline, Size 16, Line spacing 1.4.
+5.  Click OK to close the preferences window.
+6.  Click the red X in the Terminal frame to kill the current terminal, then click on the Terminal tab again to open a fresh terminal window with the new settings.
+7.  If you have similar settings to mine, it should look something like the screenshot below.
+
+![](https://cdn-images-1.medium.com/max/1600/1*0qmBJfm1SA0-g7yZonQLlA.jpeg)Agnoster Theme inside PHPStorm Terminal
+
+* * *
+
+### Feedback
+
+Would love to hear your feedback — share your thoughts, problems, or improvements in the comments.    ]]></content>
 </entry>
     </feed>

@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="Providing documentation for all our open-source packages.">
+        <meta name="description" content="We help improve your business by increasing efficiency using bespoke software solutions.">
 
         <meta property="og:site_name" content="GeneaLabs"/>
         <meta property="og:title" content="GeneaLabs"/>
-        <meta property="og:description" content="Providing documentation for all our open-source packages."/>
+        <meta property="og:description" content="We help improve your business by increasing efficiency using bespoke software solutions."/>
         <meta property="og:url" content="https://genealabs.com/packages"/>
         <meta property="og:image" content="/assets/images/logo.png"/>
         <meta property="og:type" content="website"/>
@@ -26,14 +26,20 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=582617a21302dc390b60">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=133a50b51d3f10feaad6">
 
         
-            </head>
+            <style>
+        .widget-wrapper {
+            position: relative;
+            top: 6px;
+        }
+    </style>
+    </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-900 leading-normal font-sans">
         <div id="app">
-            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+            <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
                 <div class="container flex items-center mx-auto px-4 lg:px-8">
                     <div class="flex items-center">
                         <a href="/" title="GeneaLabs home" class="inline-flex items-center">
@@ -105,23 +111,18 @@
     </p>
     <p class="md:text-xl lg:text-2xl">
         Please consider
-        <a
-            class="inline-block rounded border border-mono-300 text-mono-700 px-3 font-normal lg:text-lg"
-            href="https://github.com/sponsors/mikebronner"
-            target="_blank"
-        >
-            <svg
-                aria-hidden="true"
-                focusable="false"
-                class="icon inline-block fill-current text-pink-500"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
+        <span class="widget-wrapper">
+            <a
+                class="github-button"
+                href="https://github.com/sponsors/mikebronner"
+                data-icon="octicon-heart"
+                data-size="large"
+                aria-label="Sponsor @mikebronner  on GitHub"
             >
-                <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
-            </svg>
-            supporting
-        </a>
+                supporting
+            </a>
+        </span>
+        
         their continued development, especially if you use our packages for work
         or deploy them in production. Your continued support means a lot, and
         will to ensure that we can keep on developing open-source software.
@@ -1059,7 +1060,8 @@
 
         <script src="/assets/build/js/main.js?id=fd7d4b2a6e6bff7b6012"></script>
 
-        <script>
+            <script async defer src="https://buttons.github.io/buttons.js"></script>
+<script>
     const navMenu = {
         toggle() {
             let menu = document.getElementById('js-nav-menu');
@@ -1080,7 +1082,7 @@
     }
 </script>
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+        <footer class="bg-white text-center text-sm py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
                     &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> 2019.

@@ -30,14 +30,14 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=582617a21302dc390b60">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=133a50b51d3f10feaad6">
 
         
             </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-900 leading-normal font-sans">
         <div id="app">
-            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+            <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
                 <div class="container flex items-center mx-auto px-4 lg:px-8">
                     <div class="flex items-center">
                         <a href="/" title="GeneaLabs home" class="inline-flex items-center">
@@ -141,7 +141,64 @@
 <li><strong>ZSH</strong> (preinstalled)</li>
 <li><strong>Oh-My-Zsh</strong> Refer to the <a href="https://github.com/robbyrussell/oh-my-zsh">full installation guide</a> for more details.</li>
 </ul>
-<iframe width="700" height="250" src="/media/a7e4cfa0a4c9d468b39c67eca36a631a?postId=391d60effaf6" data-media-id="a7e4cfa0a4c9d468b39c67eca36a631a" allowfullscreen="" frameborder="0"></iframe>        </div>
+<iframe width="700" height="250" src="/media/a7e4cfa0a4c9d468b39c67eca36a631a?postId=391d60effaf6" data-media-id="a7e4cfa0a4c9d468b39c67eca36a631a" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/a7e4cfa0a4c9d468b39c67eca36a631a?postId=391d60effaf6" data-media-id="a7e4cfa0a4c9d468b39c67eca36a631a" allowfullscreen="" frameborder="0"></iframe></iframe>Install Oh-My-ZSH
+
+*   **Ubuntu Mono Derivative Powerline Font** [Download Fonts](https://github.com/powerline/fonts/archive/master.zip)
+
+* * *
+
+### Installation
+
+Now that we have identified our pre-requisites, let’s get started:
+
+1.  Download the font archive, and unzip it. Go to _fonts-master/UbuntuMono/_ and install each of the four TTFs: simply double-click and let Font Book install them for you.
+2.  Open Terminal, then navigate to _Terminal Preferences &gt; Profiles &gt; Font_ and click the Change button.
+3.  Select _Ubuntu Mono derivative Powerline_ and set the font size to your liking.
+4.  Close preferences, and quit Terminal.
+5.  If you haven’t already done so, install Oh-My-ZSH.
+6.  Now let’s configure your ZSH theme settings:
+
+<iframe width="700" height="250" src="/media/39f2610b56c46a5414d390a09d64241f?postId=391d60effaf6" data-media-id="39f2610b56c46a5414d390a09d64241f" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/39f2610b56c46a5414d390a09d64241f?postId=391d60effaf6" data-media-id="39f2610b56c46a5414d390a09d64241f" allowfullscreen="" frameborder="0"></iframe></iframe>Edit the ZSH Configuration
+
+8\. There we will update our theme. You can find “ZSH_THEME=” toward the top of the file:
+
+<iframe width="700" height="250" src="/media/3364c8937df411694a97f32ec8695a04?postId=391d60effaf6" data-media-id="3364c8937df411694a97f32ec8695a04" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/3364c8937df411694a97f32ec8695a04?postId=391d60effaf6" data-media-id="3364c8937df411694a97f32ec8695a04" allowfullscreen="" frameborder="0"></iframe></iframe>Set the ZSH Theme
+
+9\. Save you changes (CTRL-X if you’re using Nano, continue editing forever if you’re using Vi or Vim).
+
+10\. Quit and restart Terminal.
+
+11\. You should now see your new theme in place.
+
+* * *
+
+### Bonus
+
+#### Custom Colors
+
+You can customize your color preferences as desired in _Terminal Preferences &gt; Profiles &gt; ANSI Colors_.
+
+#### Agnoster in PHPStorm Terminal
+
+So now that we have the OS/X Terminal configured, you’re thinking that’s all well and good, but doesn’t really help if you’re using PHPStorm’s integrated Terminal window. Actually, now that you look at it, it only seems to have made things worse.
+
+Never fear, the fix for that is here!
+
+1.  Open the Terminal window and position it in the IDE to you liking.
+2.  Open PHPStorm Preferences (CDM-, or PHPStorm &gt; Preferences … menu item).
+3.  Go to Editor &gt; Colors &amp; Fonts &gt; Console Colors. Change Console standard output &gt; Foreground to White. Change Console background &gt; Background to Black.
+4.  Go to Editor &gt; Colors &amp; Fonts &gt; Console Font. Change Primary Font to Ubuntu Mono Derivative Powerline, Size 16, Line spacing 1.4.
+5.  Click OK to close the preferences window.
+6.  Click the red X in the Terminal frame to kill the current terminal, then click on the Terminal tab again to open a fresh terminal window with the new settings.
+7.  If you have similar settings to mine, it should look something like the screenshot below.
+
+![](https://cdn-images-1.medium.com/max/1600/1*0qmBJfm1SA0-g7yZonQLlA.jpeg)Agnoster Theme inside PHPStorm Terminal
+
+* * *
+
+### Feedback
+
+Would love to hear your feedback — share your thoughts, problems, or improvements in the comments.        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -200,7 +257,7 @@
     }
 </script>
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+        <footer class="bg-white text-center text-sm py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
                     &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> 2019.
