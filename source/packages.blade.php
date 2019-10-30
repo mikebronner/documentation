@@ -1,5 +1,18 @@
 @extends('_layouts.docs')
 
+@push ("styles")
+    <style>
+        .widget-wrapper {
+            position: relative;
+            top: 6px;
+        }
+    </style>
+@endpush
+
+@push ("scripts")
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+@endpush
+
 @section('body')
 <section class="container mx-auto px-6 py-10 md:py-12">
 
@@ -12,7 +25,18 @@
     </p>
     <p class="md:text-xl lg:text-2xl">
         Please consider
-        <a
+        <span class="widget-wrapper">
+            <a
+                class="github-button"
+                href="https://github.com/sponsors/mikebronner"
+                data-icon="octicon-heart"
+                data-size="large"
+                aria-label="Sponsor @mikebronner on GitHub"
+            >
+                supporting
+            </a>
+        </span>
+        {{-- <a
             class="inline-block rounded border border-mono-300 text-mono-700 px-3 font-normal lg:text-lg"
             href="https://github.com/sponsors/mikebronner"
             target="_blank"
@@ -28,7 +52,7 @@
                 <path d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path>
             </svg>
             supporting
-        </a>
+        </a> --}}
         their continued development, especially if you use our packages for work
         or deploy them in production. Your continued support means a lot, and
         will to ensure that we can keep on developing open-source software.

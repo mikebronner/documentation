@@ -1,208 +1,29 @@
 body {
-  section#intro {
-    background-image: url(/assets/images/computer_background.jpg);
-    font-size: 66px;
-    color: white;
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+  section.intro {
+    position: relative;
+    z-index: 1;
   }
 
-  section#intro.translation-service {
-    background-image: url(/assets/images/translation_background.jpg);
+  section.intro .background {
+    @apply absolute inset-0;
+
+    opacity: .1;
+    z-index: -1;
+    background-size: cover !important;
+    background: url("/assets/images/leaf.jpg");
   }
 
+  section.client-fit {
+    position: relative;
+    z-index: 1;
+  }
+
+  section.client-fit .background {
+    @apply absolute inset-0;
+
+    opacity: .3;
+    z-index: -1;
+    background-size: cover !important;
+    background: url("/assets/images/triangles.png");
+  }
 }
-
-// body {
-//   position: relative; }
-
-// .center-vertical {
-//   position: relative;
-//   pointer-events: none;
-//   display: table;
-//           align-items: center;
-//           justify-content: center;
-//   height: 100%;
-//   width: 100%;
-//   table-layout: fixed; }
-
-// .center-vertical .wrapper {
-//   pointer-events: none;
-//   position: relative;
-//   display: table-cell;
-//   vertical-align: middle; }
-
-// .center-vertical .wrapper .box {
-//   pointer-events: all;
-//   position: relative;
-//   display: inline-block;
-//           border-radius: 7px;
-//           box-shadow: 0 3px 7px black;
-//   overflow: hidden; }
-
-// .modal .center-vertical .wrapper .caption {
-//   position: absolute;
-//   display: block;
-//   bottom: 0;
-//   background-color: rgba(0, 0, 0, 0.7);
-//   color: white;
-//   font-weight: bold;
-//   right: 0;
-//   left: 0;
-//   padding: 10px; }
-
-// div.thumbnail[data-toggle=modal] {
-//   position: relative;
-//   cursor: pointer;
-//   height: 200px;
-//           background-size: cover;
-//   background-position: top center;
-//           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-//   overflow: hidden; }
-
-// div.thumbnail[data-toggle=modal] .caption {
-//   position: absolute;
-//   display: block;
-//   margin: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   background-color: rgba(0, 0, 0, 0.67);
-//   color: white;
-//   font-weight: bold; }
-
-// .social-icons a {
-//   font-size: 24px;
-//   text-decoration: none;
-//   margin-bottom: 25px; }
-
-// nav {
-//           box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
-//           border-radius: 0;
-//   background-color: rgba(0, 0, 0, 0.7) !important;
-//   border-bottom: none; }
-
-// nav a {
-//   color: white;
-//   font-weight: bold; }
-
-// .navbar-brand {
-//   padding: 5px 15px; }
-
-// .navbar-brand h1 {
-//   margin: 0;
-//   padding: 0;
-//   line-height: 40px;
-//   font-size: 35px;
-//   font-weight: bold;
-//   display: inline-block;
-//   vertical-align: baseline; }
-
-// .navbar-brand h1 a:hover {
-//   color: white; }
-
-// .navbar-brand #tagline {
-//   display: inline-block;
-//   font-size: 12px;
-//   margin-left: 5px; }
-
-// ul.contact-info {
-//   list-style: none;
-//   margin: 0;
-//   padding: 0 0 0 15px;
-//   font-size: 18px;
-//   line-height: 36px; }
-
-// .shadow {
-//   position: relative;
-//           box-shadow: 0 5px 10px #000000;
-//   margin-bottom: 300px;
-//   z-index: 1; }
-//   .shadow .tab {
-//     position: absolute;
-//     margin: 0 auto;
-//     top: -71px;
-//     left: 50%;
-//     margin-left: -58px;
-//     width: 116px;
-//     height: 86px;
-//     background-image: url("/assets/images/more_tab.png");
-//     background-repeat: no-repeat;
-//     cursor: pointer; }
-
-// footer.contact {
-//   height: 300px;
-//   position: fixed;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   z-index: 0;
-//   background-image: url(/assets/cardboard_texture.png); }
-//   footer.contact h3 {
-//     text-shadow: #ffcd82 1px 1px 0px;
-//     color: #5a3200; }
-
-// section#services, section#portfolio, section#laravel {
-//   position: relative;
-//   background-image: url("/assets/images/paper_texture.jpg");
-//   padding-top: 25px;
-//   padding-bottom: 25px; }
-//   section#services h2, section#services h3, section#portfolio h2, section#portfolio h3, section#laravel h2, section#laravel h3 {
-//     text-shadow: white 1px 1px 0px;
-//     color: rgba(0, 0, 0, 0.8); }
-
-// section#intro {
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   z-index: -2;
-//   overflow: hidden; }
-//   section#intro .regular, section#intro .blurred {
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     right: 0;
-//     bottom: 0;
-//     background-repeat: no-repeat;
-//     background-position: center;
-//             background-size: cover;
-//             transform: translate3d(0, 0, 0);
-//     z-index: -3; }
-//   section#intro .regular {
-//     background-image: url(/assets/images/computer_background.jpg); }
-// section#intro .regular.translation-service {
-//   background-image: url(/assets/images/translation_background.jpg); }
-
-//   section#intro .blurred {
-//     background-color: #000000; }
-//   section#intro .container {
-//     text-align: center;
-//     position: relative;
-//     height: 100%; }
-//   section#intro .intro {
-//     font-size: 66px;
-//     color: white;
-//     text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-//     z-index: 0;
-//     position: absolute;
-//     left: 0;
-//     right: 0; }
-
-// @media screen and (max-width: 768px) {
-//   .shadow {
-//     margin-bottom: 510px; }
-//   footer.contact {
-//     height: 500px; }
-//   p.intro {
-//     font-size: 32px !important; } }
-
-// .page-header {
-//   border-bottom: 1px solid #666;
-//           box-shadow: 0 1px 1px white; }
-
-// footer.contact hr {
-//   border-top: 1px solid #5a3200;
-//           box-shadow: 0 1px 1px #ffcd82; }
-
-// blockquote {
-//   border-color: #41c84b;
-// }

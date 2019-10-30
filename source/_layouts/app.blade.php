@@ -43,7 +43,7 @@
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-900 leading-normal font-sans">
         <div id="app">
-            <header class="flex items-center shadow bg-white border-b h-24 mb-8 py-4" role="banner">
+            <header class="flex items-center shadow bg-white border-b h-24 py-4" role="banner">
                 <div class="container flex items-center mx-auto px-4 lg:px-8">
                     <div class="flex items-center">
                         <a href="/" title="{{ $page->siteName }} home" class="inline-flex items-center">
@@ -69,7 +69,7 @@
 
         @stack('scripts')
 
-        <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
+        <footer class="bg-white text-center text-sm py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
                     &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> {{ date('Y') }}.

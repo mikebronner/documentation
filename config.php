@@ -4,7 +4,7 @@ return [
     'baseUrl' => 'http://localhost:3000',
     'production' => false,
     'siteName' => "GeneaLabs",
-    'siteDescription' => 'Providing documentation for all our open-source packages.',
+    'siteDescription' => "We help improve your business by increasing efficiency using bespoke software solutions.",
     'siteAuthor' => 'Mike Bronner',
     // Algolia DocSearch credentials
     'docsearchApiKey' => '',
@@ -58,12 +58,18 @@ return [
             'author' => 'Mike Bronner', // Default author, if not provided in a post
             'sort' => '-date',
             'path' => 'blog/{filename}',
+            "filter" => function ($item) {
+                return $item->published
+                    ?? true;
+            },
         ],
         'categories' => [
             'path' => '/blog/categories/{filename}',
             'posts' => function ($page, $allPosts) {
                 return $allPosts->filter(function ($post) use ($page) {
-                    return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
+                    return $post->categories
+                        ? in_array($page->getFilename(), $post->categories, true)
+                        : false;
                 });
             },
         ],
