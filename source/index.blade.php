@@ -240,7 +240,7 @@
                     <div>
                         <h4 class="text-purple-900 mb-2">Build & Forget</h4>
                         <p class="mt-0">
-                            When completing a project, we won't leave you handing.
+                            We won't leave you after completing a project.
                             Instead, we feel we are partners in
                             your project. Its success is as vital to us as it is
                             to you. It is a priority for us to maintain your

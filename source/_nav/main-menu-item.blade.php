@@ -1,13 +1,13 @@
     @if ($url = is_string($item) ? $item : $item->url)
         {{-- Menu item with URL--}}
         <a href="{{ $page->url($url) }}"
-            class="{{ 'lvl' . $level }} {{ $page->isActiveParent($item) ? 'lvl' . $level . '-active' : '' }} {{ $page->isActive($url) ? 'active font-semibold text-blue' : '' }} ml-6 "
+            class="text-green-600 hover:text-green-900 {{ 'lvl' . $level }} {{ $page->isActiveParent($item) ? 'lvl' . $level . '-active underline' : '' }} {{ $page->isActive($url) ? 'active underline font-semibold ' : '' }} ml-6 "
         >
             {{ $label }}
         </a>
     @else
         {{-- Menu item without URL--}}
-        <p class="nav-menu__item text-gray-700">{{ $label }}</p>
+        <p class="nav-menu__item text-mono-600">{{ $label }}</p>
     @endif
 
     @if (! is_string($item) && $item->children)

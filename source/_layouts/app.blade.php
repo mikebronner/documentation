@@ -72,7 +72,13 @@
         <footer class="bg-white text-center text-sm py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-reset">
                 <li class="md:mr-2">
-                    &copy; <a href="https://genealabs.com" title="GeneaLabs website">GeneaLabs</a> {{ date('Y') }}.
+                    &copy;
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com"
+                        title="GeneaLabs website"
+                    >GeneaLabs</a>
+                    {{ date('Y') }}.
                 </li>
             </ul>
         </footer>
