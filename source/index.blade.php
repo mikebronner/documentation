@@ -155,7 +155,7 @@
                         you, allowing you to focus on running your business.
                     </p>
                     <p class="text-green-800">
-                        Further, we deploy your application on the best
+                        Furthermore, we deploy your application on the best
                         infrastructure for the job.
                     </p>
                 </div>
@@ -214,9 +214,9 @@
                         <h4 class="text-purple-900 mb-2">Full-Service Offerings</h4>
                         <p class="mt-0">
                             We take care of all technical aspects. You are
-                            expert in your field, you should focus on that. We
+                            the expert in your field, you should focus on that. We
                             are experts in taking care of all technical aspects
-                            of your project. We are your development team, only
+                            of your project. We are your development team and just
                             an email or phone call away.
                         </p>
                     </div>
@@ -240,34 +240,36 @@
                     <div>
                         <h4 class="text-purple-900 mb-2">Build & Forget</h4>
                         <p class="mt-0">
-                            When we take on a project, we become partners in
-                            that project. Its success is as vital to us as it is
+                            When completing a project, we won't leave you handing.
+                            Instead, we feel we are partners in
+                            your project. Its success is as vital to us as it is
                             to you. It is a priority for us to maintain your
                             project after initial development is complete. We
                             constantly check for issues to head off potential
                             problems as soon as possible. We also update the
                             underlying framework regularly with security patches
-                            and bug fixes.
+                            and bug fixes. We will not leave you hanging once the
+                            project is complete.
                         </p>
                     </div>
                     <div>
                         <h4 class="text-purple-900 mb-2">Wordpress</h4>
                         <p class="mt-0">
-                            Wordpress is a versatile, but brittle framework. It
-                            has a lot of  overhead due to poorly developed
+                            We don't like working with Wordpress. While it is
+                            versatile, it is also a very brittle framework. It
+                            has a lot of overhead due to poorly developed
                             themes and plugins, which are often poorly supported
-                            and buggy. So it can need constant maintenance and
-                            bug fixing. That’s not our thing -- we like to
-                            develop code we can rely on.
+                            and buggy. This can lead to constant maintenance and
+                            bug fixing. We would rather develop code we can rely on.
                         </p>
                     </div>
                     <div>
                         <h4 class="text-purple-900 mb-2">3rd-Party or On-Premise Hosted Projects</h4>
                         <p class="mt-0">
-                            As mentioned earlier, we need complete control of
-                            the server architecture. In most cases we do not
-                            support web sites hosted with third parties or
-                            on-premise.
+                            In most cases we do not support web sites hosted with
+                            third parties or on-premise. As mentioned earlier, we need
+                            complete control of the server architecture in
+                            order to provide the best service we can.
                         </p>
                     </div>
                 </div>
