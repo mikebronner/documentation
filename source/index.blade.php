@@ -7,6 +7,43 @@
     ></script>
 @endpush
 
+@push ('styles')
+    <script>
+        window.testimonials = [
+            {
+                name: "Leslie Lawson",
+                company: "Owner of Lawson Research",
+                photo: "/imgs/leslie_lawson.jpg",
+                text: "<p>I would highly recommend GeneaLab's services. Their monthly fee is reasonable and Mike's attention to detail is appreciated. I also appreciate that I can email or call, if needed, to get immediate help. Thank you for your help in maintaining my website.</p>",
+            },
+            {
+                name: "Logan Miller",
+                company: "Co-Owner of Ranch Resources",
+                photo: "/imgs/logan_miller.jpg",
+                text: "<p>Mike always comes up with solutions to the interesting hurdles we throw his way. I always feel that he is on call and responsive when there are issues and resolves them quickly. He is fair about billing and is efficient with his time when he is on the clock.</p>",
+            },
+            {
+                name: "Randall Mitchell",
+                company: "VP of Information Systems, The Phoenix Symphony",
+                photo: "/imgs/randall_mitchell.jpg",
+                text: "<p>GeneaLabs developed an in-house tool that provided us the ability to increase employee efficiencies, while also reducing expenses.</p><p>I recommend working with Mike based on his professionalism, business ethic and acumen, project turn-around, attention to detail, and quality of work.</p>",
+            },
+            {
+                name: "Jeremy Yale",
+                company: "Owner of Imagine That! Comics",
+                photo: "/imgs/jeremy_yale.jpg",
+                text: "GeneaLabs provided an opportunity to reach a wider customer-base by integrating with Amazon and Ebay, and the potential to build a customer base through my own website, and avoid fees associated with selling through other outlets. Our new website is now our central hub for all sales outlets, providing us the ability to create new listings, manage inventory, and process orders across all sales outlets from one system.</p><p>I think Mike's approach to customer service is exemplary. He always makes the customer a priority, regardless of the time of day, or inconvenience it may cause in his personal life. He diligently works through issues until they’re resolved, regardless of the level of difficulty.</p><p>Thank you for the time and effort you’ve put into my site. I’m looking forward to working together in the future to implement more of the ideas for improvements that we’ve discussed over the past couple of years. 😊</p>",
+            },
+            {
+                name: "Maureen Taylor",
+                company: "The Photo Detective™",
+                photo: "/imgs/maureen_taylor.jpg",
+                text: "<p>I knew about branding, but Mike told me a lot more about how all the pieces fit together.</p><p>He has helped increase the ease of purchasing, Google rankings, and improved how design and functionality work together.</p><p>Mike finds creative solutions that fit my budget. He’s also more than a technical person: he approaches your business from the perspective of your customers.</p>",
+            }
+        ]
+    </script>
+@endpush
+
 @section('content')
     <section class="intro py-10 md:py-12 shadow-lg">
         <div
@@ -51,7 +88,7 @@
                     <p class="text-green-800">
                         Responsive techniques guide our design and development
                         processes. They help ensure that things work well on
-                        most screen sizes.
+                        all common screen sizes.
                     </p>
                     <p class="text-green-800">
                         During the design process we develop and provide a
@@ -136,7 +173,119 @@
             </div>
         </div>
     </section>
-    
+
+    <section
+        class="text-mono-800 shadow-lg py-24 "
+    >
+        <div
+            class="container mx-auto px-6"
+        >
+            <testimonial></testimonial>
+        </div>
+    </section>
+
+    <section
+        class="client-fit text-mono-800 shadow-lg py-24 "
+    >
+        <div
+            class="background"
+        >
+        </div>
+        <div
+            class="container mx-auto px-6 text-purple-900"
+        >
+            <h2 class="font-thin text-5xl subpixel-antialiased text-purple-900 mb-8">
+                Are we a good fit?
+            </h2>
+            <div class="flex flex-wrap">
+                <div class="md:w-1/2 md:pr-3 text-purple-800">
+                    <h3 class="text-purple-900">
+                        What We Excel At
+                    </h3>
+                    <div>
+                        <h4 class="text-purple-900 mb-2">Web Application Development</h4>
+                        <p class="mt-0">
+                            Our core business revolves around developing custom
+                            web applications. We also take on existing Laravel
+                            projects, and overhaul legacy PHP applications.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-purple-900 mb-2">Full-Service Offerings</h4>
+                        <p class="mt-0">
+                            We take care of all technical aspects. You are
+                            expert in your field, you should focus on that. We
+                            are experts in taking care of all technical aspects
+                            of your project. We are your development team, only
+                            an email or phone call away.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-purple-900 mb-2">Hosting & Maintenance</h4>
+                        <p class="mt-0">
+                            Our specialized processes require that we manage our
+                            own server infrastructure. That also gives us direct
+                            control over performance and allows us to monitor
+                            it closely. We transfer your existing project,
+                            should you have one, to our infrastructure. That
+                            lets us optimize the setup to your project's
+                            requirements.
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-3 text-purple-800">
+                    <h3 class="text-purple-900">
+                        Things We Try To Avoid
+                    </h3>
+                    <div>
+                        <h4 class="text-purple-900 mb-2">Build & Forget</h4>
+                        <p class="mt-0">
+                            When we take on a project, we become partners in
+                            that project. Its success is as vital to us as it is
+                            to you. It is a priority for us to maintain your
+                            project after initial development is complete. We
+                            constantly check for issues to head off potential
+                            problems as soon as possible. We also update the
+                            underlying framework regularly with security patches
+                            and bug fixes.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-purple-900 mb-2">Wordpress</h4>
+                        <p class="mt-0">
+                            Wordpress is a versatile, but brittle framework. It
+                            has a lot of  overhead due to poorly developed
+                            themes and plugins, which are often poorly supported
+                            and buggy. So it can need constant maintenance and
+                            bug fixing. That’s not our thing -- we like to
+                            develop code we can rely on.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-purple-900 mb-2">3rd-Party or On-Premise Hosted Projects</h4>
+                        <p class="mt-0">
+                            As mentioned earlier, we need complete control of
+                            the server architecture. In most cases we do not
+                            support web sites hosted with third parties or
+                            on-premise.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="text-center mt-8 mb-8"
+            >
+                <a
+                    class="sh_lead_button text-center rounded text-3xl bg-purple-600 hover:bg-purple-400 text-purple-200 hover:text-purple-900 font-light py-3 px-8"
+                    href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
+                    onclick="shLeadFormPopup.openForm(event)"
+                >
+                    Ready To Get Started?
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section
         class="text-mono-800 shadow-lg py-24 "
     >
@@ -235,108 +384,6 @@
                         Maureen Taylor
                     </p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section
-        class="client-fit text-mono-800 shadow-lg py-24 "
-    >
-        <div
-            class="background"
-        >
-        </div>
-        <div
-            class="container mx-auto px-6 text-purple-900"
-        >
-            <h2 class="font-thin text-5xl subpixel-antialiased text-purple-900 mb-8">
-                Are we a good fit?
-            </h2>
-            <div class="flex flex-wrap">
-                <div class="md:w-1/2 md:pr-3 text-purple-800">
-                    <h3 class="text-purple-900">
-                        What We Excel At
-                    </h3>
-                    <div>
-                        <h4 class="text-purple-900 mb-2">Web Application Development</h4>
-                        <p class="mt-0">
-                            Our core business revolves around developing custom
-                            web applications. We also take on existing Laravel
-                            projects, and overhaul legacy PHP projects.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-purple-900 mb-2">Full-Service Offerings</h4>
-                        <p class="mt-0">
-                            We take care of all technical aspects. You are
-                            expert in your field, you should focus on that. We
-                            are experts in taking care of all technical aspects
-                            of your project. We are your web development team,
-                            only an email or phone call away.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-purple-900 mb-2">Hosting & Maintenance</h4>
-                        <p class="mt-0">
-                            Our specialized processes require that we manage our
-                            own server infrastructure. That gives us direct
-                            control over performance and allows us to monitor
-                            them closely. We transfer your existing project,
-                            should you have one, to our infrastructure. That
-                            lets us optimize the setup to your project's
-                            requirements.
-                        </p>
-                    </div>
-                </div>
-                <div class="md:w-1/2 md:pl-3 text-purple-800">
-                    <h3 class="text-purple-900">
-                        Things We Try To Avoid
-                    </h3>
-                    <div>
-                        <h4 class="text-purple-900 mb-2">Build & Forget</h4>
-                        <p class="mt-0">
-                            When we take on a project, we become partners in
-                            that project. Its success is as vital to us as it is
-                            to you. It is a priority for us to maintain your
-                            project after initial development is complete. We
-                            constantly check for issues to head off potential
-                            problems as soon as possible. We also update the
-                            underlying framework regularly with security patches
-                            and bug fixes.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-purple-900 mb-2">Wordpress</h4>
-                        <p class="mt-0">
-                            Wordpress is a versatile, but brittle framework. It
-                            has a lot of  overhead due to poorly developed
-                            themes and plugins, poor support, and many bugs. So
-                            it can need constant maintenance and bug fixing.
-                            That’s not our thing -- we like to develop code we
-                            can rely on.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="text-purple-900 mb-2">3rd-Party or On-Premise Hosted Projects</h4>
-                        <p class="mt-0">
-                            As mentioned earlier, we need complete control of
-                            the server architecture. In most cases we do not
-                            support web sites hosted with third parties or
-                            on-premise.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="text-center mt-8 mb-8"
-            >
-                <a
-                    class="sh_lead_button text-center rounded text-3xl bg-purple-600 hover:bg-purple-400 text-purple-200 hover:text-purple-900 font-light py-3 px-8"
-                    href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
-                    onclick="shLeadFormPopup.openForm(event)"
-                >
-                    Ready To Get Started?
-                </a>
             </div>
         </div>
     </section>
