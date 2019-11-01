@@ -76,7 +76,7 @@
             >
                 <div
                     :class="transitionClass"
-                    class="cursor-pointer mx-auto max-w-xl flex justify-between bg-white shadow-lg rounded-lg h-16 items-center"
+                    class="cursor-pointer mx-auto max-w-3xl flex justify-between bg-white shadow-lg rounded-lg h-16 items-center"
                 >
                     <span
                         @click="previousTestimonial"
@@ -111,7 +111,7 @@
                 </div>
             </div>
         <div
-            class="pointer-events-none relative mx-auto w-full max-w-xl px-8"
+            class="pointer-events-none relative mx-auto w-full max-w-3xl px-8"
         >
             <blockquote
                 :class="transitionClass"
