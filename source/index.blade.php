@@ -56,7 +56,7 @@
             <div class="flex flex-col-reverse mb-12 lg:flex-row">
                 <div class="mt-8">
                     <p
-                        class="font-thin mt-4 text-5xl subpixel-antialiased text-green-900"
+                        class="font-thin mt-4 text-3xl md:text-5xl subpixel-antialiased text-green-900"
                     >
                         {{ $page->siteDescription }}
                     </p>
@@ -161,10 +161,10 @@
                 </div>
             </div>
             <div
-                class="text-center mt-8 mb-8"
+                class="text-center mt-16 md:mt-4 mb-8"
             >
                 <a
-                    class="sh_lead_button text-center rounded text-3xl bg-green-500 hover:bg-green-300 text-green-100 hover:text-green-700 font-light py-3 px-8"
+                    class="sh_lead_button text-center rounded text-xl md:text-3xl bg-green-500 hover:bg-green-300 text-green-100 hover:text-green-700 font-light py-3 px-8"
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
@@ -194,7 +194,7 @@
         <div
             class="container mx-auto px-6 text-purple-900"
         >
-            <h2 class="font-thin text-5xl subpixel-antialiased text-purple-900 mb-8">
+            <h2 class="font-thin text-4xl lg:text-5xl subpixel-antialiased text-purple-900 mb-8">
                 Are we a good fit?
             </h2>
             <div class="flex flex-wrap">
@@ -275,10 +275,10 @@
                 </div>
             </div>
             <div
-                class="text-center mt-8 mb-8"
+                class="text-center mt-16 mb-0"
             >
                 <a
-                    class="sh_lead_button text-center rounded text-3xl bg-purple-600 hover:bg-purple-400 text-purple-200 hover:text-purple-900 font-light py-3 px-8"
+                    class="sh_lead_button text-center rounded text-2xl md:text-3xl bg-purple-600 hover:bg-purple-400 text-purple-200 hover:text-purple-900 font-light py-3 px-8"
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
@@ -294,7 +294,7 @@
         <div
             class="container mx-auto px-6"
         >
-            <h2 class="font-thin text-5xl subpixel-antialiased text-mono-900 mb-8">
+            <h2 class="font-thin text-4xl lg:text-5xl subpixel-antialiased text-mono-900 mb-8">
                 Clients We Work With
             </h2>
             <div
