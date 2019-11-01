@@ -57,8 +57,8 @@
                 }
 
                 this.transitionClass = "animated " + fadeOut
-                this.currentTestimonialIndex = newIndex;
                 setTimeout(() => {
+                    this.currentTestimonialIndex = newIndex;
                     this.transitionClass = "animated " + fadeIn;
                 }, 1000);
             },
