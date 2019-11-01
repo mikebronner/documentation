@@ -34,7 +34,7 @@
                     nextIndex = 0;
                 }
 
-                this.transition(nextIndex, "left");
+                this.transition(nextIndex, "right");
             },
 
             previousTestimonial: function () {
@@ -44,7 +44,7 @@
                     previousIndex = window.testimonials.length - 1;
                 }
 
-                this.transition(previousIndex, "right");
+                this.transition(previousIndex, "left");
             },
 
             transition: function (newIndex, direction) {
