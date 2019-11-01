@@ -34,7 +34,7 @@
                     nextIndex = 0;
                 }
 
-                this.transition(nextIndex);
+                this.transition(nextIndex, "left");
             },
 
             previousTestimonial: function () {
@@ -44,12 +44,23 @@
                     previousIndex = window.testimonials.length - 1;
                 }
 
-                this.transition(previousIndex);
+                this.transition(previousIndex, "right");
             },
 
-            transition: function (newIndex) {
-                // TODO: add animations here
+            transition: function (newIndex, direction) {
+                let fadeOut = "fadeOutLeft";
+                let fadeIn = "fadeInRight";
+
+                if (direction == "right") {
+                    fadeOut = "fadeOutRight";
+                    fadeIn = "fadeInLeft";
+                }
+
+                this.transitionClass = "animated " + fadeOut
                 this.currentTestimonialIndex = newIndex;
+                setTimeout(() => {
+                    this.transitionClass = "animated " + fadeIn;
+                }, 1000);
             },
         },
     };
@@ -63,7 +74,10 @@
                 class="absolute w-full"
                 style="top: 50px;"
             >
-                <div class="cursor-pointer mx-auto max-w-xl flex justify-between bg-white shadow-lg rounded-lg h-16 items-center">
+                <div
+                    :class="transitionClass"
+                    class="cursor-pointer mx-auto max-w-xl flex justify-between bg-white shadow-lg rounded-lg h-16 items-center"
+                >
                     <span
                         @click="previousTestimonial"
                         class="flex items-center h-full"
