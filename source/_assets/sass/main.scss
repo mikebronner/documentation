@@ -1,10 +1,5 @@
-
 @tailwind base;
 @tailwind components;
-
-// Code syntax highlighting,
-// powered by https://highlightjs.org
-@import '~highlight.js/styles/a11y-light.css';
 
 @import 'base';
 @import 'navigation';
@@ -16,10 +11,12 @@
 
 @tailwind utilities;
 
-
+// Code syntax highlighting,
+// powered by https://highlightjs.org
+@import '~highlight.js/styles/a11y-light.css';
 
 // $genealabs-color: #41c84b;
-@import "node_modules/animate.css/animate";
+@import "~animate.css/animate";
 
 $fa-font-path: "../../fonts";
 @import "node_modules/font-awesome/scss/font-awesome";
