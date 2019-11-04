@@ -15,8 +15,13 @@
             Please feel free to reach out to us using the form below.
         </p>
 
-        <form action="https://formspree.io/hello@genealabs.com" method="post" class="mb-12">
+        <form
+            action="https://formmailer.online/api/send"
+            method="POST"
+            class="mb-12"
+        >
             <input type="email" name="__work__" style="display: none;">
+            <input type="hidden" name="token" value="72bb23f9-85b6-45b0-ba01-8cda5f3a361a">
             <div class="flex flex-wrap mb-6 -mx-3">
                 <div class="w-full md:w-1/2 mb-6 md:mb-0 px-3">
                     <label class="block mb-2 text-gray-900 text-sm font-semibold" for="contact-name">
