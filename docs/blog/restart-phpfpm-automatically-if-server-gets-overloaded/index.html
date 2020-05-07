@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -130,7 +130,9 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <p>From time to time your server may get overloaded because PHP is spawning too many workers, or its workers get hung up, and does not make more available. I had a case where this was happening daily on a server, and it was impacting my clients so much that their sites were becoming non-responsive.</p>
+
 <p>To help alleviate the issue while I was troubleshooting, we wrote a script that would automatically restart PHP-FPM if the server load was deemed too high:</p>
+
 <pre><code class="language-sh">#!/bin/bash
 
 LOAD=`uptime | sed -r 's/^.*average: [0-9.]+, ([0-9.]+),.*$/\1/'`
@@ -140,8 +142,11 @@ if [ $ISLOADED -eq 1 ]
 then
         echo "restarting php-fpm at a load of $LOAD"
         systemctl restart php7.2-fpm 
-fi</code></pre>
-<p>We then added this script to run in cron every minute. With the server stabilizing, I was able to focus on troubleshooting the actual problem, without impacting live websites TOO severely.</p>        </div>
+fi
+</code></pre>
+
+<p>We then added this script to run in cron every minute. With the server stabilizing, I was able to focus on troubleshooting the actual problem, without impacting live websites TOO severely.</p>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -212,7 +217,28 @@ fi</code></pre>
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

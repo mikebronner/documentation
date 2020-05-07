@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -130,41 +130,43 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <p>If you have an eero and subscribe to eero Plus, you get a free subscription to  <a href="https://encrypt.me">encrypt.me</a> , one of the most performant VPN providers I have ever used. Unfortunately they only provide an app to secure individual devices, and no clear way to protect entire networks. This leaves all your IoT devices, as well as home entertainment devices like Roku, AppleTV, etc,  out in the cold.</p>
+
 <p>The following is a guide to help you extract the VPN settings and apply them to your OpenVPN router.</p>
+
 <p><em>If you are using an eero and want to implement network-wide VPN, you will have to create a VPN gateway in front of your eero and either put the eero in bridge mode or double-nat it, which is what I do.</em></p>
+
 <h2>Assumptions</h2>
+
 <ul>
 <li>macOS desktop</li>
 <li>DD-WRT VPN gateway router</li>
 <li><a href="https://encrypt.me/apps/">EncryptMe app</a>  is installed.</li>
 </ul>
+
 <p>If your setup differs, please make the appropriate adjustments to this guide.</p>
+
 <h2>Guide</h2>
+
 <h3>Get The Configuration</h3>
+
 <ol>
-<li>
-<p>Open the <strong>EncryptMe</strong> app on your computer.</p>
-</li>
-<li>
-<p>Connect to your preferred or fastest connection.</p>
-</li>
-<li>
-<p>Open <strong>Terminal</strong> and enter the following commands:</p>
+<li>Open the <strong>EncryptMe</strong> app on your computer.</li>
+<li>Connect to your preferred or fastest connection.</li>
+<li><p>Open <strong>Terminal</strong> and enter the following commands:</p>
+
 <pre><code class="language-sh">sudo -i
-ps aux | grep openvpn</code></pre>
-</li>
-<li>
-<p>Extract the location of the OpenVPN config file from the output.</p>
-</li>
-<li>
-<p>Output the content of the config file:</p>
-<pre><code class="language-sh">cat /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/cloak.20190527094324.conf</code></pre>
-</li>
-<li>
-<p>Quit the <strong>EncryptMe</strong> app.</p>
-</li>
+ps aux | grep openvpn
+</code></pre></li>
+<li><p>Extract the location of the OpenVPN config file from the output.</p></li>
+<li><p>Output the content of the config file:</p>
+
+<pre><code class="language-sh">cat /var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/cloak.20190527094324.conf
+</code></pre></li>
+<li><p>Quit the <strong>EncryptMe</strong> app.</p></li>
 </ol>
+
 <h3>Implement The Settings</h3>
+
 <ol>
 <li>Navigate to the VPN settings page on your router.</li>
 <li>Enable <strong>Start OpenVPN Client</strong>.</li>
@@ -194,25 +196,34 @@ ps aux | grep openvpn</code></pre>
 <li>Copy/paste the text between the <code>&lt;cert&gt;</code> and <code>&lt;/cert&gt;</code> tags into the <strong>Public Client Cert</strong> field.</li>
 <li>Copy/paste the text between the <code>&lt;key&gt;</code> and <code>&lt;/key&gt;</code> tags into the <strong>Private Client Key</strong> field.</li>
 <li>Hit <strong>Apply Settings</strong>.</li>
-<li>Navigate to the Status &gt; OpenVPN tab to verify that the connection succeeded. It may take a moment to connect, so if you don't see <code>CONNECT SUCCESS</code> yet, give it a few refreshes. If it still doesn't connect, double-check that the settings were entered correctly. See the screenshot below as an example of what it should look like.</li>
+<li>Navigate to the Status > OpenVPN tab to verify that the connection succeeded. It may take a moment to connect, so if you don't see <code>CONNECT SUCCESS</code> yet, give it a few refreshes. If it still doesn't connect, double-check that the settings were entered correctly. See the screenshot below as an example of what it should look like.</li>
 </ol>
+
 <h4>Example Screenshot</h4>
+
 <p><img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1558975708205/v6ipVsTVH.png" alt="1*EBeeEx3W-U71ynPsIBLKuQ.png" /></p>
+
 <h2>Summary</h2>
+
 <h3>Benefits</h3>
+
 <ul>
 <li>One single connection that protects your entire network.</li>
 <li>Highly performant VPN service.</li>
 <li>Free VPN, if you are an eero Plus subscriber.</li>
 </ul>
+
 <h3>Drawbacks</h3>
+
 <ul>
 <li>Amazon, Netflix, and other streaming providers don't like VPNs and block them. Encrypt.me does not seem to provide any form of unblocking services to address this.</li>
 <li>The certs seem to expire every 3 months or so, which means you need to periodically perform this exercise to keep your connection up.</li>
 <li>Encrypt.me does log session and browsing activity, which some claim defeats the purpose of VPNs. My main priority is protecting my privacy, mainly my ISP from reselling my data.</li>
-<li>Encrypt.me blocks certain traffic they deem &quot;nefarious&quot; by default. For example they block torrent traffic, but it can be unblocked per request on your account.</li>
+<li>Encrypt.me blocks certain traffic they deem "nefarious" by default. For example they block torrent traffic, but it can be unblocked per request on your account.</li>
 </ul>
-<p>I would love to hear your experiences, or suggestions on improving this process. How are you protecting your network?</p>        </div>
+
+<p>I would love to hear your experiences, or suggestions on improving this process. How are you protecting your network?</p>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -283,7 +294,28 @@ ps aux | grep openvpn</code></pre>
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -140,41 +140,63 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <p>One thing that has been tedious over the last few years was maintaining Laravel packages over multiple Laravel releases. <a href="https://medium.com/@michaeldyrynda">Michael Dyrynda</a> wrote an excellent <a href="https://dyrynda.com.au/blog/testing-multiple-dependency-versions-with-travis-ci">blog post on Travis-CI build matrixes</a> that covers setting up Travis to install different composer dependencies.</p>
+
 <p>We can leverage this approach to set up different test environments to cover different versions of Laravel.</p>
+
 <p>Additionally, we can put together a few scripts to make this all work in our local environment as well!</p>
+
 <h3>Use Case</h3>
+
 <p>So when would this process come in handy? There are other means of maintaining Laravel packages:</p>
+
 <ul>
 <li>Only maintain support for the most recent version of Laravel, and throw up a new branch each time a new version of Laravel is released. In this model all previous branches grow stale and do not get support or improvements.</li>
 <li>Only support the most recent version of Laravel, and keep everything on the same branch, using semver to keep the requirements in-line. This way composer will install the version of your package that meets the users’ requirements. Here, too, only the most recent version of Laravel is supported.</li>
 </ul>
+
 <p>The common draw-back with these scenarios is that so many users who would like to use your package might not be able to, because their project is not (maybe is never) on the latest Laravel version. Also, users who don’t immediately upgrade their Laravel version when you update your package to the next Laravel version will be left in the cold and won’t receive patches or updates until they do update.</p>
+
 <p><strong>There really is no good scenario that covers all bases, but the following method aims to provide as wide range of support as possible, with as little overhead as possible.</strong></p>
+
 <h3>Requirements</h3>
+
 <p>Ideally, your Laravel package is already set up to use these, as we won’t cover their implementation here:</p>
+
 <ul>
 <li><a href="https://github.com/orchestral/testbench">Orchestra Testbench</a> (and the other variants as necessary: testbench-browser-kit, testbench-dusk, testbench-db, etc.)</li>
 <li><a href="https://travis-ci.org">Travis-CI</a> (this is free for open-source packages)</li>
 </ul>
+
 <h3>Configuring Travis-CI</h3>
+
 <p>Take a read through Michael’s blog post (and follow his instructions if you like). Once you have an idea of what needs to be done, we will implement those changes, with a slightly different approach, to your project’s <code>.travis.yml</code> file:</p>
-<iframe width="700" height="250" src="/media/40165969ea5ddd72dafbd4203fdeb8e6?postId=3485cb5762e2" data-media-id="40165969ea5ddd72dafbd4203fdeb8e6" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/40165969ea5ddd72dafbd4203fdeb8e6?postId=3485cb5762e2" data-media-id="40165969ea5ddd72dafbd4203fdeb8e6" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
+
+<iframe width="700" height="250" src="/media/40165969ea5ddd72dafbd4203fdeb8e6?postId=3485cb5762e2" data-media-id="40165969ea5ddd72dafbd4203fdeb8e6" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+
 <p>Let’s go over what changed:</p>
+
 <ul>
 <li>Removed the <code>php</code> and <code>env</code> sections.</li>
 <li>Created a comprehensive <code>matrix</code> section that covers all our build permutations. We’re not specifying different package versions here, but instead are creating an environment variable for each version of laravel under each version of PHP.</li>
 <li>Added a line under <code>before_script</code> to give our scripts the necessary permissions to be executed.</li>
 <li>Changed the <code>script</code> section to only call our custom script, which we will cover next.</li>
 </ul>
+
 <p>Everything else in your <code>.travis.yml</code> file can remain as you had it, it will likely differ from my example above.</p>
+
 <h3>Creating The Test Script</h3>
+
 <p>We now need to achieve the following in our test scripts (one for each version of Laravel we will be testing):</p>
+
 <ul>
 <li>Install the correct dependencies for that version of Laravel.</li>
 <li>Run PHPUnit.</li>
 </ul>
-<iframe width="700" height="250" src="/media/2ce0287f316cbebd07e4549fd9b7b14e?postId=3485cb5762e2" data-media-id="2ce0287f316cbebd07e4549fd9b7b14e" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/2ce0287f316cbebd07e4549fd9b7b14e?postId=3485cb5762e2" data-media-id="2ce0287f316cbebd07e4549fd9b7b14e" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
+
+<iframe width="700" height="250" src="/media/2ce0287f316cbebd07e4549fd9b7b14e?postId=3485cb5762e2" data-media-id="2ce0287f316cbebd07e4549fd9b7b14e" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+
 <p>Let’s take a closer look:</p>
+
 <ul>
 <li>Make a backup of <code>composer.json</code> so it doesn’t get messed up when we run these scripts locally.</li>
 <li>Use <code>sed</code> to create a Laravel-version-specific <code>phpunit.xml</code> file.</li>
@@ -186,26 +208,37 @@
 We are also loading the custom <code>phpunit-xx.xml</code> file. The remaining options shown in the example are for code coverage purposes.</li>
 <li>And lastly, we remove the version-specific <code>phpunit-xx.xml</code> file.</li>
 </ul>
+
 <p>Encapsulating the testing process into scripts like this allow us to run these tests locally as well, and not have to wait for Travis to show us any failures. You would create a copy of this file for each version of Laravel, replacing <code>phpunit-55.xml</code> with <code>phpunit-54.xml</code>, and so on. Each file corresponds to each <code>PU_FILE=xx</code> entry in <code>.travis.yml</code>.</p>
+
 <h3>Optional Cleanup</h3>
+
 <ul>
 <li>If you added the line to create the <code>build</code> directory, I would recommend adding that to your <code>.git-ignore</code> file: <code>/build</code>.</li>
 <li><a href="https://hannesvdvreken.com/2015/01/14/gitattributes/">It is recommend</a> to maintain a <code>[.gitattributes](https://www.git-scm.com/docs/gitattributes)</code> file in your package repos. It can do so much, but I have started using it to exclude non-distribution files from my packages, so that when people install them with composer, they only pull down what’s needed to run the package. This makes for leaner downloads, and less cruft in projects.</li>
 </ul>
+
 <h3>Summary</h3>
+
 <ul>
 <li>We configured Travis to test all permutations of PHP and Laravel.</li>
 <li>We wrote some scripts to assist with that, and more importantly, allow us to run these tests locally.</li>
 </ul>
+
 <p>To run your tests locally, all you need to do is call <code>./tests/pu-55.sh</code> or whatever your equivalent script name is, and you’re all set. Then if you want to test Laravel 5.4, simply run <code>./tests/pu-54.sh</code>, or <code>./tests/pu-56.sh</code> for Laravel 5.6, and so on.</p>
+
 <p><strong>I would love to hear your feedback on this process.</strong> Have you done something similar? Do you have suggestions for improvements? Has this opened new doors for you?</p>
+
 <h3>Source Citations &amp; Credits</h3>
+
 <p><a href="https://github.com/sjbronner">Sebastian Bronner</a>, who helped me brainstorm some initial ideas and found Michael’s blog post.</p>
+
 <p><a href="https://github.com/orchestral/testbench" title="https://github.com/orchestral/testbench"><strong>orchestral/testbench</strong>
 _testbench - [Package] Laravel Testing Helper for Packages Development_github.com</a><a href="https://github.com/orchestral/testbench"></a><a href="https://dyrynda.com.au/blog/testing-multiple-dependency-versions-with-travis-ci" title="https://dyrynda.com.au/blog/testing-multiple-dependency-versions-with-travis-ci"><strong>Michael Dyrynda | Testing multiple dependency versions with Travis CI</strong>
 _The next step was to write the necessary tests describing my desired inputs and outputs. Locally, I was testing using…_dyrynda.com.au</a><a href="https://dyrynda.com.au/blog/testing-multiple-dependency-versions-with-travis-ci"></a><a href="https://dustinfraker.com/speed-up-your-phpunit-tests-disable-xdebug/" title="https://dustinfraker.com/speed-up-your-phpunit-tests-disable-xdebug/"><strong>Speed Up Your PHPUnit Tests - Disable Xdebug - Dustin Fraker</strong>
 _I recently noticed that my PHPUnit tests were running kind of slow which prompted me to start looking into how to speed…_dustinfraker.com</a><a href="https://dustinfraker.com/speed-up-your-phpunit-tests-disable-xdebug/"></a><a href="https://hannesvdvreken.com/2015/01/14/gitattributes/" title="https://hannesvdvreken.com/2015/01/14/gitattributes/"><strong>.gitattributes</strong>
-_Working as a web developer. On his blog he writes about things he learned while experimenting with tools he might use…_hannesvdvreken.com</a><a href="https://hannesvdvreken.com/2015/01/14/gitattributes/"></a></p>        </div>
+_Working as a web developer. On his blog he writes about things he learned while experimenting with tools he might use…_hannesvdvreken.com</a><a href="https://hannesvdvreken.com/2015/01/14/gitattributes/"></a></p>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -276,7 +309,28 @@ _Working as a web developer. On his blog he writes about things he learned while
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

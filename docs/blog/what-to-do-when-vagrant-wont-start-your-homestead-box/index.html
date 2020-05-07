@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -135,6 +135,7 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <h2>Error</h2>
+
 <pre><code>There was an error while executing `VBoxManage`, a CLI used by Vagrant
 for controlling VirtualBox. The command and stderr is shown below.
 
@@ -145,9 +146,14 @@ Progress state: NS_ERROR_FAILURE
 VBoxManage: error: Failed to create the host-only adapter
 VBoxManage: error: VBoxNetAdpCtl: Error while adding new interface: failed to open /dev/vboxnetctl: No such file or directory
 VBoxManage: error: Details: code NS_ERROR_FAILURE (0x80004005), component HostNetworkInterfaceWrap, interface IHostNetworkInterface
-VBoxManage: error: Context: "RTEXITCODE handleCreate(HandlerArg *)" at line 94 of file VBoxManageHostonly.cpp</code></pre>
+VBoxManage: error: Context: "RTEXITCODE handleCreate(HandlerArg *)" at line 94 of file VBoxManageHostonly.cpp
+</code></pre>
+
 <h2>Solution</h2>
-<pre><code class="language-sh">sudo "/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh" restart</code></pre>        </div>
+
+<pre><code class="language-sh">sudo "/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh" restart
+</code></pre>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -218,7 +224,28 @@ VBoxManage: error: Context: "RTEXITCODE handleCreate(HandlerArg *)" at line 94 o
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

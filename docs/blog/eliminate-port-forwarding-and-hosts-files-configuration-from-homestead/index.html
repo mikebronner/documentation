@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -130,17 +130,24 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <p>You know the drill with Homestead: maintain a huge list of domains in <code>/etc/hosts</code>, make sure all the ports are forwarding correctly, have complex config files to handle running artisan commands outside of homestead, and so on. This has always been annoying me, so when the <code>.dev</code> TLD switched to forced HTTPS a few weeks back in macOS 10.13.2-beta, (which has since released), as well as in Chrome now, it was time to find a better workflow.</p>
+
 <p>At first I started experimenting with complicated Bonjour configurations and <code>.local</code> domains, but that had more drawbacks than benefits. I ran the problem by my <a href="https://github.com/sjbronner">brother</a>. He had a few suggestions that could drastically simplify the issue:</p>
+
 <ul>
 <li>remove port forwarding</li>
 <li>point all sites to the IP address configured in <code>Homestead.yaml</code>.</li>
 </ul>
+
 <p>That was a good first step, as we no longer needed to worry about possible port conflicts on our computers, and could still use the default ports for services running in Homestead. The <code>hosts</code> file was still a problem, though.</p>
+
 <p>The solution for that was to register a public subdomain that points to Homestead’s IP address. Now that we have that in place, we cleared out all the entries from <code>/etc/hosts</code> that were specific to Homestead sites, and lo-and-behold, we have streamlined the Homestead workflow process quite a bit.</p>
+
 <blockquote>
-<p>The only place you need to make configuration changes is now in <code>Homestead.yaml</code> when adding new sites.</p>
+  <p>The only place you need to make configuration changes is now in <code>Homestead.yaml</code> when adding new sites.</p>
 </blockquote>
+
 <h4>Assumptions</h4>
+
 <ul>
 <li>Your Homestead’s IP address is <code>192.168.10.10</code>. If yours is different, use that IP address in the instructions below.</li>
 <li>Your development computer has internet access. If not, you may still have to maintain a <code>/etc/hosts</code> file.</li>
@@ -148,7 +155,9 @@
 <li>The instructions are geared toward Mac users. If you are on Linus, you may need to adjust some things. Eliminating port forwarding on Windows might not work.</li>
 <li>I keep all my Homestead sites in a <code>Sites</code> folder. You may call this something else on your system. By default <code>Homestead.yaml</code> defines this folder as <code>~/Code</code>.</li>
 </ul>
+
 <h4>Implementation</h4>
+
 <ul>
 <li>Go to your registrar and create an <code>A</code> record with host <code>*.dev</code> that points to <code>192.168.10.10</code>.</li>
 <li>Open your <code>Homestead.yaml</code> file in an editor of your choice.</li>
@@ -156,36 +165,53 @@
 <li>Remove or comment out your custom port forward rules.</li>
 <li>Rename the TLDs of the site entries from whatever they were at (<code>.dev</code> or <code>.test</code>, etc) to <code>&lt;site&gt;.dev.example.com</code>. Replace <code>&lt;site&gt;</code> with whatever you want to access that site as in Homestead:</li>
 </ul>
-<iframe width="700" height="250" src="/media/db76b110e0e6c3d7a31f9f8eb58827e2?postId=1d3ab956bd5b" data-media-id="db76b110e0e6c3d7a31f9f8eb58827e2" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/db76b110e0e6c3d7a31f9f8eb58827e2?postId=1d3ab956bd5b" data-media-id="db76b110e0e6c3d7a31f9f8eb58827e2" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
+
+<iframe width="700" height="250" src="/media/db76b110e0e6c3d7a31f9f8eb58827e2?postId=1d3ab956bd5b" data-media-id="db76b110e0e6c3d7a31f9f8eb58827e2" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+
 <ul>
 <li>Go ahead and save your <code>Homestead.yaml</code> file and open <code>/etc/hosts</code> for editing.</li>
 <li>Clear out (or comment, for now) all the Homestead domain and IP entries.</li>
 </ul>
+
 <p>If you now fire up and provision homestead <code>vagrant up --provision</code>, you should be able to access your dev site in your browser using the following URL: <code>purpleturles.dev.example.com</code>, <strong>without using the </strong><code>**:8000**</code> <strong>port</strong>!</p>
+
 <p>We’re not quite out of the woods just yet, as you will quickly find out that the Redis and Postgres services are refusing connections. This is because they are not bound to the <code>192.168.10.10</code> address. Let’s get that wrapped up.</p>
+
 <ul>
 <li>SSH into Homestead: <code>vagrant ssh</code>.</li>
 <li>Edit the Postgres configuration file:</li>
 </ul>
-<iframe width="700" height="250" src="/media/a36064122aef7a86c6143c292279bfde?postId=1d3ab956bd5b" data-media-id="a36064122aef7a86c6143c292279bfde" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/a36064122aef7a86c6143c292279bfde?postId=1d3ab956bd5b" data-media-id="a36064122aef7a86c6143c292279bfde" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
+
+<iframe width="700" height="250" src="/media/a36064122aef7a86c6143c292279bfde?postId=1d3ab956bd5b" data-media-id="a36064122aef7a86c6143c292279bfde" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+
 <ul>
 <li>Add the following line at the end:</li>
 </ul>
-<iframe width="700" height="250" src="/media/af47cd1ca310ac491d4088b935713e1a?postId=1d3ab956bd5b" data-media-id="af47cd1ca310ac491d4088b935713e1a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/af47cd1ca310ac491d4088b935713e1a?postId=1d3ab956bd5b" data-media-id="af47cd1ca310ac491d4088b935713e1a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
+
+<iframe width="700" height="250" src="/media/af47cd1ca310ac491d4088b935713e1a?postId=1d3ab956bd5b" data-media-id="af47cd1ca310ac491d4088b935713e1a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+
 <ul>
 <li>Go ahead and save the Postgres config file, and open the Redis config file for editing:</li>
 </ul>
-<iframe width="700" height="250" src="/media/33a8a42313f72a60b80858ff1a7df1f8?postId=1d3ab956bd5b" data-media-id="33a8a42313f72a60b80858ff1a7df1f8" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/33a8a42313f72a60b80858ff1a7df1f8?postId=1d3ab956bd5b" data-media-id="33a8a42313f72a60b80858ff1a7df1f8" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
+
+<iframe width="700" height="250" src="/media/33a8a42313f72a60b80858ff1a7df1f8?postId=1d3ab956bd5b" data-media-id="33a8a42313f72a60b80858ff1a7df1f8" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+
 <ul>
 <li>Add the following entry after the existing bind entry:</li>
 </ul>
-<iframe width="700" height="250" src="/media/2aa4336aef39786fd68cabfca7efc91a?postId=1d3ab956bd5b" data-media-id="2aa4336aef39786fd68cabfca7efc91a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"><iframe width="700" height="250" src="/media/2aa4336aef39786fd68cabfca7efc91a?postId=1d3ab956bd5b" data-media-id="2aa4336aef39786fd68cabfca7efc91a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe></iframe>
+
+<iframe width="700" height="250" src="/media/2aa4336aef39786fd68cabfca7efc91a?postId=1d3ab956bd5b" data-media-id="2aa4336aef39786fd68cabfca7efc91a" data-thumbnail="https://i.embed.ly/1/image?url=https%3A%2F%2Favatars2.githubusercontent.com%2Fu%2F1791050%3Fs%3D400%26v%3D4&amp;key=a19fcc184b9711e1b4764040d3dc5c07" allowfullscreen="" frameborder="0"></iframe>
+
 <p>Now we’re cooking! Go ahead and save, exit Homestead, and restart it once more: <code>vagrant reload</code>.</p>
+
 <blockquote>
-<p>You should now have access to all your dev sites without the need to do port forwarding or maintaining a tedious <code>/etc/hosts</code> file!</p>
+  <p>You should now have access to all your dev sites without the need to do port forwarding or maintaining a tedious <code>/etc/hosts</code> file!</p>
 </blockquote>
+
 <p><em>Please let me know if you have any questions or comments. I would love to hear about your experiences with this!</em></p>
-<p><em>I would like to thank my brother, Sebastian, for his help in this and sparking some interesting discussions and thoughts on how to achieve this!</em></p>        </div>
+
+<p><em>I would like to thank my brother, Sebastian, for his help in this and sparking some interesting discussions and thoughts on how to achieve this!</em></p>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -256,7 +282,28 @@
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

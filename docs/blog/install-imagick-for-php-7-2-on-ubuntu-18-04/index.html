@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -130,30 +130,39 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <p>I use Imagick for many of my web application projects. It is a robust and powerful image manipulation tool that has some advantages over GD. Unfortunately it doesn't come installed by default in Homestead.</p>
+
 <h2>Installation</h2>
+
 <ol>
 <li>SSH into your Homestead instance.</li>
 <li>Run the following command:
-<pre><code class="language-sh">sudo -i
+<code>sh
+sudo -i
 apt update -y
 apt install php-imagick -y
 echo extension=imagick.so &gt;&gt; /etc/php/7.2/cli/php.ini
 echo extension=imagick.so &gt;&gt; /etc/php/7.2/fpm/php.ini
-service php7.2-fpm reload</code></pre></li>
+service php7.2-fpm reload</code></li>
 </ol>
+
 <h2>Optional Configuration</h2>
-<p>If you would like to enable processing of PDFs in Imagick (it is now disabled by default), perform the following configuration after running the above command, while still in <code>sudo</code> mode:</p>
-<ol>
-<li>Edit the Iaptmagick configuration file:
-<pre><code class="language-sh">nano /etc/ImageMagick-6/policy.xml</code></pre></li>
-<li>
-<p>Enable PDF editing, change</p>
-<pre><code class="language-xml">&lt;policy domain="coder" rights="none" pattern="PDF" /&gt;</code></pre>
-<p>to</p>
-<pre><code class="language-xml">&lt;policy domain="coder" rights="read|write" pattern="PDF" /&gt;</code></pre>
-</li>
-</ol>
-<p>That should do it!</p>        </div>
+
+<p>If you would like to enable processing of PDFs in Imagick (it is now disabled by default), perform the following configuration after running the above command, while still in <code>sudo</code> mode:
+1. Edit the Iaptmagick configuration file:
+    <code>sh
+    nano /etc/ImageMagick-6/policy.xml</code>
+2. Enable PDF editing, change
+    <code>xml
+    &lt;policy domain="coder" rights="none" pattern="PDF" /&gt;</code></p>
+
+<pre><code>to
+```xml
+&lt;policy domain="coder" rights="read|write" pattern="PDF" /&gt;
+```
+</code></pre>
+
+<p>That should do it!</p>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -224,7 +233,28 @@ service php7.2-fpm reload</code></pre></li>
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

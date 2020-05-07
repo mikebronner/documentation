@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -134,24 +134,40 @@
                 >package-development</a>
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
-            <p>Workbench has sadly been discontinued in Laravel 5. Yes, there are ways to integrate it back into L5, but it seems to be on its way out. So, other than manually wiring up our packages that are in development, what can we do?</p>
+            <p>Workbench has sadly been discontinued in Laravel 5&#46; Yes, there are ways to integrate it back into L5, but it seems to be on its way out. So, other than manually wiring up our packages that are in development, what can we do?</p>
+
 <p>Enter <a href="https://twitter.com/franzliedke">@franzliedke</a>’s <a href="https://github.com/franzliedke/studio"><strong>studio</strong></a> package. It aims to be a widely usable composer package scaffolding tool, but there may be certain instances where it won’t work well for you. So your mileage may vary.</p>
+
 <h3>Requirements</h3>
+
 <ul>
 <li>Parent Laravel project</li>
 <li>Studio package</li>
 </ul>
+
 <h3>Installation</h3>
+
 <p>We want to start the new package in the project you are envisioning it to be used in initially — that’s our “Parent Laravel Project”.</p>
+
 <ol>
 <li>Go to your project’s base path. Let’s assume our project is called “purple-turtles” for the sake of demonstration.</li>
 </ol>
-<pre><code>cd ~/Developer/Sites/purple-turtles</code></pre>
-<p>2. Studio documentation recommends installing studio globally with composer, however, this won’t work if you are developing in a VM like Homestead. Instead, let’s install it at the project level:</p>
-<pre><code>composer require --dev franzl/studio</code></pre>
-<p>3. Now lets get a new package started:</p>
-<pre><code>vendor/bin/studio create packages/purple-turles/icecreammachine</code></pre>
-<p>4. This will now step through a series of questions to get the package set up:</p>
+
+<pre><code>cd ~/Developer/Sites/purple-turtles
+</code></pre>
+
+<p>2&#46; Studio documentation recommends installing studio globally with composer, however, this won’t work if you are developing in a VM like Homestead. Instead, let’s install it at the project level:</p>
+
+<pre><code>composer require --dev franzl/studio
+</code></pre>
+
+<p>3&#46; Now lets get a new package started:</p>
+
+<pre><code>vendor/bin/studio create packages/purple-turles/icecreammachine
+</code></pre>
+
+<p>4&#46; This will now step through a series of questions to get the package set up:</p>
+
 <ul>
 <li>Please name this package: enter the <em>vendor/package</em> name you want to use.</li>
 <li>Please provide a default namespace (PSR-4): hit enter if the suggested default is to your liking. If not, like in our case, enter something like “PurpleTurtles\IcecreamMachine”.</li>
@@ -159,14 +175,22 @@
 <li>… PhpSpec …: enter “y” if you will be using PHPSpec for testing, otherwise you can just hit enter.</li>
 <li>… TravisCI …: enter “y” if you will be using TravisCI for builds (this is free for open-source projects).</li>
 </ul>
+
 <p>It will now finish up creating the scaffold in the packages directory in your project’s base path.</p>
-<p>5. Set up git:</p>
+
+<p>5&#46; Set up git:</p>
+
 <p>cd packages/purples-turtles/icecreammachine
 git init</p>
+
 <p>Now you can use your favorite GIT tool (in my case Git Tower 2) or commandline to publish your package to GitHub or BitBucket, or something similar.</p>
+
 <p>All that’s left now is to publish your package in Packagist and include it in other projects!</p>
+
 <p>Also note that your package will be available in your parent project, as if it was included in the vendor folder.</p>
-<p>There is a small drawback in that you need to run <strong>composer update</strong> anytime you make class-level changes (or run <strong>composer dump-autoload -o</strong> if the changes weren’t that drastic) in the package directory, and then run <strong>composer update</strong> or <strong>composer dump-autoload -o</strong> or <strong>php artisan optimize</strong> in the parent project. Would love to see studio hook into the composer process and automatically run composer update on the package whenever the parent project is updated.</p>        </div>
+
+<p>There is a small drawback in that you need to run <strong>composer update</strong> anytime you make class-level changes (or run <strong>composer dump-autoload -o</strong> if the changes weren’t that drastic) in the package directory, and then run <strong>composer update</strong> or <strong>composer dump-autoload -o</strong> or <strong>php artisan optimize</strong> in the parent project. Would love to see studio hook into the composer process and automatically run composer update on the package whenever the parent project is updated.</p>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -237,7 +261,28 @@ git init</p>
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

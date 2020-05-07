@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -130,13 +130,23 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <h2>Problem</h2>
+
 <p>If you are developing Nova packages, you have probably been faced with the situation where you wanted to create Nova resources based on configurable model classes (which would allow the developer using your package to extend your package models and add logic required for their app).</p>
+
 <p>Unfortunately the model binding is limited to a static variable on the Resource model:</p>
-<pre><code class="language-php">public static $model = "App\User";</code></pre>
+
+<pre><code class="language-php">public static $model = "App\User";
+</code></pre>
+
 <h2>Solution</h2>
+
 <p>Remove the initialization of your <code>$model</code> variable. This will throw errors if things don't load as expected, instead of causing unexpected behaviors if <code>$model</code> is initialized with dummy data.</p>
-<pre><code class="language-php">public static $model;</code></pre>
+
+<pre><code class="language-php">public static $model;
+</code></pre>
+
 <p>Instead we will initialize the values in the Nova Service provider:</p>
+
 <pre><code class="language-php">    // ...
 
     public function boot()
@@ -153,12 +163,19 @@
         }
 
         // ...
-    }</code></pre>
+    }
+</code></pre>
+
 <p>This allows you to initialize the class names dynamically, which comes in very handy for package development.</p>
+
 <h4>Previous Approach</h4>
+
 <p>I had previously written this tutorial using method overloading of the <code>Resource</code> class. However, this proved to be problematic, as the <code>$model</code> variable ended up being referenced outside of the Resource class throughout Nova. I subsequently pivoted to this service-provider-based solution, which while not as elegant, is much simpler.</p>
+
 <hr />
-<p><em>I hope this was helpful for you. I know customizing Nova can seem daunting and complex. If you have questions pertaining to Nova, please don't hesitate to ask, and I will try to write up the solution in a blog post.</em></p>        </div>
+
+<p><em>I hope this was helpful for you. I know customizing Nova can seem daunting and complex. If you have questions pertaining to Nova, please don't hesitate to ask, and I will try to write up the solution in a blog post.</em></p>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -229,7 +246,28 @@
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

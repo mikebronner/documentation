@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -130,38 +130,30 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <hr />
-<p>_Note on conventions used in this article:</p>
-<ul>
-<li>
-<p>console commands are bold and italic:_ <strong><em>which php5-fpm</em></strong></p>
-</li>
-<li>
-<ul>
-<li>*</li>
-</ul>
-</li>
-</ul>
-<h3>Reasoning</h3>
-<p>As with everything, we need to make a consious decision when we do things. In this case a VirtualBox Guest Additions mismatch has severe performance implications and in my case has halted the synchronizing between Vagrant and OS/X.</p>
+
+<p><em>Note on conventions used in this article:
+- console commands are bold and italic:</em> <strong><em>which php5-fpm</em></strong></p>
+
 <hr />
+
+<h3>Reasoning</h3>
+
+<p>As with everything, we need to make a consious decision when we do things. In this case a VirtualBox Guest Additions mismatch has severe performance implications and in my case has halted the synchronizing between Vagrant and OS/X.</p>
+
+<hr />
+
 <h3>Requirements</h3>
+
 <ul>
-<li>
-<p>Homestead 2</p>
-</li>
-<li>
-<p>VirtualBox 5 (5.0.0 or greater)</p>
-</li>
-<li>
-<p>Vagrant 1.7.4 (or greater)</p>
-</li>
-<li>
-<ul>
-<li>*</li>
+<li>Homestead 2</li>
+<li>VirtualBox 5 (5.0.0 or greater)</li>
+<li>Vagrant 1.7.4 (or greater)</li>
 </ul>
-</li>
-</ul>
+
+<hr />
+
 <h3>Implementation</h3>
+
 <ol>
 <li>Let’s start off by halting Homestead:
 <strong><em>homestead halt</em></strong></li>
@@ -172,17 +164,17 @@
 <li>SSH into Homestead:
 <strong><em>homestead ssh</em></strong></li>
 <li>Remove any existing packages that we need to build the Guest Additions. (We will install the new versions next.)
-*<em>_sudo apt-get remove dkms build-essential linux-headers-</em>_**</li>
+<strong><em>sudo apt-get remove dkms build-essential linux-headers-*</em></strong></li>
 <li>Remove any remnants of the old Guest Additions:
-*<em>_sudo rm -rf VBoxGuestAdditions-</em>_**</li>
+<strong><em>sudo rm -rf VBoxGuestAdditions-*</em></strong></li>
 <li>Now lets install the new replacements for them:
 <strong><em>sudo apt-get install dkms build-essential linux-headers-$(uname -r)</em></strong></li>
 <li>Great! We have the system prepped, and ready to install the new Guest Additions. In my example I am using the 5.0.0 version, but make sure you use the version that matches your VirtualBox (one command, please excuse the inappropriate line breaks — wish Medium had propper code snippet support, the code blocks they do have break the lists):
-<strong><em>wget</em></strong> <a href="http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions_5.0.0.iso"><strong>_http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions<em>5.0.0.iso</em></strong></a></li>
+<strong><em>wget</em></strong> <a href="http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions_5.0.0.iso"><strong><em>http://download.virtualbox.org/virtualbox/5.0.0/VBoxGuestAdditions_5.0.0.iso</em></strong></a></li>
 <li>Create a mount point for the ISO:
 <strong><em>sudo mkdir /media/VBoxGuestAdditions</em></strong></li>
 <li>And mount the ISO (again, this is a single command on one line):
-<strong>_sudo mount -o loop,ro VBoxGuestAdditions<em>5.0.0.iso /media/VBoxGuestAdditions</em></strong></li>
+<strong><em>sudo mount -o loop,ro VBoxGuestAdditions_5.0.0.iso /media/VBoxGuestAdditions</em></strong></li>
 <li>Now we can finally install the Guest Additions:
 <strong><em>sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run</em></strong></li>
 <li>Once this completes successfully, we can clean up:
@@ -196,24 +188,40 @@ homestead halt</em></strong></li>
 <li>Let’s bring it back up:
 <strong><em>homestead up</em></strong></li>
 </ol>
+
 <hr />
+
 <p>And we can rejoice not seeing a Guest Addition version warning! Mission accomplished. Now pat yourself on the back, and get back to work already! 😄</p>
+
 <hr />
+
 <h3>Update</h3>
+
 <p>This process also fixes instances of the following error that may be encountered while running <strong><em>homestead up</em></strong>:</p>
+
 <pre><code>==&gt; default: Mounting shared folders…
 default: /vagrant =&gt; /Users/mike/.composer/vendor/laravel/homestead
 Failed to mount folders in Linux guest. This is usually because
 the “vboxsf” file system is not available. Please verify that
 the guest additions are properly installed in the guest and
-can work properly. The command attempted was:</code></pre>
+can work properly. The command attempted was:
+</code></pre>
+
 <pre><code>mount -t vboxsf -o uid=`id -u vagrant`,gid=`getent group vagrant | cut -d: -f3` vagrant /vagrant
-mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` vagrant /vagrant</code></pre>
-<pre><code>The error output from the last command was:</code></pre>
+mount -t vboxsf -o uid=`id -u vagrant`,gid=`id -g vagrant` vagrant /vagrant
+</code></pre>
+
+<pre><code>The error output from the last command was:
+</code></pre>
+
 <pre><code>mount: wrong fs type, bad option, bad superblock on vagrant,
-missing codepage or helper program, or other error</code></pre>
+missing codepage or helper program, or other error
+</code></pre>
+
 <pre><code>In some cases useful info is found in syslog — try
-dmesg | tail or so.</code></pre>        </div>
+dmesg | tail or so.
+</code></pre>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -284,7 +292,28 @@ dmesg | tail or so.</code></pre>        </div>
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

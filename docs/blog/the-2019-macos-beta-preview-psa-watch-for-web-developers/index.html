@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -130,7 +130,9 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <p>It's time once again to begin the rollercoaster ride that is the annual macOS beta program! As a developer, I am intrigued by the new functionality provided in the OS, as well as new features in Xcode. This year holds huge promises that I am really looking forward to!</p>
+
 <p>I will be installing and updating macOS Catalina as new versions come out, and testing them from a web development stand-point (mainly Laravel, but possibly also Server-Side Swift, if I get the time). Any issues I encounter with the following software will be reported here, and I will keep this entry up-to-date as best possible.</p>
+
 <ul>
 <li>Visual Studio Code</li>
 <li>Vagrant</li>
@@ -150,10 +152,15 @@
 <li>Permute</li>
 <li>Screenflow 8</li>
 </ul>
+
 <p>These are most of the apps I use on a day-to-day basis from a full-stack web-dev point-of view.</p>
+
 <p>Today I am installing macOS 10.15.0 on my test machine, a 2016 MacBook Pro with TouchBar. Following that I will attempt to install the apps listed above and see if there are any compatibility issues and report back.</p>
+
 <p><em>Keep an eye on this post, and let me know if there is an app that I missed. If I have it, I will try to add it.</em></p>
+
 <h2>Beta 1 - Build 19A471t from 2019-06-03</h2>
+
 <ul>
 <li>✅ VirtualBox 5.2.14</li>
 <li>✅ Vagrant 2.0.1</li>
@@ -172,14 +179,21 @@
 <li>✅ Discord 0.0.255</li>
 <li>✅ Base 2.4.12</li>
 </ul>
+
 <h2>Beta 2 - Build 19A487l from 2019-06-17</h2>
+
 <ul>
 <li>✅ VirtualBox 5.2.14</li>
 <li>✅ Vagrant 2.0.1</li>
 <li>⚠️ Homestead: if using NFS, you will need to update your Sites folder directive as follows:
-<pre><code class="language-yml">- map: /System/Volumes/Data/Users/yourname/sitesfolder
-  to: /home/vagrant/Sites
-  type: "nfs"</code></pre></li>
+```yml
+
+<ul>
+<li>map: /System/Volumes/Data/Users/yourname/sitesfolder
+to: /home/vagrant/Sites
+type: "nfs"
+```</li>
+</ul></li>
 <li>✅ VSCode 1.35.0-insider</li>
 <li>✅ Tower 3.4.1</li>
 <li>✅ Paw 3.1.8</li>
@@ -194,14 +208,21 @@
 <li>✅ Discord 0.0.255</li>
 <li>✅ Base 2.4.12</li>
 </ul>
+
 <h2>Beta 3 - Build 19A501i from 2019-07-02</h2>
+
 <ul>
 <li>✅ VirtualBox 5.2.14</li>
 <li>✅ Vagrant 2.0.1</li>
 <li>⚠️ Homestead: <strong>if using NFS, you will need to update your Sites folder directive as follows:</strong>
-<pre><code class="language-yml">- map: /System/Volumes/Data/Users/yourname/sitesfolder
-  to: /home/vagrant/Sites
-  type: "nfs"</code></pre></li>
+```yml
+
+<ul>
+<li>map: /System/Volumes/Data/Users/yourname/sitesfolder
+to: /home/vagrant/Sites
+type: "nfs"
+```</li>
+</ul></li>
 <li>✅ VSCode 1.35.0-insider</li>
 <li>✅ Tower 3.4.2</li>
 <li>✅ Paw 3.1.8</li>
@@ -216,15 +237,22 @@
 <li>✅ Discord 0.0.255</li>
 <li>✅ Base 2.4.12</li>
 </ul>
+
 <h2>Beta 4 - Build 19A512f from 2019-07-16</h2>
+
 <ul>
 <li>⛔️ VirtualBox 6</li>
 <li>✅ Parallels 14</li>
 <li>✅ Vagrant 2.0.1</li>
 <li>⚠️ Homestead: <strong>if using NFS, you will need to update your Sites folder directive as follows:</strong>
-<pre><code class="language-yml">- map: /System/Volumes/Data/Users/yourname/sitesfolder
-  to: /home/vagrant/Sites
-  type: "nfs"</code></pre></li>
+```yml
+
+<ul>
+<li>map: /System/Volumes/Data/Users/yourname/sitesfolder
+to: /home/vagrant/Sites
+type: "nfs"
+```</li>
+</ul></li>
 <li>✅ VSCode 1.35.0-insider</li>
 <li>✅ Tower 3.4.2</li>
 <li>✅ Paw 3.1.8</li>
@@ -238,11 +266,14 @@
 <li>✅ Affinity Designer 1.6.1, 1.7</li>
 <li>✅ Discord 0.0.255</li>
 </ul>
+
 <h2>Summary</h2>
+
 <ul>
 <li>So far I'm loving Catalina, especially the new Sidecar functionality that lets me use my iPad Pro as a display.</li>
 <li>The CleanMyMac issues aren't a primary concern, as I can still run my Mac great without it in all other regards.</li>
-</ul>        </div>
+</ul>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -310,7 +341,28 @@
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

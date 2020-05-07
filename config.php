@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 return [
     'baseUrl' => 'http://localhost:3000',
     'production' => false,
@@ -36,7 +38,7 @@ return [
             : $cleaned;
     },
     'isActive' => function ($page, $path) {
-        return ends_with(trimPath($page->getPath()), trimPath($path));
+        return Str::endsWith(trimPath($page->getPath()), trimPath($path));
     },
     'isActiveParent' => function ($page, $menuItem) {
         if (is_object($menuItem) && $menuItem->children) {
@@ -46,11 +48,11 @@ return [
         }
     },
     'url' => function ($page, $path) {
-        return starts_with($path, 'http') ? $path : '/' . trimPath($path);
+        return Str::startsWith($path, 'http') ? $path : '/' . trimPath($path);
     },
 
     'selected' => function ($page, $section) {
-        return str_contains($page->getPath(), $section) ? 'selected' : '';
+        return Str::contains($page->getPath(), $section) ? 'selected' : '';
     },
 
     'collections' => [

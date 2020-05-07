@@ -30,7 +30,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -135,95 +135,173 @@
                     
         <div class="border-b border-blue-200 mb-10 pb-4" v-pre>
             <p>PHPCI is a nifty little swiss-army-knife for your development toolbox. It provides continuous integration and connects to popular services like GitHub and BitBucket. It will monitor your source repositories for changes, and trigger a new build when it sees activity. Then it will let you know if anything went wrong or can be improved.</p>
+
 <p>This comes in handy to improve your code quality and minimize errors and issues down the road. In the following section we’ll go through the process of installing PHPCI in Homestead.</p>
+
 <p><strong>A word of caution</strong>: it can be unbearibly slow if you install it in the shared folders section. It also helps to have more than 1 processor assigned to Homestead to speed things up.</p>
+
 <hr />
+
 <h3>Pre-Requisites</h3>
+
 <ul>
-<li>
-<p>Laravel Homestead 2.0 configured and running.</p>
-</li>
-<li>
-<ul>
-<li>*</li>
+<li>Laravel Homestead 2.0 configured and running.</li>
 </ul>
-</li>
-</ul>
+
+<hr />
+
 <ol>
 <li>Make sure Homestead is up and running:</li>
 </ol>
-<pre><code>homestead up</code></pre>
-<p>2. Add a new database “phpci” to Homestead using your favorite SQL admin tool, maybe something like Sequel Pro:</p>
+
+<pre><code>homestead up
+</code></pre>
+
+<p>2&#46; Add a new database “phpci” to Homestead using your favorite SQL admin tool, maybe something like Sequel Pro:</p>
+
 <p><img src="https://cdn-images-1.medium.com/max/1600/1*ugOhTEgnBzkk2YQb3tmJGQ.png" alt="" />Create PHPCI Database</p>
-<p>3. Open your Terminal, SSH into your homestead VM, and clone phpci to a dedicated folder outside of the shared folder:</p>
+
+<p>3&#46; Open your Terminal, SSH into your homestead VM, and clone phpci to a dedicated folder outside of the shared folder:</p>
+
 <pre><code>homestead ssh
 cd ~
-git clone [https://github.com/Block8/PHPCI.git](https://github.com/Block8/PHPCI.git)</code></pre>
-<p>4. Get all the dependencies:</p>
+git clone [https://github.com/Block8/PHPCI.git](https://github.com/Block8/PHPCI.git)
+</code></pre>
+
+<p>4&#46; Get all the dependencies:</p>
+
 <pre><code>cd ~/PHPCI
-composer install</code></pre>
-<p>4. Configure PHPCI:</p>
-<pre><code>./console phpci:install</code></pre>
+composer install
+</code></pre>
+
+<p>4&#46; Configure PHPCI:</p>
+
+<pre><code>./console phpci:install
+</code></pre>
+
 <p>Using the following answers:</p>
+
 <pre><code>******************
 Welcome to PHPCI
-******************</code></pre>
-<pre><code>Checking requirements… OK</code></pre>
+******************
+</code></pre>
+
+<pre><code>Checking requirements… OK
+</code></pre>
+
 <pre><code>Please answer the following questions:
- — — — — — — — — — — — — — — — — — -</code></pre>
+ — — — — — — — — — — — — — — — — — -
+</code></pre>
+
 <pre><code>Please enter your MySQL host [localhost]:
 Please enter your MySQL database name [phpci]:
 Please enter your MySQL username [phpci]: **homestead**
-Please enter your MySQL password: **secret**</code></pre>
-<pre><code>Your PHPCI URL (“https://phpci.local" for example): **https://phpci.dev:8000**</code></pre>
-<pre><code>Setting up your database… OK</code></pre>
+Please enter your MySQL password: **secret**
+</code></pre>
+
+<pre><code>Your PHPCI URL (“https://phpci.local" for example): **https://phpci.dev:8000**
+</code></pre>
+
+<pre><code>Setting up your database… OK
+</code></pre>
+
 <pre><code>Admin Email: **your@email.com**
 Admin Name: **Your Name**
-Admin Password: **yourpassword**</code></pre>
-<pre><code>User account created!</code></pre>
-<p>6. Add cron job to automatically run builds:</p>
-<pre><code>sudo env EDITOR=nano crontab -e</code></pre>
+Admin Password: **yourpassword**
+</code></pre>
+
+<pre><code>User account created!
+</code></pre>
+
+<p>6&#46; Add cron job to automatically run builds:</p>
+
+<pre><code>sudo env EDITOR=nano crontab -e
+</code></pre>
+
 <p>Add the following to the cron file:</p>
-<pre><code>* * * * * sudo php /home/vagrant/PHPCI/console phpci:run-builds</code></pre>
-<p>7. Update MySQL configuration:</p>
-<pre><code>sudo nano /etc/mysql/my.cnf</code></pre>
+
+<pre><code>* * * * * sudo php /home/vagrant/PHPCI/console phpci:run-builds
+</code></pre>
+
+<p>7&#46; Update MySQL configuration:</p>
+
+<pre><code>sudo nano /etc/mysql/my.cnf
+</code></pre>
+
 <p>(Continue, even if the file doesn’t exist.)
 And add the following values in the <strong>[mysqld]</strong> section:</p>
+
 <pre><code>[mysqld]
 max_allowed_packet=64M
 innodb_log_file_size=512M
-innodb_log_buffer_size=768M</code></pre>
-<p>8. Restart the MySQL service:</p>
-<pre><code>sudo service mysql restart</code></pre>
-<p>9. Update PHP configuration:</p>
-<pre><code>sudo nano /etc/php5/cli/php.ini</code></pre>
+innodb_log_buffer_size=768M
+</code></pre>
+
+<p>8&#46; Restart the MySQL service:</p>
+
+<pre><code>sudo service mysql restart
+</code></pre>
+
+<p>9&#46; Update PHP configuration:</p>
+
+<pre><code>sudo nano /etc/php5/cli/php.ini
+</code></pre>
+
 <p>With (leave as is if it is already larger than 1024M):</p>
-<pre><code>memory_limit=1024M</code></pre>
-<p>10. Let’s exit out of homestead:</p>
-<pre><code>exit</code></pre>
-<p>11. Edit homestead config:</p>
-<pre><code>homestead edit</code></pre>
+
+<pre><code>memory_limit=1024M
+</code></pre>
+
+<p>10&#46; Let’s exit out of homestead:</p>
+
+<pre><code>exit
+</code></pre>
+
+<p>11&#46; Edit homestead config:</p>
+
+<pre><code>homestead edit
+</code></pre>
+
 <p>And add your new PHPCI site:</p>
+
 <pre><code>sites:
   — map: phpci.dev
-    to: /home/vagrant/PHPCI/public</code></pre>
-<p>12. Update your hosts file:</p>
-<pre><code>sudo nano /etc/hosts</code></pre>
+    to: /home/vagrant/PHPCI/public
+</code></pre>
+
+<p>12&#46; Update your hosts file:</p>
+
+<pre><code>sudo nano /etc/hosts
+</code></pre>
+
 <p>And add the relevant entry:</p>
-<pre><code>127.0.0.1       phpci.dev</code></pre>
-<p>13. Now restart Homestead and provision it:</p>
+
+<pre><code>127.0.0.1       phpci.dev
+</code></pre>
+
+<p>13&#46; Now restart Homestead and provision it:</p>
+
 <pre><code>homestead halt
-homestead up --provision</code></pre>
-<p>14. Open your browser and go to: <a href="http://phpci.dev:8000">http://phpci.dev:8000</a>.
+homestead up --provision
+</code></pre>
+
+<p>14&#46; Open your browser and go to: <a href="http://phpci.dev:8000">http://phpci.dev:8000</a>.
 You should now be able to log in using the email address and password specified in step #4.</p>
-<p>15. From here on in just follow all the same established PHPCI procedures as documented in their wiki: <a href="https://github.com/Block8/PHPCI/wiki">https://github.com/Block8/PHPCI/wiki</a></p>
+
+<p>15&#46; From here on in just follow all the same established PHPCI procedures as documented in their wiki: <a href="https://github.com/Block8/PHPCI/wiki">https://github.com/Block8/PHPCI/wiki</a></p>
+
 <hr />
+
 <p>In a future post I will discuss setting up a Laravel project and showing off all PHPCI can offer.</p>
+
 <hr />
+
 <h4>Updates</h4>
+
 <ul>
 <li><a href="https://twitter.com/egor_pe"><strong>Egor Pervuninski</strong></a> promptly converted these instructions to an <a href="https://github.com/eneset/homestead-phpci">Ansible deployment</a>. Nice job!</li>
-</ul>        </div>
+</ul>
+        </div>
 
         <nav class="flex justify-between text-sm md:text-base">
             <div>
@@ -294,7 +372,28 @@ You should now be able to log in using the email address and password specified 
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>

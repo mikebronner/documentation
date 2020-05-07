@@ -26,7 +26,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=a74400cd48b4a79d7b92">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=917875424e94b3ba93c0">
 
         
             </head>
@@ -142,7 +142,9 @@
 
             <div class="w-full lg:w-3/5 break-words pb-16 lg:px-4" v-pre>
                 <h1 id="navigation">Navigation</h1>
+
 <p>The navigation menu in the left-hand sidebar is defined using an array in <code>navigation.php</code>. Nested pages can be added by using the <code>children</code> associative array.</p>
+
 <pre><code class="language-php">&lt;?php
 // navigation.php
 
@@ -163,7 +165,9 @@ return [
 'navigation' =&gt; require_once('navigation.php'),
 
 // blade files
-$page-&gt;navigation</code></pre>            </div>
+$page-&gt;navigation
+</code></pre>
+            </div>
 
             <nav class="nav-menu p-0 pl-4">
                 <a
@@ -212,7 +216,28 @@ $page-&gt;navigation</code></pre>            </div>
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    2019.
+                    2020.
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/privacy-policy"
+                        title="Privacy Policy"
+                    >Privacy Policy</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/terms-of-service"
+                        title="Terms of Service"
+                    >Terms of Service</a>
+                </li>
+                <li class="md:mr-2">
+                    <a
+                        class="text-green-600 hover:text-green-900"
+                        href="https://genealabs.com/disclaimer"
+                        title="Disclaimer"
+                    >Disclaimer</a>
                 </li>
             </ul>
         </footer>
