@@ -62,6 +62,17 @@
                     </p>
                 </div>
             </div>
+            <div
+                class="text-center mt-16 md:mt-4 mb-8"
+            >
+                <a
+                    class="sh_lead_button text-center rounded text-xl md:text-3xl bg-green-500 hover:bg-green-300 text-green-100 hover:text-green-700 font-light py-3 px-8"
+                    href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
+                    onclick="shLeadFormPopup.openForm(event)"
+                >
+                    Talk To Us About Your Company
+                </a>
+            </div>
 
             <div class="md:flex -mx-2 -mx-4">
                 <div class="mb-8 mx-3 px-2 md:w-1/3">
@@ -159,17 +170,6 @@
                         infrastructure for the job.
                     </p>
                 </div>
-            </div>
-            <div
-                class="text-center mt-16 md:mt-4 mb-8"
-            >
-                <a
-                    class="sh_lead_button text-center rounded text-xl md:text-3xl bg-green-500 hover:bg-green-300 text-green-100 hover:text-green-700 font-light py-3 px-8"
-                    href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
-                    onclick="shLeadFormPopup.openForm(event)"
-                >
-                    Tell Us About Your Project
-                </a>
             </div>
         </div>
     </section>
@@ -282,7 +282,7 @@
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
-                    Ready To Get Started?
+                    Talk To Us About Your Company
                 </a>
             </div>
         </div>

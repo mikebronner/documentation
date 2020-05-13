@@ -78,7 +78,7 @@
                         href="https://genealabs.com"
                         title="GeneaLabs website"
                     >GeneaLabs</a>
-                    {{ date('Y') }}.
+                    2014 - {{ date('Y') }}.
                 </li>
                 <li class="md:mr-2">
                     <a

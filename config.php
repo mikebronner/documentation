@@ -6,7 +6,7 @@ return [
     'baseUrl' => 'http://localhost:3000',
     'production' => false,
     'siteName' => "GeneaLabs",
-    'siteDescription' => "We help improve your business by increasing efficiency using bespoke software solutions.",
+    'siteDescription' => "We help professional genealogists connect with clients.",
     'siteAuthor' => 'Mike Bronner',
     // Algolia DocSearch credentials
     'docsearchApiKey' => '',
