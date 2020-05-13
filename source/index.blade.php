@@ -54,7 +54,7 @@
             class=" container mx-auto px-6"
         >
             <div class="flex flex-col-reverse mb-12 lg:flex-row">
-                <div class="mt-8 mb-16">
+                <div class="mt-8">
                     <p
                         class="font-thin mt-4 text-3xl md:text-5xl subpixel-antialiased text-green-900"
                     >
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div
-                class="text-center mt-16 md:mt-4 mb-8"
+                class="text-center mt-16 md:mt-4 mb-20"
             >
                 <a
                     class="sh_lead_button text-center rounded text-xl md:text-3xl bg-green-500 hover:bg-green-300 text-green-100 hover:text-green-700 font-light py-3 px-8"
