@@ -54,7 +54,7 @@
             class=" container mx-auto px-6"
         >
             <div class="flex flex-col-reverse mb-12 lg:flex-row">
-                <div class="mt-8">
+                <div class="mt-8 mb-16">
                     <p
                         class="font-thin mt-4 text-3xl md:text-5xl subpixel-antialiased text-green-900"
                     >
