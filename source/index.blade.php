@@ -56,14 +56,18 @@
             <div class="flex flex-col-reverse mb-12 lg:flex-row">
                 <div class="mt-8">
                     <p
-                        class="font-thin mt-4 text-3xl md:text-5xl subpixel-antialiased text-green-900"
+                        class="text-lg md:text-xl subpixel-antialiased"
                     >
                         Connecting professional genealogists with clients.
                     </p>
-                    <p>
+                    <p
+                        class="text-lg md:text-xl subpixel-antialiased"
+                    >
                         We help professional genealogists’ brand and website align with their business goals by working smarter.
                     </p>
-                    <p>
+                    <p
+                        class="font-thin mt-4 text-3xl md:text-5xl subpixel-antialiased text-green-900"
+                    >
                         Boost Your Leads ☙
                         Develop More Opportunities ❧
                         Increase Your Income
@@ -74,7 +78,7 @@
                 class="text-center mt-16 md:mt-4 mb-20"
             >
                 <a
-                    class="sh_lead_button text-center rounded text-xl md:text-3xl bg-green-500 hover:bg-green-300 text-green-100 hover:text-green-700 font-light py-3 px-8"
+                    class="sh_lead_button text-center rounded text-lg md:text-2xl bg-green-500 hover:bg-green-300 text-green-100 hover:text-green-700 font-light py-3 px-8"
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
