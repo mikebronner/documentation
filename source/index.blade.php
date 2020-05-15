@@ -58,7 +58,15 @@
                     <p
                         class="font-thin mt-4 text-3xl md:text-5xl subpixel-antialiased text-green-900"
                     >
-                        {{ $page->siteDescription }}
+                        Connecting professional genealogists with clients.
+                    </p>
+                    <p>
+                        We help professional genealogists’ brand and website align with their business goals by working smarter.
+                    </p>
+                    <p>
+                        Boost Your Leads ☙
+                        Develop More Opportunities ❧
+                        Increase Your Income
                     </p>
                 </div>
             </div>
@@ -70,7 +78,7 @@
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
-                    Talk To Us About Your Company
+                    Start Your Alignment
                 </a>
             </div>
 
@@ -282,7 +290,7 @@
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
-                    Talk To Us About Your Company
+                    Start Your Alignment
                 </a>
             </div>
         </div>
