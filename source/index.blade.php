@@ -58,7 +58,7 @@
                     <p
                         class="text-center font-thin mt-4 text-3xl md:text-5xl subpixel-antialiased text-green-900"
                     >
-                        Connecting professional genealogists with clients.
+                        Connecting Professional Genealogists With Clients
                     </p>
                     <p
                         class="text-center text-xl md:text-2xl subpixel-antialiased"
