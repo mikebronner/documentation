@@ -82,7 +82,7 @@
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
-                    Start Your Alignment
+                    Start Aligning Your Business
                 </a>
             </div>
 
@@ -294,7 +294,7 @@
                     href="https://genealabs.17hats.com/p#/lcf/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
                     onclick="shLeadFormPopup.openForm(event)"
                 >
-                    Start Your Alignment
+                    Start Aligning Your Business
                 </a>
             </div>
         </div>
