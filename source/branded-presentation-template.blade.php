@@ -1,10 +1,7 @@
 @extends('_layouts.master')
 
 @push ('scripts')
-    <script
-        type="text/javascript"
-        src="https://genealabs.17hats.com/ruby/embed/lead/script/hrspbdcvncvnbdpkngrcrxnrwsbghcws"
-    ></script>
+
 @endpush
 
 @push ('styles')
@@ -77,12 +74,124 @@
             feedback, if necessary. Pending your approval, we will send you the
             final product.
         </p>
-        <h2>Sample Slide Formats</h2>
+        <h2>Sample Template</h2>
         <p>
             The template consists of some or all of the following types of
-            slides. Please note that layouts may differ on your template.
+            slides. Your template will be customized with your branding,
+            and your slide layouts may differ in various aspects.
         </p>
-        <p>===> example slide images here <===</p>
+        <div
+            class="grid grid-cols-3 gap-4"
+        >
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-presentation-title.jpg">
+                Presentation Title
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-presentation-title-photo.jpg">
+                Pres. Title & Photo
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-title-photo.jpg">
+                Title & Photo
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-title-bullets.jpg">
+                Title & Bullets
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-bullets-2-col.jpg">
+                Bullets 2-Column
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-bullets-3-col.jpg">
+                Bullets 3-Column
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-title-text.jpg">
+                Title & Text
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-bullets.jpg">
+                Bullets
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-title-bullets-photo.jpg">
+                Title & Bullets & Photo
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-section.jpg">
+                Section Title
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-title.jpg">
+                Title
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-agenda.jpg">
+                Agenda
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-statement.jpg">
+                Statement
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-fact.jpg">
+                Fact
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-quote.jpg">
+                Quote
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-photo-3-up.jpg">
+                Photos 3-Up
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-photo.jpg">
+                Photo
+            </div>
+            <div
+                class="text-center"
+            >
+                <img src="/assets/images/slideshow-blank.jpg">
+                Blank
+            </div>
+        </div>
         <h2>Are You Ready To Get Started?</h2>
         <p>
             Are you ready to move your presentations to the next level? Great!
