@@ -1,7 +1,8 @@
 @extends('_layouts.master')
 
 @push ('scripts')
-
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.min.js"></script>
+    <script type="text/javascript">setTimeout(function(){iFrameResize({checkOrigin: false, heightCalculationMethod: "taggedElement"});}, 30)</script>
 @endpush
 
 @push ('styles')
@@ -86,109 +87,112 @@
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-presentation-title.jpg">
+                <img
+                    class="rounded shadow-md"
+                    src="/assets/images/slideshow-presentation-title.jpg"
+                >
                 Presentation Title
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-presentation-title-photo.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-presentation-title-photo.jpg">
                 Pres. Title & Photo
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-title-photo.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-title-photo.jpg">
                 Title & Photo
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-title-bullets.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-title-bullets.jpg">
                 Title & Bullets
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-bullets-2-col.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-bullets-2-col.jpg">
                 Bullets 2-Column
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-bullets-3-col.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-bullets-3-col.jpg">
                 Bullets 3-Column
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-title-text.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-title-text.jpg">
                 Title & Text
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-bullets.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-bullets.jpg">
                 Bullets
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-title-bullets-photo.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-title-bullets-photo.jpg">
                 Title & Bullets & Photo
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-section.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-section.jpg">
                 Section Title
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-title.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-title.jpg">
                 Title
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-agenda.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-agenda.jpg">
                 Agenda
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-statement.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-statement.jpg">
                 Statement
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-fact.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-fact.jpg">
                 Fact
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-quote.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-quote.jpg">
                 Quote
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-photo-3-up.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-photo-3-up.jpg">
                 Photos 3-Up
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-photo.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-photo.jpg">
                 Photo
             </div>
             <div
                 class="text-center"
             >
-                <img src="/assets/images/slideshow-blank.jpg">
+                <img class="rounded shadow-md" src="/assets/images/slideshow-blank.jpg">
                 Blank
             </div>
         </div>
@@ -273,11 +277,58 @@
             to order now to get the process started: the sooner you order, the
             sooner you will receive your templates for your next presentation.
         </p>
-        <button
-            class="m-4 mx-auto py-2 px-6 block text-xl rounded-lg bg-green-800 text-green-100"
-        >
-            Order Now
-        </button>
+        <div x-data="{ open: false }">
+            <button
+                class="m-4 mx-auto py-2 px-6 block text-xl rounded-lg bg-green-800 text-green-100"
+                x-on:click="open = true"
+            >
+                Order Now
+            </button>
+            <div
+                x-show="open"
+                class="fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center"
+            >
+                <!--
+                  Background overlay, show/hide based on modal state.
+              
+                  Entering: "ease-out duration-300"
+                    From: "opacity-0"
+                    To: "opacity-100"
+                  Leaving: "ease-in duration-200"
+                    From: "opacity-100"
+                    To: "opacity-0"
+                -->
+                <div
+                    class="fixed inset-0 transition-opacity"
+                    x-on:click="open = false"
+                >
+                    <div class="absolute inset-0 bg-black opacity-75"></div>
+                </div>
+              
+                <!--
+                  Modal panel, show/hide based on modal state.
+              
+                  Entering: "ease-out duration-300"
+                    From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                    To: "opacity-100 translate-y-0 sm:scale-100"
+                  Leaving: "ease-in duration-200"
+                    From: "opacity-100 translate-y-0 sm:scale-100"
+                    To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                -->
+                <div
+                    class="max-h-screen overflow-y-scroll bg-white rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full sm:p-6"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="modal-headline"
+                >
+                    <iframe
+                        src="https://hello.dubsado.com:443/public/form/view/5ec6e8d5ce434202a9245d95"
+                        frameborder="0"
+                        style="width:1px; min-width:100%;"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
         <p>
             My 100% money-back guarantee: if during the final review you aren't
             satisfied with the results, I'll refund your payment in full.

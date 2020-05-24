@@ -32,5 +32,8 @@
         "vue": "^2.5",
         "vue-template-compiler": "^2.5",
         "yargs": "^4.6"
+    },
+    "dependencies": {
+        "alpinejs": "^2.3.5"
     }
 }
