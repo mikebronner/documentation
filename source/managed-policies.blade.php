@@ -290,7 +290,7 @@
             Further, communicating your policies with your visitors builds trust
             and provides a resource for setting expectations.
         </p>
-        <h2>Looking for something more?</h2>
+        {{-- <h2>Looking for something more?</h2>
         <p>
             Are you looking for a more hands-off solution? We've got you covered
             with our Managed Policy Service:
@@ -307,6 +307,6 @@
                 </li>
             </ul>
             <a href="/managed-policies">Learn More &hellip;</a>
-        </p>
+        </p> --}}
     </section>
 @endsection
