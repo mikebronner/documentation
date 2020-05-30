@@ -26,7 +26,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=863f183f6a01f313ccd2">
+        <link rel="stylesheet" href="/assets/build/css/main.css?id=f67c1c93de4c60db0508">
 
         
         
@@ -94,7 +94,10 @@
             <main role="main"
                 class="w-full flex-auto relative"
             >
-                        <section class="container mx-auto max-w-2xl">
+                        <section
+        x-data="{ open: false }"
+        class="container mx-auto max-w-2xl"
+    >
         <h1>Branded Presentation Templates</h1>
         <h2>Frustrated with your slideshows?</h2>
         <p>
@@ -103,7 +106,7 @@
             presentation. Maybe your branding isn't consistent from one to the
             other or your designs seem unprofessional. You know its something
             you need to fix, but you don't know how and don't have the time to
-            figure it out for yourself. Have you been putting this off, because
+            figure it out for yourself. Have you been putting this off because
             it turned out to be a lot more work than expected?
         </p>
         <p>
@@ -128,11 +131,11 @@
             Focus on presenting, on running your business. We will handle the
             design and branding of your slideshow template. With this new
             template you will be able to assemble your presentations quicker,
-            appear more professional, and be focussed on earning money, rather
+            appear more professional, and be focused  on earning money, rather
             than having to learn technologies that are not directly in line with
             your business. Order one of our slideshow template packages now. Why?
         </p>
-        <ul>
+        <ul class="ml-4 list-disc list-outside">
             <li>I have years of experience with slideshows and Audio/Visual technologies.</li>
             <li>I understand design and accessiblity.</li>
             <li>I have successfully helped other professional genealogists with this.</li>
@@ -283,13 +286,37 @@
         <h2>Are You Ready To Get Started?</h2>
         <p>
             Are you ready to move your presentations to the next level? Great!
-            Order your template here. The pricing is between $400 and $1200,
-            depending on the package you choose. Professional templates show
-            that you are serious about your business, and the cost is easily
-            recouped through increased business and/or higher fees.
+            The pricing is between $400 and $1200, depending on the package you
+            choose. Professional templates show that you are serious about your
+            business, and the cost is easily recouped through increased business
+            and/or higher fees.
         </p>
+        <table
+            class="table"
+        >
+            <thead>
+                <tr>
+                    <th>Minimal Deck</th>
+                    <th>Basic Deck</th>
+                    <th>Full Deck</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>6 Slide Formats</td>
+                    <td>12 Slide Formats</td>
+                    <td>18 Slide Formats</td>
+                </tr>
+                <tr>
+                    <td>$400</td>
+                    <td>$800</td>
+                    <td>$1200</td>
+                </tr>
+            </tbody>
+        </table>
         <button
-            class="m-4 mx-auto py-2 px-6 block text-xl rounded-lg bg-green-800 text-green-100"
+            class="m-4 mx-auto py-2 px-6 block text-xl rounded-lg bg-brand-600 text-brand-100 hover:bg-brand-700"
+            x-on:click="open = true"
         >
             Order Now
         </button>
@@ -361,56 +388,54 @@
             to order now to get the process started: the sooner you order, the
             sooner you will receive your templates for your next presentation.
         </p>
-        <div x-data="{ open: false }">
-            <button
-                class="m-4 mx-auto py-2 px-6 block text-xl rounded-lg bg-green-800 text-green-100"
-                x-on:click="open = true"
-            >
-                Order Now
-            </button>
+        <button
+            class="m-4 mx-auto py-2 px-6 block text-xl rounded-lg bg-green-800 text-green-100"
+            x-on:click="open = true"
+        >
+            Order Now
+        </button>
+        <div
+            x-show="open"
+            class="fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center"
+        >
+            <!--
+                Background overlay, show/hide based on modal state.
+            
+                Entering: "ease-out duration-300"
+                From: "opacity-0"
+                To: "opacity-100"
+                Leaving: "ease-in duration-200"
+                From: "opacity-100"
+                To: "opacity-0"
+            -->
             <div
-                x-show="open"
-                class="fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center"
+                class="fixed inset-0 transition-opacity"
+                x-on:click="open = false"
             >
-                <!--
-                  Background overlay, show/hide based on modal state.
-              
-                  Entering: "ease-out duration-300"
-                    From: "opacity-0"
-                    To: "opacity-100"
-                  Leaving: "ease-in duration-200"
-                    From: "opacity-100"
-                    To: "opacity-0"
-                -->
-                <div
-                    class="fixed inset-0 transition-opacity"
-                    x-on:click="open = false"
-                >
-                    <div class="absolute inset-0 bg-black opacity-75"></div>
-                </div>
-              
-                <!--
-                  Modal panel, show/hide based on modal state.
-              
-                  Entering: "ease-out duration-300"
-                    From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                    To: "opacity-100 translate-y-0 sm:scale-100"
-                  Leaving: "ease-in duration-200"
-                    From: "opacity-100 translate-y-0 sm:scale-100"
-                    To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                -->
-                <div
-                    class="max-h-screen overflow-y-scroll bg-white rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full sm:p-6"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="modal-headline"
-                >
-                    <iframe
-                        src="https://hello.dubsado.com:443/public/form/view/5ec6e8d5ce434202a9245d95"
-                        frameborder="0"
-                        style="width:1px; min-width:100%;"
-                    ></iframe>
-                </div>
+                <div class="absolute inset-0 bg-black opacity-75"></div>
+            </div>
+            
+            <!--
+                Modal panel, show/hide based on modal state.
+            
+                Entering: "ease-out duration-300"
+                From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                To: "opacity-100 translate-y-0 sm:scale-100"
+                Leaving: "ease-in duration-200"
+                From: "opacity-100 translate-y-0 sm:scale-100"
+                To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            -->
+            <div
+                class="max-h-screen overflow-y-scroll bg-white rounded-lg px-4 pt-5 pb-4 overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full sm:p-6"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="modal-headline"
+            >
+                <iframe
+                    src="https://hello.dubsado.com:443/public/form/view/5ec6e8d5ce434202a9245d95"
+                    frameborder="0"
+                    style="width:1px; min-width:100%;"
+                ></iframe>
             </div>
         </div>
         <p>

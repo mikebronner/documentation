@@ -52,7 +52,7 @@
         </p>
         <p>
             At the end you will be given a short JavaScript snippet to embedd in
-            your website, and your're all done! When I created the documents for
+            your website, and you're all done! When I created the documents for
             GeneaLabs, I created and embedded them live on the site within 30
             minutes!
         </p>
@@ -252,7 +252,7 @@
         </p>
         <ul>
             <li><a href="/privacy-policy" target=_blank">GeneaLabs's Privacy Policy</a></li>
-            <li><a href="/terms-of-service" target=_blank">GenaLabs's Terms of Service</a></li>
+            <li><a href="/terms-of-service" target=_blank">GeneaLabs's Terms of Service</a></li>
             <li><a href="/disclaimer" target=_blank">GeneaLabs's Disclaimer</a></li>
         </ul>
         <h3>I have more questions. What do I do?</h3>
@@ -279,7 +279,7 @@
         <h2>Laws Are Changing!</h2>
         <p>
             With new privacy laws being enacted all the time, it is more
-            important than every that you protect yourself.
+            important than ever that you protect yourself.
         </p>
         <p>
             Not having policy documentation on your website opens you up to
