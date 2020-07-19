@@ -51,5 +51,10 @@ module.exports = {
   variants: {},
   plugins: [
     require('@tailwindcss/custom-forms')
-  ]
+  ],
+  purge: [
+    './source/**/*.html',
+    './source/**/*.vue',
+    './source/**/*.php',
+  ],
 }
