@@ -19,7 +19,7 @@
         "font-awesome": "^4.5",
         "fuse.js": "^3.3",
         "hasbin": "^1.2",
-        "highlight.js": "^9.13",
+        "highlight.js": "^10.4",
         "jquery": "^3.5.1",
         "laravel-mix": "^4.0",
         "laravel-mix-purgecss": "^3.0",
